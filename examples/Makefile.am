@@ -13,7 +13,8 @@ if HAS_NETPBM
 NETPBM_EXTRA = happrox
 endif
 
-bin_PROGRAMS = transform
+bin_PROGRAMS = transform \
+	$(NETPBM_EXTRA)
 
 noinst_PROGRAMS = \
 	set \
@@ -33,5 +34,4 @@ noinst_PROGRAMS = \
 	sphere \
 	stripe \
 	optimize \
-	merge \
-	$(NETPBM_EXTRA)
+	merge

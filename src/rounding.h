@@ -45,9 +45,15 @@
 #        define FPU_ROUND_DOUBLE (fpu_init = _controlfp (0, 0),\
                                  _controlfp (_PC_53, MCW_PC))
 #        define FPU_RESTORE      (_controlfp (fpu_init, 0xfffff))
-#      else /* not _MSC_VER */
-#        error "You need the Microsoft C compiler for the Win32 version"
-#      endif /*  not _MSC_VER */
+#      elif __MINGW32__
+#        include <float.h>
+         static unsigned int fpu_init;
+#        define FPU_ROUND_DOUBLE (fpu_init = _controlfp (0, 0),\
+                                  _controlfp (_PC_53, _MCW_PC))
+#        define FPU_RESTORE      (_controlfp (fpu_init, 0xfffff))
+#      else /* not _MSC_VER or __MINGW32__ */
+#        error "You need MSVC or MinGW for the Win32 version"
+#      endif /*  not _MSC_VER or __MINGW32__ */
 #    else /* not WIN32 */
 #      ifdef __CYGWIN__
          typedef unsigned int fpu_control_t __attribute__ ((__mode__ (__HI__)));

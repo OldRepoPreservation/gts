@@ -98,8 +98,10 @@ static gboolean find_closest (gpointer key, gpointer value, gpointer user_data)
   GtsFace * f = GTS_FACE (value);
   
   if (gts_triangle_orientation (GTS_TRIANGLE (f)) > 0.) {
-    gdouble d = gts_point_distance2 (data->p, 
-				     GTS_POINT (GTS_SEGMENT (GTS_TRIANGLE (f)->e1)->v1));
+    GtsPoint * p1 = GTS_POINT (GTS_SEGMENT (GTS_TRIANGLE (f)->e1)->v1);
+    gdouble d = ((data->p->x - p1->x)*(data->p->x - p1->x) + 
+		 (data->p->y - p1->y)*(data->p->y - p1->y));
+
     if (d < data->dmin) {
       data->dmin = d;
       data->closest = f;

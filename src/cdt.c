@@ -882,16 +882,16 @@ remove_intersected_edge (GtsSegment * s,
   o2 = gts_point_orientation (GTS_POINT (v3), GTS_POINT (v1), 
 			      GTS_POINT (s->v2));
 
-  if (o1 >= 0.) {
-    if (o2 >= 0.) { /* @s->v2 is inside (or on the edge) of @f */
-      g_assert (o1 == 0. && o2 == 0.);
-      remove_triangles (e, surface);
-      if (!constraint && !e->triangles)
-	gts_object_destroy (GTS_OBJECT (e));
-      *left = g_slist_prepend (*left, e2);
-      *right = g_slist_prepend (*right, e1);
-      return constraint;
-    }
+  if (o1 == 0.) {
+    g_assert (o2 == 0.);
+    remove_triangles (e, surface);
+    if (!constraint && !e->triangles)
+      gts_object_destroy (GTS_OBJECT (e));
+    *left = g_slist_prepend (*left, e2);
+    *right = g_slist_prepend (*right, e1);
+  }
+  else if (o1 > 0.) {
+    g_assert (o2 <= 0.);
     NEXT_CUT (e2, e1, right)
   }
   else if (o2 >= 0.)
@@ -1052,8 +1052,11 @@ GSList * gts_delaunay_add_constraint (GtsSurface * surface,
   triangulate_polygon (right, surface);
   triangulate_polygon (left, surface);
 #endif
-  if (ref && !ref->surfaces)
+  if (ref && !ref->surfaces) {
+    gts_allow_floating_edges = TRUE;
     gts_object_destroy (GTS_OBJECT (ref));
+    gts_allow_floating_edges = FALSE;
+  }
   return constraints;
 }
 

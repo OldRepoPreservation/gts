@@ -252,6 +252,7 @@ Graph class
 </para>
 
 @object: 
+@graph_class: 
 @node_class: 
 @edge_class: 
 
@@ -279,9 +280,10 @@ Graph class
 
 </para>
 
-@g: 
 @fp: 
 @Returns: 
+<!-- # Unused Parameters # -->
+@g: 
 
 
 <!-- ##### FUNCTION gts_graph_read_jostle ##### -->

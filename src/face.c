@@ -263,3 +263,35 @@ void gts_face_foreach_neighbor (GtsFace * f,
   }
 }
 
+static gboolean triangle_is_incompatible (GtsTriangle * t, GtsEdge * e, GtsSurface * s)
+{
+  GSList * i = e->triangles;
+
+  while (i) {
+    if (i->data != t &&
+	GTS_IS_FACE (i->data) &&
+	gts_face_has_parent_surface (i->data, s) &&
+	!gts_triangles_are_compatible (t, i->data, e))
+      return TRUE;
+    i = i->next;
+  }
+  return FALSE;
+}
+
+/**
+ * gts_face_is_compatible:
+ * @f: a #GtsFace.
+ * @s: a #GtsSurface.
+ *
+ * Returns: %TRUE if @f is compatible with all its neighbors belonging
+ * to @s, %FALSE otherwise.
+ */
+gboolean gts_face_is_compatible (GtsFace * f, GtsSurface * s)
+{
+  g_return_val_if_fail (f != NULL, FALSE);
+  g_return_val_if_fail (s != NULL, FALSE);
+
+  return !(triangle_is_incompatible (GTS_TRIANGLE (f), GTS_TRIANGLE (f)->e1, s) ||
+	   triangle_is_incompatible (GTS_TRIANGLE (f), GTS_TRIANGLE (f)->e2, s) ||
+	   triangle_is_incompatible (GTS_TRIANGLE (f), GTS_TRIANGLE (f)->e3, s));
+}

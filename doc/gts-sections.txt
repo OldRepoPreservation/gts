@@ -307,6 +307,7 @@ gts_face_has_parent_surface
 gts_face_neighbor_number
 gts_face_neighbors
 gts_face_foreach_neighbor
+gts_face_is_compatible
 gts_faces_from_edges
 </SECTION>
 

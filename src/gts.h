@@ -744,6 +744,8 @@ void          gts_face_foreach_neighbor             (GtsFace * f,
 						     GtsSurface * s, 
 						     GtsFunc func,
 						     gpointer data);
+gboolean      gts_face_is_compatible                (GtsFace * f, 
+						     GtsSurface * s);
 
 /* Matrices: matrix.c */
 

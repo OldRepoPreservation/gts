@@ -539,37 +539,7 @@ static void stats_foreach_edge (GtsEdge * e, GtsSurfaceStats * stats)
 
 static void stats_foreach_face (GtsTriangle * t, GtsSurfaceStats * stats)
 {
-  GSList * i;
-  gboolean incompatible = FALSE;
-
-  i = t->e1->triangles;
-  while (i && !incompatible) {
-    if (i->data != t &&
-	GTS_IS_FACE (i->data) &&
-	gts_face_has_parent_surface (i->data, stats->parent) &&
-	!gts_triangles_are_compatible (t, i->data, t->e1))
-      incompatible = TRUE;
-    i = i->next;
-  }
-  i = t->e2->triangles;
-  while (i && !incompatible) {
-    if (i->data != t &&
-	GTS_IS_FACE (i->data) &&
-	gts_face_has_parent_surface (i->data, stats->parent) &&
-	!gts_triangles_are_compatible (t, i->data, t->e2))
-      incompatible = TRUE;
-    i = i->next;
-  }
-  i = t->e3->triangles;
-  while (i && !incompatible) {
-    if (i->data != t &&
-	GTS_IS_FACE (i->data) &&
-	gts_face_has_parent_surface (i->data, stats->parent) &&
-	!gts_triangles_are_compatible (t, i->data, t->e3))
-      incompatible = TRUE;
-    i = i->next;
-  }
-  if (incompatible)
+  if (!gts_face_is_compatible (GTS_FACE (t), stats->parent))
     stats->n_incompatible_faces++;
   if (gts_triangle_is_duplicate (t))
     stats->n_duplicate_faces++;

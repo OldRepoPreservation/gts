@@ -12,3 +12,4 @@ Wagner Toledo Correa: triangle strips.
 Marcelo E. Magallon: Debian packages.
 Wayne C Gramlich, Michael Loehr: 4x4 GtsMatrix implementation.
 Tim F.: "dual" marching tetrahedra.
+Tomas Akenine-Moller: fast triangle-box intersection test.

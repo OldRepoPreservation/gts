@@ -231,6 +231,7 @@ gts_bboxes_are_overlapping
 gts_bbox_diagonal2
 gts_bbox_point_distance2
 gts_bbox_is_stabbed
+gts_bbox_overlaps_triangle
 <SUBSECTION>
 GtsBBTreeTraverseFunc
 gts_bb_tree_new

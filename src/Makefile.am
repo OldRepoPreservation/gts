@@ -56,7 +56,8 @@ libgts_la_SOURCES = \
 	graph.c \
 	pgraph.c \
 	partition.c \
-	curvature.c
+	curvature.c \
+	tribox3.c
 
 include_HEADERS = \
 	gts.h gtsconfig.h

@@ -901,6 +901,8 @@ void       gts_bbox_point_distance2          (GtsBBox * bb,
 					      gdouble * max);
 gboolean   gts_bbox_is_stabbed               (GtsBBox * bb, 
 					      GtsPoint * p);
+gboolean   gts_bbox_overlaps_triangle        (GtsBBox * bb,
+					      GtsTriangle * t);
 
 GNode *    gts_bb_tree_new                   (GSList * bboxes);
 GNode *    gts_bb_tree_surface               (GtsSurface * s);

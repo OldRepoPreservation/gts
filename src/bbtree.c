@@ -462,6 +462,44 @@ gboolean gts_bbox_is_stabbed (GtsBBox * bb, GtsPoint * p)
   return TRUE;
 }
 
+extern int triBoxOverlap (double boxcenter[3],
+			  double boxhalfsize[3],
+			  double triverts[3][3]);
+
+/**
+ * gts_bbox_overlaps_triangle:
+ * @bb: a #GtsBBox.
+ * @t: a #GtsTriangle.
+ *
+ * This is a wrapper around the fast overlap test of Tomas
+ * Akenine-Moller (http://www.cs.lth.se/home/Tomas_Akenine_Moller/).
+ *
+ * Returns: %TRUE if @bb overlaps with @t, %FALSE otherwise.
+ */
+gboolean gts_bbox_overlaps_triangle (GtsBBox * bb, GtsTriangle * t)
+{
+  double bc[3], bh[3], tv[3][3];
+  GtsPoint * p1, * p2, * p3;
+
+  g_return_val_if_fail (bb != NULL, FALSE);
+  g_return_val_if_fail (t != NULL, FALSE);
+
+  bc[0] = (bb->x2 + bb->x1)/2.;
+  bh[0] = (bb->x2 - bb->x1)/2.;
+  bc[1] = (bb->y2 + bb->y1)/2.;
+  bh[1] = (bb->y2 - bb->y1)/2.;
+  bc[2] = (bb->z2 + bb->z1)/2.;
+  bh[2] = (bb->z2 - bb->z1)/2.;
+  p1 = GTS_POINT (GTS_SEGMENT (t->e1)->v1);
+  p2 = GTS_POINT (GTS_SEGMENT (t->e1)->v2);
+  p3 = GTS_POINT (gts_triangle_vertex (t));
+  tv[0][0] = p1->x; tv[0][1] = p1->y; tv[0][2] = p1->z;
+  tv[1][0] = p2->x; tv[1][1] = p2->y; tv[1][2] = p2->z;
+  tv[2][0] = p3->x; tv[2][1] = p3->y; tv[2][2] = p3->z;
+
+  return triBoxOverlap (bc, bh, tv);
+}
+
 /**
  * gts_bb_tree_new:
  * @bboxes: a list of #GtsBBox.

@@ -1,0 +1,184 @@
+<!-- ##### SECTION Title ##### -->
+Extended binary heaps
+
+<!-- ##### SECTION Short_Description ##### -->
+efficient data structure for priority heaps allowing removal of elements.
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+This data structure is similar to the binary heap implementation but adds the two operations gts_eheap_decrease_key() and gts_eheap_remove(). Contrary to the binary heap implementation, keys are stored in a #GtsEHeapPair structure and comparisons between keys are performed directly (thus saving a call to a comparison function). This structure consequently provides generally faster operations at the expense of memory use. If your comparison function is simple and you don't need the extra functionalities, it is usually better to use a #GtsHeap.
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### STRUCT GtsEHeapPair ##### -->
+<para>
+The extended heap structure.
+</para>
+
+@data: Points to the item stored in the heap.
+@key: Value of the key for this item.
+@pos: Private field.
+
+<!-- ##### USER_FUNCTION GtsKeyFunc ##### -->
+<para>
+
+</para>
+
+@item: A pointer to an item to be stored in the heap.
+@data: User data passed to gts_eheap_new().
+@Returns: the value of the key for the given item.
+
+
+<!-- ##### STRUCT GtsEHeap ##### -->
+<para>
+An opaque data structure describing an extended binary heap.
+</para>
+
+
+<!-- ##### FUNCTION gts_eheap_new ##### -->
+<para>
+
+</para>
+
+@key_func: 
+@data: 
+@Returns: 
+
+
+<!-- ##### FUNCTION gts_eheap_insert ##### -->
+<para>
+
+</para>
+
+@heap: 
+@p: 
+@Returns: 
+
+
+<!-- ##### FUNCTION gts_eheap_insert_with_key ##### -->
+<para>
+
+</para>
+
+@heap: 
+@p: 
+@key: 
+@Returns: 
+
+
+<!-- ##### FUNCTION gts_eheap_top ##### -->
+<para>
+
+</para>
+
+@heap: 
+@key: 
+@Returns: 
+
+
+<!-- ##### FUNCTION gts_eheap_remove_top ##### -->
+<para>
+
+</para>
+
+@heap: 
+@key: 
+@Returns: 
+
+
+<!-- ##### FUNCTION gts_eheap_remove ##### -->
+<para>
+
+</para>
+
+@heap: 
+@p: 
+@Returns: 
+
+
+<!-- ##### FUNCTION gts_eheap_decrease_key ##### -->
+<para>
+
+</para>
+
+@heap: 
+@p: 
+@new_key: 
+
+
+<!-- ##### FUNCTION gts_eheap_key ##### -->
+<para>
+
+</para>
+
+@heap: 
+@p: 
+@Returns: 
+
+
+<!-- ##### FUNCTION gts_eheap_randomized ##### -->
+<para>
+
+</para>
+
+@heap: 
+@randomized: 
+
+
+<!-- ##### FUNCTION gts_eheap_update ##### -->
+<para>
+
+</para>
+
+@heap: 
+
+
+<!-- ##### FUNCTION gts_eheap_freeze ##### -->
+<para>
+
+</para>
+
+@heap: 
+<!-- # Unused Parameters # -->
+@h: 
+
+
+<!-- ##### FUNCTION gts_eheap_thaw ##### -->
+<para>
+
+</para>
+
+@heap: 
+
+
+<!-- ##### FUNCTION gts_eheap_foreach ##### -->
+<para>
+
+</para>
+
+@heap: 
+@func: 
+@data: 
+
+
+<!-- ##### FUNCTION gts_eheap_size ##### -->
+<para>
+
+</para>
+
+@heap: 
+@Returns: 
+
+
+<!-- ##### FUNCTION gts_eheap_destroy ##### -->
+<para>
+
+</para>
+
+@heap: 
+
+

@@ -1,0 +1,36 @@
+curdir=`pwd`
+wrkdir=`mktemp -d /tmp/cvs2dist.XXXXXX`
+cd $wrkdir
+
+if cvs -d popinet@cvs.sf.net:/cvsroot/gts checkout gts > msg 2>&1; then
+    :
+else
+    cat msg
+    cd $curdir
+    rm -r -f $wrkdir
+    exit 1
+fi
+
+cd gts
+libtoolize > msg 2>&1
+aclocal >> msg 2>&1
+autoheader >> msg 2>&1
+automake -a >> msg 2>&1
+autoconf >> msg 2>&1
+./configure >> msg 2>&1
+make changelog >> msg 2>&1
+if make -k >> msg 2>&1; then
+    if make dist >> msg 2>&1; then
+        tar xzf gts-*.tar.gz
+        mv -f gts-?.?.? gts-`date +%y-%m-%d`
+        tar cf gts-snapshot.tar gts-`date +%y-%m-%d`
+        gzip -f --best gts-snapshot.tar
+	scp -q gts-snapshot.tar.gz popinet@gts.sourceforge.net:/home/groups/g/gt/gts/htdocs/gts-snapshot.tar.gz
+    else
+	cat msg
+    fi
+else
+    cat msg
+fi
+cd $curdir
+rm -r -f $wrkdir

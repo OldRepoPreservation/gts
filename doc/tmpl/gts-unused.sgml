@@ -1,0 +1,686 @@
+<!-- ##### SECTION ./tmpl/containee.sgml.sgml:Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION ./tmpl/containee.sgml.sgml:See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION ./tmpl/containee.sgml.sgml:Short_Description ##### -->
+
+
+
+<!-- ##### SECTION ./tmpl/containee.sgml.sgml:Title ##### -->
+Differential geometry operators
+
+
+<!-- ##### SECTION ./tmpl/gts-unused.sgml:See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### MACRO GTS_IS_OOCS ##### -->
+<para>
+
+</para>
+
+@obj: 
+
+<!-- ##### MACRO GTS_OBJECT_DESTROYABLE ##### -->
+<para>
+Evaluates to %TRUE if @object is destroyable, %FALSE otherwise. You should not need to use this macro.
+</para>
+
+@object: a #GtsObject.
+
+<!-- ##### MACRO GTS_OBJECT_NOT_DESTROYABLE ##### -->
+<para>
+Sets @object as not destroyable. You should not need to use this macro.
+</para>
+
+@object: a #GtsObject.
+
+<!-- ##### MACRO GTS_OOCS ##### -->
+<para>
+
+</para>
+
+@obj: 
+
+<!-- ##### MACRO GTS_OOCS_CLASS ##### -->
+<para>
+
+</para>
+
+@klass: 
+
+<!-- ##### STRUCT GtsOocs ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT GtsOocsClass ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### ENUM GtsStopOption ##### -->
+<para>
+These two values are used to control the behaviour of the refinement and coarsening procedures.
+</para>
+
+
+<!-- ##### MACRO IS_GTS_GRAPH ##### -->
+<para>
+
+</para>
+
+@obj: 
+
+<!-- ##### FUNCTION gts_bb_tree_intersect ##### -->
+<para>
+
+</para>
+
+@tree: 
+@bbox: 
+@Returns: 
+
+<!-- ##### FUNCTION gts_delaunay_triangulation ##### -->
+<para>
+
+</para>
+
+@points: 
+@segments: 
+@convex_hull: 
+@Returns: 
+
+<!-- ##### FUNCTION gts_file_close ##### -->
+<para>
+
+</para>
+
+@f: 
+
+<!-- ##### FUNCTION gts_get_newline ##### -->
+<para>
+
+</para>
+
+@fptr: 
+
+<!-- ##### FUNCTION gts_get_token ##### -->
+<para>
+
+</para>
+
+@fptr: 
+@buf: 
+@delimiters: 
+@comments: 
+@Returns: 
+
+<!-- ##### FUNCTION gts_hull_from_points ##### -->
+<para>
+
+</para>
+
+@points: 
+@parent: 
+@Returns: 
+
+<!-- ##### FUNCTION gts_kdtree_draw ##### -->
+<para>
+
+</para>
+
+@tree: 
+@fptr: 
+@bbox: 
+@compare: 
+@p1: 
+@p2: 
+
+<!-- ##### FUNCTION gts_oocs_add_triangle ##### -->
+<para>
+
+</para>
+
+@oocs: 
+@p1: 
+@p2: 
+@p3: 
+@data: 
+
+<!-- ##### FUNCTION gts_oocs_class ##### -->
+<para>
+
+</para>
+
+@Returns: 
+
+<!-- ##### FUNCTION gts_oocs_new ##### -->
+<para>
+
+</para>
+
+@klass: 
+@cluster_class: 
+@s: 
+@bbox: 
+@delta: 
+@Returns: 
+
+<!-- ##### FUNCTION gts_oocs_update ##### -->
+<para>
+
+</para>
+
+@oocs: 
+@Returns: 
+
+<!-- ##### FUNCTION gts_point_destroy ##### -->
+<para>
+
+</para>
+
+@p: 
+
+<!-- ##### FUNCTION gts_point_is_between ##### -->
+<para>
+
+</para>
+
+@p: 
+@s: 
+@Returns: 
+
+<!-- ##### FUNCTION gts_point_is_boundary ##### -->
+<para>
+
+</para>
+
+@p: 
+@surface: 
+@Returns: 
+
+<!-- ##### FUNCTION gts_point_is_in_circle ##### -->
+<para>
+
+</para>
+
+@p: 
+@t: 
+@Returns: 
+
+<!-- ##### FUNCTION gts_point_is_outside_wedge ##### -->
+<para>
+
+</para>
+
+@p: 
+@s: 
+@t1: 
+@t2: 
+@Returns: 
+
+<!-- ##### FUNCTION gts_point_is_unattached ##### -->
+<para>
+
+</para>
+
+@p: 
+@Returns: 
+
+<!-- ##### FUNCTION gts_point_neighbors ##### -->
+<para>
+
+</para>
+
+@p: 
+@list: 
+@Returns: 
+
+<!-- ##### FUNCTION gts_point_replace ##### -->
+<para>
+
+</para>
+
+@p: 
+@with: 
+
+<!-- ##### FUNCTION gts_point_resize ##### -->
+<para>
+
+</para>
+
+@p: 
+@size: 
+@Returns: 
+
+<!-- ##### FUNCTION gts_point_triangles ##### -->
+<para>
+
+</para>
+
+@p: 
+@surface: 
+@list: 
+@Returns: 
+
+<!-- ##### FUNCTION gts_points_are_connected ##### -->
+<para>
+
+</para>
+
+@p1: 
+@p2: 
+@Returns: 
+
+<!-- ##### FUNCTION gts_points_from_segments ##### -->
+<para>
+
+</para>
+
+@segments: 
+@Returns: 
+
+<!-- ##### FUNCTION gts_points_merge ##### -->
+<para>
+
+</para>
+
+@points: 
+@epsilon: 
+@Returns: 
+
+<!-- ##### FUNCTION gts_segment_collapse_is_valid ##### -->
+<para>
+
+</para>
+
+@s: 
+@Returns: 
+
+<!-- ##### FUNCTION gts_segment_destroy ##### -->
+<para>
+
+</para>
+
+@s: 
+@descend: 
+
+<!-- ##### FUNCTION gts_segment_free ##### -->
+<para>
+
+</para>
+
+@s: 
+
+<!-- ##### FUNCTION gts_segment_has_any_parent_surface ##### -->
+<para>
+
+</para>
+
+@s: 
+@Returns: 
+
+<!-- ##### FUNCTION gts_segment_has_parent_surface ##### -->
+<para>
+
+</para>
+
+@s: 
+@surface: 
+@Returns: 
+
+<!-- ##### FUNCTION gts_segment_is_boundary ##### -->
+<para>
+
+</para>
+
+@s: 
+@surface: 
+@Returns: 
+
+<!-- ##### MACRO gts_segment_is_unattached ##### -->
+<para>
+
+</para>
+
+@s: 
+@Returns: 
+
+<!-- ##### FUNCTION gts_segment_midpoint ##### -->
+<para>
+
+</para>
+
+@s: 
+@Returns: 
+
+<!-- ##### FUNCTION gts_segment_replace ##### -->
+<para>
+
+</para>
+
+@s: 
+@with: 
+
+<!-- ##### FUNCTION gts_segment_reset_data ##### -->
+<para>
+
+</para>
+
+@s: 
+
+<!-- ##### FUNCTION gts_segment_resize ##### -->
+<para>
+
+</para>
+
+@s: 
+@size: 
+@Returns: 
+
+<!-- ##### FUNCTION gts_segment_set ##### -->
+<para>
+
+</para>
+
+@s: 
+@v1: 
+@v2: 
+
+<!-- ##### FUNCTION gts_segment_split ##### -->
+<para>
+
+</para>
+
+@s: 
+@p: 
+@Returns: 
+
+<!-- ##### FUNCTION gts_segment_triangle_number ##### -->
+<para>
+
+</para>
+
+@s: 
+@surface: 
+@Returns: 
+
+<!-- ##### FUNCTION gts_segments_from_points ##### -->
+<para>
+
+</para>
+
+@points: 
+@parent: 
+@Returns: 
+
+<!-- ##### FUNCTION gts_segments_merge ##### -->
+<para>
+
+</para>
+
+@segments: 
+@Returns: 
+
+<!-- ##### FUNCTION gts_split_is_collapsable ##### -->
+<para>
+
+</para>
+
+@vs: 
+@Returns: 
+
+<!-- ##### FUNCTION gts_surface_add_triangle ##### -->
+<para>
+
+</para>
+
+@s: 
+@t: 
+
+<!-- ##### FUNCTION gts_surface_check ##### -->
+<para>
+
+</para>
+
+@s: 
+@Returns: 
+
+<!-- ##### FUNCTION gts_surface_decimate ##### -->
+<para>
+
+</para>
+
+@s: 
+@lmin: 
+@wedge_angle_min: 
+
+<!-- ##### FUNCTION gts_surface_destroy ##### -->
+<para>
+
+</para>
+
+@s: 
+@descend: 
+
+<!-- ##### FUNCTION gts_surface_foreach_point ##### -->
+<para>
+
+</para>
+
+@s: 
+@func: 
+@data: 
+
+<!-- ##### FUNCTION gts_surface_foreach_segment ##### -->
+<para>
+
+</para>
+
+@s: 
+@func: 
+@data: 
+
+<!-- ##### FUNCTION gts_surface_foreach_triangle ##### -->
+<para>
+
+</para>
+
+@s: 
+@func: 
+@data: 
+
+<!-- ##### FUNCTION gts_surface_remove_triangle ##### -->
+<para>
+
+</para>
+
+@s: 
+@t: 
+@descend: 
+
+<!-- ##### FUNCTION gts_surface_stripe ##### -->
+<para>
+
+</para>
+
+@s: 
+@Returns: 
+
+<!-- ##### FUNCTION gts_surface_triangle_number ##### -->
+<para>
+
+</para>
+
+@s: 
+@Returns: 
+
+<!-- ##### FUNCTION gts_surfaces_intersection ##### -->
+<para>
+
+</para>
+
+@s1: 
+@s2: 
+@triangles_tree1: 
+@triangles_tree2: 
+@Returns: 
+
+<!-- ##### FUNCTION gts_surfaces_read ##### -->
+<para>
+
+</para>
+
+@fptr: 
+@Returns: 
+
+<!-- ##### FUNCTION gts_surfaces_union ##### -->
+<para>
+
+</para>
+
+@s1: 
+@s2: 
+@triangles_tree1: 
+@triangles_tree2: 
+@Returns: 
+
+<!-- ##### FUNCTION gts_triangle_destroy ##### -->
+<para>
+
+</para>
+
+@t: 
+@descend: 
+
+<!-- ##### FUNCTION gts_triangle_free ##### -->
+<para>
+
+</para>
+
+@t: 
+
+<!-- ##### FUNCTION gts_triangle_has_parent_surface ##### -->
+<para>
+
+</para>
+
+@t: 
+@s: 
+@Returns: 
+
+<!-- ##### FUNCTION gts_triangle_is_outside_wedge ##### -->
+<para>
+
+</para>
+
+@t: 
+@s: 
+@t1: 
+@t2: 
+@Returns: 
+
+<!-- ##### MACRO gts_triangle_is_unattached ##### -->
+<para>
+
+</para>
+
+@t: 
+@Returns: 
+
+<!-- ##### MACRO gts_triangle_point ##### -->
+<para>
+
+</para>
+
+@t: 
+
+<!-- ##### FUNCTION gts_triangle_point_opposite ##### -->
+<para>
+
+</para>
+
+@t: 
+@s: 
+@Returns: 
+
+<!-- ##### MACRO gts_triangle_points ##### -->
+<para>
+
+</para>
+
+@t: 
+@tp1: 
+@tp2: 
+@tp3: 
+
+<!-- ##### FUNCTION gts_triangle_points_segments ##### -->
+<para>
+
+</para>
+
+@t: 
+@s: 
+@p1: 
+@p2: 
+@p3: 
+@ps1: 
+@ps2: 
+@ps3: 
+
+<!-- ##### FUNCTION gts_triangle_reset_data ##### -->
+<para>
+
+</para>
+
+@t: 
+
+<!-- ##### FUNCTION gts_triangle_use_segments ##### -->
+<para>
+
+</para>
+
+@s1: 
+@s2: 
+@s3: 
+@Returns: 
+
+<!-- ##### FUNCTION gts_triangle_wedge_angle ##### -->
+<para>
+
+</para>
+
+@t1: 
+@t2: 
+@Returns: 
+
+<!-- ##### FUNCTION gts_triangles_from_segments ##### -->
+<para>
+
+</para>
+
+@segments: 
+@parent: 
+@Returns: 
+
+<!-- ##### FUNCTION gts_volume_optimized_point ##### -->
+<para>
+
+</para>
+
+@s: 
+@Returns: 
+

@@ -188,8 +188,8 @@ gint gts_file_getc (GtsFile * f)
  */
 guint gts_file_read (GtsFile * f, gpointer ptr, guint size, guint nmemb)
 {
-  guint i = 0;
-  gchar * p = ptr;
+  guint i, n;
+  gchar * p;
 
   g_return_val_if_fail (f != NULL, 0);
   g_return_val_if_fail (ptr != NULL, 0);
@@ -197,26 +197,15 @@ guint gts_file_read (GtsFile * f, gpointer ptr, guint size, guint nmemb)
   if (f->type == GTS_ERROR)
     return 0;
 
-  while (i < nmemb) {
-    guint j = 0;
-
-    while (j < size) {
-      gint c = fgetc (f->fp);
-
-      if (c == EOF)
-	return i;
-      f->curpos++;
-      if (c == '\n') {
-	f->curline++;
-	f->curpos = 0; 
-      }
-      *(p++) = c;
-      j++;
+  n = fread (ptr, size, nmemb, f->fp);
+  for (i = 0, p = ptr; i < n*size; i++, p++) {
+    f->curpos++;
+    if (*p == '\n') {
+      f->curline++;
+      f->curpos = 0;
     }
-    i++;
   }
-
-  return i;
+  return n;
 }
 
 /**

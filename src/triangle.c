@@ -1054,3 +1054,40 @@ GtsObject * gts_triangle_is_stabbed (GtsTriangle * t,
   return GTS_OBJECT (t);
 }
 
+/**
+ * gts_triangle_interpolate_height:
+ * @t: a #GtsTriangle.
+ * @p: a #GtsPoint.
+ *
+ * Fills the z-coordinate of point @p belonging to the plane
+ * projection of triangle @t with the linearly interpolated value of
+ * the z-coordinates of the vertices of @t.
+ */
+void gts_triangle_interpolate_height (GtsTriangle * t, GtsPoint * p)
+{
+  GtsPoint * p1, * p2, * p3;
+  gdouble x1, x2, y1, y2, det;
+
+  g_return_if_fail (t != NULL);
+  g_return_if_fail (p != NULL);
+
+  p1 = GTS_POINT (GTS_SEGMENT (t->e1)->v1);
+  p2 = GTS_POINT (GTS_SEGMENT (t->e1)->v2);
+  p3 = GTS_POINT (gts_triangle_vertex (t));
+
+  x1 = p2->x - p1->x;
+  y1 = p2->y - p1->y;
+  x2 = p3->x - p1->x;
+  y2 = p3->y - p1->y;
+  det = x1*y2 - x2*y1;
+  if (det == 0.)
+    p->z = (p1->z + p2->z + p3->z)/3.;
+  else {
+    gdouble x = p->x - p1->x;
+    gdouble y = p->y - p1->y;
+    gdouble a = (x*y2 - y*x2)/det;
+    gdouble b = (y*x1 - x*y1)/det;
+
+    p->z = (1. - a - b)*p1->z + a*p2->z + b*p3->z;
+  }
+}

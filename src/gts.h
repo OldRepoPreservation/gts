@@ -702,6 +702,8 @@ gboolean      gts_triangles_are_folded      (GSList * triangles,
 GtsObject *   gts_triangle_is_stabbed       (GtsTriangle * t,
 					     GtsPoint * p,
 					     gdouble * orientation);
+void          gts_triangle_interpolate_height (GtsTriangle * t, 
+					       GtsPoint * p);
 
 /* Faces: face.c */
 

@@ -291,6 +291,7 @@ gts_triangle_circumcircle_center
 gts_triangle_is_stabbed
 gts_triangles_are_folded
 gts_triangles_from_edges
+gts_triangle_interpolate_height
 </SECTION>
 
 <SECTION>

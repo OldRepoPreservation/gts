@@ -399,6 +399,7 @@ static GtsSurface * happrox (gray ** g, gint width, gint height,
 
 static GtsSurface * happrox_list (GSList * points,
 				  gboolean keep_enclosing,
+				  gboolean closed,
 				  CostFunc cost_func,
 				  gpointer cost_data,
 				  GtsStopFunc stop_func,
@@ -416,7 +417,7 @@ static GtsSurface * happrox_list (GSList * points,
   t = gts_triangle_enclosing (gts_triangle_class (), points, 10.);
   gts_triangle_vertices (t, &w1, &w2, &w3);
   GTS_POINT (w1)->z = GTS_POINT (w2)->z = GTS_POINT (w3)->z = 
-    keep_enclosing ? -10000. : -1e30;
+    keep_enclosing ? -10. : -1e30;
 
   f = GTS_LIST_FACE (gts_face_new (s->face_class, t->e1, t->e2, t->e3));
   gts_surface_add_face (s, GTS_FACE (f));
@@ -436,6 +437,20 @@ static GtsSurface * happrox_list (GSList * points,
     gts_object_destroy (GTS_OBJECT (w3));
     gts_allow_floating_vertices = FALSE;
   }
+  else if (closed) {
+    GSList * l = gts_surface_boundary (s);
+    GtsFace * f;
+
+    g_assert (g_slist_length (l) == 3);
+    f = gts_face_new (s->face_class, l->data, l->next->data, l->next->next->data);
+    gts_surface_add_face (s, f);
+    if (!gts_face_is_compatible (f, s))
+      gts_triangle_revert (GTS_TRIANGLE (f));
+    g_slist_free (l);
+    gts_object_destroy (GTS_OBJECT (t));
+  }
+  else
+    gts_object_destroy (GTS_OBJECT (t));
 
   return s;
 }
@@ -468,10 +483,12 @@ int main (int argc, char * argv[])
   gboolean flat = FALSE;
   gdouble relative = 0.;
   gboolean keep_enclosing = FALSE;
+  gboolean closed = FALSE;
 
   while (c != EOF) {
 #ifdef HAVE_GETOPT_LONG
     static struct option long_options[] = {
+      {"closed", no_argument, NULL, 'C'},
       {"keep", no_argument, NULL, 'k'},
       {"relative", required_argument, NULL, 'r'},
       {"flat", no_argument, NULL, 'f'},
@@ -482,11 +499,15 @@ int main (int argc, char * argv[])
       {"verbose", no_argument, NULL, 'v'}
     };
     int option_index = 0;
-    switch ((c = getopt_long (argc, argv, "hvn:c:lfr:k",
+    switch ((c = getopt_long (argc, argv, "hvn:c:lfr:kC",
 			      long_options, &option_index))) {
 #else /* not HAVE_GETOPT_LONG */
-    switch ((c = getopt (argc, argv, "hvn:c:lfr:k"))) {
+    switch ((c = getopt (argc, argv, "hvn:c:lfr:kC"))) {
 #endif /* not HAVE_GETOPT_LONG */
+    case 'C': /* closed */
+      closed = TRUE;
+      keep_enclosing = TRUE;
+      break;
     case 'k': /* keep */
       keep_enclosing = TRUE;
       break;
@@ -527,6 +548,7 @@ int main (int argc, char * argv[])
 	       "                        (default is PGM file)\n"
                "  -r Z  --relative=Z  use relative height cost for all heights larger than Z\n"
 	       "  -k    --keep        keep enclosing triangle\n"
+	       "  -C    --closed      close the surface\n"
 	       "  -l    --log         log evolution of cost\n" 
 	       "  -v,   --verbose     display surface statistics\n"
 	       "  -h,   --help        display this help and exit\n"
@@ -577,7 +599,7 @@ int main (int argc, char * argv[])
     if (verbose)
       fprintf (stderr, "happrox: %d vertices\n", n);
 
-    s = happrox_list (points, keep_enclosing, cost_func, cost_data, stop_func, stop_data);
+    s = happrox_list (points, keep_enclosing, closed, cost_func, cost_data, stop_func, stop_data);
   }
   else {
     gint width, height;

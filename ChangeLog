@@ -1,3 +1,155 @@
+2004-10-18 13:23  Stéphane Popinet <popinet@users.sourceforge.net>;
+
+	* doc/isocube.fig: Added vertex indices.
+
+2004-10-14 11:08  Stéphane Popinet <popinet@users.sourceforge.net>;
+
+	* src/misc.c: Simpler and more efficient gts_file_read function.
+
+2004-10-11 13:00  Stéphane Popinet <popinet@users.sourceforge.net>;
+
+	* src/rounding.h, .cvsignore, Makefile.am, configure.in, gts.pc.in:
+	Glib-2.0 and mingwin support.  Based on patches by Tim Fenn and
+	others.
+
+2004-10-11 11:34  Stéphane Popinet <popinet@users.sourceforge.net>;
+
+	* doc/tmpl/.cvsignore, test/boolean/surfaces/.cvsignore:
+	Interoperability with arch.
+
+2004-10-11 11:30  Stéphane Popinet <popinet@users.sourceforge.net>;
+
+	* test/coarsen/.cvsignore, test/delaunay/.cvsignore,
+	tools/.cvsignore, examples/.cvsignore, src/.cvsignore,
+	test/.cvsignore, test/boolean/.cvsignore, test/clipping/.cvsignore,
+	.cvsignore, doc/.cvsignore: Interoperability with arch.
+
+2004-10-11 11:00  Stéphane Popinet <popinet@users.sourceforge.net>;
+
+	* doc/tmpl/vertices.sgml: Updated.
+
+2004-10-11 10:59  Stéphane Popinet <popinet@users.sourceforge.net>;
+
+	* configure.in: Updated version.
+
+2004-10-10 13:27  Stéphane Popinet <popinet@users.sourceforge.net>;
+
+	* src/iso.c: Linked to doc/isocube.fig
+
+2004-10-10 13:26  Stéphane Popinet <popinet@users.sourceforge.net>;
+
+	* doc/isocube.fig: Initial revision.
+
+2004-08-18 17:15  Stéphane Popinet <popinet@users.sourceforge.net>;
+
+	* src/cdt.c: Fixed typos in code for glib 2.4 (hmm, should I have
+	merged a patch with typos in the first place?).
+
+2004-07-23 13:23  Stéphane Popinet <popinet@users.sourceforge.net>;
+
+	* src/valgrind.supp: Updated for new version of valgrind.
+
+2004-07-23 13:22  Stéphane Popinet <popinet@users.sourceforge.net>;
+
+	* src/: graph.c, gts.h: The interface to gts_graph_read() has
+	changed.  The read method now takes into account the GtsGraphClass
+	specified in the file (i.e. the object returned is converted to the
+	given class).
+
+2004-06-10 12:33  Stéphane Popinet <popinet@users.sourceforge.net>;
+
+	* src/cdt.c: Added changes by Gert Wollny for compilation with Glib
+	2.4.
+
+2004-06-03 12:00  Stéphane Popinet <popinet@users.sourceforge.net>;
+
+	* examples/happrox.c: Cost function is passed as an argument. 
+	Relative height cost has been added.
+
+2004-05-28 15:28  Stéphane Popinet <popinet@users.sourceforge.net>;
+
+	* examples/happrox.c: Added option for flat list input (rather than
+	PGM).
+
+2004-05-26 17:09  Stéphane Popinet <popinet@users.sourceforge.net>;
+
+	* RELEASE: Updated.
+
+2004-05-26 17:08  Stéphane Popinet <popinet@users.sourceforge.net>;
+
+	* src/cdt.c: Guess selection uses "2D" distance (as it should)
+	rather than "3D" distance.
+
+2004-05-26 17:06  Stéphane Popinet <popinet@users.sourceforge.net>;
+
+	* tools/cvs2dist: Modified for new sourceforge CVS server name.
+
+2004-05-17 10:34  Stéphane Popinet <popinet@users.sourceforge.net>;
+
+	* tools/gts2oogl.c: Fixed doc.
+
+2004-05-17 10:33  Stéphane Popinet <popinet@users.sourceforge.net>;
+
+	* test/boolean/: tests, surfaces/gts-crash.gts,
+	surfaces/gts-crash1.gts: Added failed boolean case by Romain Behar.
+
+2004-05-17 10:32  Stéphane Popinet <popinet@users.sourceforge.net>;
+
+	* .cvsignore: Updated.
+
+2004-05-17 10:32  Stéphane Popinet <popinet@users.sourceforge.net>;
+
+	* examples/.cvsignore, src/cdt.c: Removed check for 1.3.0 for
+	GHashTable hack (1.3.0 is not part of the "official" releases
+	anyway). Windows folks should use a 1.2.8 version for windows not
+	1.3.0.
+
+2004-05-17 10:30  Stéphane Popinet <popinet@users.sourceforge.net>;
+
+	* src/boolean.c: Now uses SOS for segment/triangle intersections.
+
+2004-05-17 10:26  Stéphane Popinet <popinet@users.sourceforge.net>;
+
+	* src/: gts.h, vertex.c: gts_vertices_merge takes an extra check
+	function argument.
+
+2004-05-17 10:24  Stéphane Popinet <popinet@users.sourceforge.net>;
+
+	* src/surface.c: Set file type to ascii if not binary.
+
+2004-05-17 10:23  Stéphane Popinet <popinet@users.sourceforge.net>;
+
+	* src/split.c: Set file type to ascii for progressive surfaces.
+
+2004-05-17 10:21  Stéphane Popinet <popinet@users.sourceforge.net>;
+
+	* src/point.c: Changed stabbing ray from z-aligned to x-aligned.
+
+2004-05-17 10:17  Stéphane Popinet <popinet@users.sourceforge.net>;
+
+	* src/bbtree.c: Changed stabbing ray from z-aligned to x-aligned.
+
+2004-05-17 10:15  Stéphane Popinet <popinet@users.sourceforge.net>;
+
+	* examples/cleanup.c: Added 2D boundary merging.
+
+2004-05-17 10:12  Stéphane Popinet <popinet@users.sourceforge.net>;
+
+	* examples/Makefile.am: Added merge.
+
+2004-05-17 10:10  Stéphane Popinet <popinet@users.sourceforge.net>;
+
+	* gts.spec, examples/merge.c, examples/revolution.c: Initial
+	revision.
+
+2004-05-17 10:09  Stéphane Popinet <popinet@users.sourceforge.net>;
+
+	* TODO: Updated.
+
+2004-05-15 15:27  Stéphane Popinet <popinet@users.sourceforge.net>;
+
+	* ChangeLog, NEWS: Updated.
+
 2004-05-15 15:11  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/gts.def: Updated.
@@ -9,17 +161,17 @@
 2004-05-15 15:01  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/gts.h, src/boolean.c, src/edge.c, doc/gts-sections.txt,
-	  doc/tmpl/bb-trees.sgml, doc/tmpl/boolean.sgml,
-	  doc/tmpl/containee.sgml, doc/tmpl/container.sgml,
-	  doc/tmpl/curvature.sgml, doc/tmpl/edges.sgml,
-	  doc/tmpl/faces.sgml, doc/tmpl/graph.sgml, doc/tmpl/hsplit.sgml,
-	  doc/tmpl/hsurface.sgml, doc/tmpl/iso.sgml,
-	  doc/tmpl/matrices.sgml, doc/tmpl/misc.sgml, doc/tmpl/object.sgml,
-	  doc/tmpl/oocs.sgml, doc/tmpl/pgraph.sgml, doc/tmpl/points.sgml,
-	  doc/tmpl/psurface.sgml, doc/tmpl/segments.sgml,
-	  doc/tmpl/simplify.sgml, doc/tmpl/split.sgml,
-	  doc/tmpl/surfaces.sgml, doc/tmpl/triangles.sgml,
-	  doc/tmpl/vertices.sgml, doc/tmpl/wgraph.sgml: Updated doc.
+	doc/tmpl/bb-trees.sgml, doc/tmpl/boolean.sgml,
+	doc/tmpl/containee.sgml, doc/tmpl/container.sgml,
+	doc/tmpl/curvature.sgml, doc/tmpl/edges.sgml, doc/tmpl/faces.sgml,
+	doc/tmpl/graph.sgml, doc/tmpl/hsplit.sgml, doc/tmpl/hsurface.sgml,
+	doc/tmpl/iso.sgml, doc/tmpl/matrices.sgml, doc/tmpl/misc.sgml,
+	doc/tmpl/object.sgml, doc/tmpl/oocs.sgml, doc/tmpl/pgraph.sgml,
+	doc/tmpl/points.sgml, doc/tmpl/psurface.sgml,
+	doc/tmpl/segments.sgml, doc/tmpl/simplify.sgml,
+	doc/tmpl/split.sgml, doc/tmpl/surfaces.sgml,
+	doc/tmpl/triangles.sgml, doc/tmpl/vertices.sgml,
+	doc/tmpl/wgraph.sgml: Updated doc.
 
 2004-02-22 21:53  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -48,8 +200,8 @@
 2003-11-06 14:11  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/rounding.h: Added check for _FPU_EXTENDED. Necessary for
-	  machines having fpu_control.h but not using extended precision
-	  (SGI ALTIX (64 bit itanium) apparently).
+	machines having fpu_control.h but not using extended precision (SGI
+	ALTIX (64 bit itanium) apparently).
 
 2003-11-03 18:25  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -58,7 +210,7 @@
 2003-11-03 18:24  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* tools/gts2oogl.c: Added option to write gnuplot representation of
-	  isolines.
+	isolines.
 
 2003-10-29 12:27  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -91,7 +243,7 @@
 2003-10-08 06:23  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/: point.c, split.c, surface.c: Added support for binary
-	  vertex coordinates in GTS files.
+	vertex coordinates in GTS files.
 
 2003-10-08 06:23  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -108,34 +260,34 @@
 2003-09-15 18:23  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* test/boolean/boole.c: Added checks on surface areas (detects
-	  folds).
+	folds).
 
 2003-09-15 18:22  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* AUTHORS, examples/iso.c, src/isotetra.c: Added "dual" isosurface
-	  calculation by Tim F.
+	calculation by Tim F.
 
 2003-09-04 14:21  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* tools/gts2oogl.c: New options to output duplicate edges or
-	  individual faces.
+	individual faces.
 
 2003-09-04 14:19  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/boolean.c: Major bugfixing session for inner loops. The
-	  orientation test in connect_interior_loop worked only for simple
-	  cases, and loop inversion was triggering a bug.
+	orientation test in connect_interior_loop worked only for simple
+	cases, and loop inversion was triggering a bug.
 
 2003-09-03 17:36  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/boolean.c: Change the way the validity of ear cutting is
-	  calculated. This fixes the orientation problems for Wayne's tests
-	  in test/boolean.  Added new debuggin info stuff.
+	calculated. This fixes the orientation problems for Wayne's tests
+	in test/boolean.  Added new debuggin info stuff.
 
 2003-09-02 22:38  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/boolean.c: Added debugging message for badly oriented faces
-	  of loop triangulation.
+	of loop triangulation.
 
 2003-08-27 16:08  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -148,30 +300,30 @@
 2003-08-27 15:21  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/cdt.c: Added support for "GtsListFace" when doing Delaunay
-	  triangulation. A GtsListFace contains a list of GtsPoint which
-	  are automatically reallocated ("binned") when new faces are
-	  created. This data structure is used in the happrox.c example.
+	triangulation. A GtsListFace contains a list of GtsPoint which are
+	automatically reallocated ("binned") when new faces are created.
+	This data structure is used in the happrox.c example.
 
 2003-08-27 15:17  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/Makefile.am: gts.def script generation should now include
-	  external variables. This should fix the problem with
-	  gts_allow_floating... under MSVC.
+	external variables. This should fix the problem with
+	gts_allow_floating... under MSVC.
 
 2003-08-27 15:15  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* configure.in: Added check for netpbm library (necessary for
-	  happrox).
+	happrox).
 
 2003-08-27 15:14  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* tools/gts2oogl.c: Added option to output colored surface
-	  components.
+	components.
 
 2003-08-27 15:13  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* test/clipping/clipping.c: Updated for new library class (pretty
-	  useless though).
+	useless though).
 
 2003-08-27 15:11  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -184,7 +336,7 @@
 2003-08-27 15:08  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/boolean.c: New function
-	  gts_surface_foreach_intersecting_face.
+	gts_surface_foreach_intersecting_face.
 
 2003-08-27 15:06  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -217,18 +369,18 @@
 2003-07-03 17:24  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* examples/transform.c, src/gts.h, src/matrix.c, src/point.c,
-	  src/vopt.c: New GtsMatrix implementation (quaternions) by Wayne
-	  Gramlich and Michael Loehr.
+	src/vopt.c: New GtsMatrix implementation (quaternions) by Wayne
+	Gramlich and Michael Loehr.
 
 2003-07-03 17:20  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/boolean.c: New vertices created by intersects() now always
-	  are of the class defined by surface s1.
+	are of the class defined by surface s1.
 
 2003-07-02 15:44  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/boolean.c: Added attributes inheritance when computing
-	  intersections.
+	intersections.
 
 2003-06-13 10:26  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -237,8 +389,8 @@
 2003-06-13 10:25  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* test/boolean/surfaces/: a8.gts, a9.gts, b10.gts, b23.gts,
-	  b24.gts, b25.gts, b8.gts, b9.gts, a10.gts, a23.gts, a24.gts,
-	  a25.gts: Tests by Wayne Gramlich.
+	b24.gts, b25.gts, b8.gts, b9.gts, a10.gts, a23.gts, a24.gts,
+	a25.gts: Tests by Wayne Gramlich.
 
 2003-06-13 10:25  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -251,7 +403,7 @@
 2003-06-13 10:24  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/surface.c: Added gts_surface_write_vtk() and
-	  gts_surface_center_of_area().
+	gts_surface_center_of_area().
 
 2003-06-13 10:23  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -272,12 +424,12 @@
 2003-04-02 10:53  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/cdt.c: Fixed serious orientation bug in triangle_next_edge()
-	  (thanks to Curt Olson).
+	(thanks to Curt Olson).
 
 2003-03-31 10:11  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/cdt.c: Fixed useless warning for point location of a point
-	  outside the surface (thanks to Fred Bouvier).
+	outside the surface (thanks to Fred Bouvier).
 
 2003-02-13 15:06  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -294,8 +446,8 @@
 2003-02-12 17:00  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/: boolean.c, gts.h: Added gts_surface_intersection() function
-	  returning the intersection curve between two surfaces (and only
-	  that).
+	returning the intersection curve between two surfaces (and only
+	that).
 
 2003-02-10 16:42  Ray Jones <rjones@pobox.com>;
 
@@ -304,7 +456,7 @@
 2003-02-10 11:56  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/cdt.c: Fixed (should) stupid bug in attribute inheritance
-	  stuff (thanks to Fred Bouvier).
+	stuff (thanks to Fred Bouvier).
 
 2003-01-30 11:32  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -333,7 +485,7 @@
 2003-01-23 11:38  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/Makefile.am: Changed the way predicates_init is compiled. The
-	  previous stuff did not work under Cygwin.
+	previous stuff did not work under Cygwin.
 
 2003-01-23 11:37  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -342,7 +494,7 @@
 2003-01-22 09:42  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/stripe.c: Removed unused functions and commented out
-	  debugging messages.
+	debugging messages.
 
 2003-01-21 13:25  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -367,12 +519,12 @@
 2003-01-16 08:48  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* examples/volume.c: Added option to display coordinates of center
-	  of mass.
+	of mass.
 
 2003-01-16 08:48  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/: gts.h, surface.c: Added new function
-	  gts_surface_center_of_mass().
+	gts_surface_center_of_mass().
 
 2003-01-16 08:47  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -389,7 +541,7 @@
 2002-11-27 15:26  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/surface.c: gts_surface_tessellate() uses pointer array
-	  instead of heap (Jerome Benoit).
+	instead of heap (Jerome Benoit).
 
 2002-11-19 09:17  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -406,7 +558,7 @@
 2002-11-19 09:15  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/: gts.h, surface.c: Added geodesic sphere and surface
-	  tesselation (Jerome Benoit).
+	tesselation (Jerome Benoit).
 
 2002-11-19 09:14  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -431,7 +583,7 @@
 2002-11-12 18:00  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* examples/refine.c, src/gts.h, src/surface.c: Applied patch by
-	  Jerome Benoit for more generic gts_surface_refine() function.
+	Jerome Benoit for more generic gts_surface_refine() function.
 
 2002-11-11 10:05  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -448,12 +600,11 @@
 2002-11-08 15:42  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* NEWS, doc/gts-docs.sgml, doc/gts-sections.txt,
-	  doc/tmpl/boolean.sgml, doc/tmpl/containee.sgml,
-	  doc/tmpl/edges.sgml, doc/tmpl/graph.sgml,
-	  doc/tmpl/gts-unused.sgml, doc/tmpl/iso.sgml,
-	  doc/tmpl/matrices.sgml, doc/tmpl/misc.sgml, doc/tmpl/object.sgml,
-	  doc/tmpl/points.sgml, doc/tmpl/surfaces.sgml, .cvsignore:
-	  Updated.
+	doc/tmpl/boolean.sgml, doc/tmpl/containee.sgml,
+	doc/tmpl/edges.sgml, doc/tmpl/graph.sgml, doc/tmpl/gts-unused.sgml,
+	doc/tmpl/iso.sgml, doc/tmpl/matrices.sgml, doc/tmpl/misc.sgml,
+	doc/tmpl/object.sgml, doc/tmpl/points.sgml, doc/tmpl/surfaces.sgml,
+	.cvsignore: Updated.
 
 2002-11-08 15:41  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -474,13 +625,13 @@
 2002-10-16 09:54  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/: gts.h, isotetra.c, makefile.msc: Updated win32 build (patch
-	  by Mike Loehr).
+	by Mike Loehr).
 
 2002-10-15 10:10  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/isotetra.c: Applied patch from Gert: Change to column-major
-	  storing of data.  Fixed bug for special cases where isosurface
-	  crosses a cell exactly on a vertex.
+	storing of data.  Fixed bug for special cases where isosurface
+	crosses a cell exactly on a vertex.
 
 2002-09-30 09:35  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -493,7 +644,7 @@
 2002-09-17 09:53  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* test/boolean/: boole.c, cubes.c, set.c: Uses gts_file_destroy()
-	  call.
+	call.
 
 2002-09-16 13:27  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -510,7 +661,7 @@
 2002-09-16 13:25  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/: gts.h, Makefile.am: Added marching tetrahedra by Gert
-	  Wollny.
+	Wollny.
 
 2002-09-16 13:24  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -519,7 +670,7 @@
 2002-09-16 13:23  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* examples/iso.c: Added new option for Gert Wollny implementation
-	  of marching tetrahedra.
+	of marching tetrahedra.
 
 2002-09-16 12:52  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -528,23 +679,23 @@
 2002-09-13 11:28  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/makefile.msc: Changed glib from 1.2 to 1.3 (thanks to Mike
-	  Loehr).
+	Loehr).
 
 2002-09-13 11:04  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* examples/set.c: Changed gts_file_close() to gts_file_destroy()
-	  and used new interface for gts_surface_inter_new().
+	and used new interface for gts_surface_inter_new().
 
 2002-09-13 11:03  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* examples/cleanup.c, tools/gts2oogl.c, tools/gtscompare.c,
-	  tools/stl2gts.c: Changed gts_file_close() to gts_file_destroy().
+	tools/stl2gts.c: Changed gts_file_close() to gts_file_destroy().
 
 2002-09-13 11:02  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/: gts.h, misc.c: Changed gts_file_close() to
-	  gts_file_destroy() which does not close the file anymore (thanks
-	  to Ray Jones).
+	gts_file_destroy() which does not close the file anymore (thanks to
+	Ray Jones).
 
 2002-09-13 11:01  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -569,12 +720,12 @@
 2002-09-12 15:00  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* test/boolean/: boole.c, set.c: Uses new gts_surface_inter_new()
-	  interface.
+	interface.
 
 2002-09-12 14:58  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/point.c: gts_point_is_inside_surface() now uses SoS for
-	  crossing tests.
+	crossing tests.
 
 2002-09-12 14:57  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -583,10 +734,10 @@
 2002-09-12 14:54  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/boolean.c: New version (again) using oriented boundary loops
-	  (but without the complicated "bridge" technique of 1.18). Works
-	  well for all practical tests but fails for horse4/horse5 boole
-	  test. This is due to interior loops orientation ambiguities.
-	  Quite robust though.
+	(but without the complicated "bridge" technique of 1.18). Works
+	well for all practical tests but fails for horse4/horse5 boole
+	test. This is due to interior loops orientation ambiguities. Quite
+	robust though.
 
 2002-09-10 11:17  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -603,12 +754,12 @@
 2002-09-03 18:08  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* test/boolean/boole.c: Returns info about empty surfaces (to be
-	  consistent with checking script).
+	consistent with checking script).
 
 2002-09-03 18:07  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/leak.sh: Checks for leaks in trace file generated using
-	  DEBUG_LEAKS compilation flag.
+	DEBUG_LEAKS compilation flag.
 
 2002-09-03 18:05  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -617,8 +768,8 @@
 2002-09-03 18:05  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/surface.c: gts_surface_write() uses hash tables instead of
-	  reserved pointer (useful for debugging and minor performance
-	  penalty).
+	reserved pointer (useful for debugging and minor performance
+	penalty).
 
 2002-09-03 18:03  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -639,8 +790,8 @@
 2002-09-03 16:20  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/boolean.c: Preliminary version using "oriented boundary
-	  curve" triangulation technique. This does not work (yet) for
-	  intersection containing loops.
+	curve" triangulation technique. This does not work (yet) for
+	intersection containing loops.
 
 2002-08-28 11:02  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -649,29 +800,29 @@
 2002-08-27 12:44  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/boolean.c: Non-working trial version (using edge splitting to
-	  ensure continuity of triangulation).
+	ensure continuity of triangulation).
 
 2002-08-23 06:16  Ray Jones <rjones@pobox.com>;
 
 	* src/: curvature.c, gts.h: Fixed up
-	  gts_vertex_principal_directions ().  Renamed parameters for
-	  clarity in a couple other functions.	TODO: review code for
-	  possible divide-by-zero, NULL pointers, etc.
+	gts_vertex_principal_directions ().  Renamed parameters for clarity
+	in a couple other functions.  TODO: review code for possible
+	divide-by-zero, NULL pointers, etc.
 
 2002-08-20 10:06  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/boolean.c: Added warnings and status flag.
-	  gts_surface_inter_new() returns NULL if a problem occured.
+	gts_surface_inter_new() returns NULL if a problem occured.
 
 2002-08-19 15:47  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/valgrind.supp: Initial revision (adds crappy array indexing
-	  of predicates.c).
+	of predicates.c).
 
 2002-08-19 15:46  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/surface.c: Added option to use binary trees instead of hash
-	  table for surface face storage.
+	table for surface face storage.
 
 2002-08-19 15:40  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -680,12 +831,12 @@
 2002-08-19 15:40  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/misc.c: Hexadecimal encoding of integers and floats is now
-	  recognised properly.
+	recognised properly.
 
 2002-08-19 15:39  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/gts.h: Added option to use binary tree storage of faces
-	  (instead of hash tables).
+	(instead of hash tables).
 
 2002-08-19 15:38  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -694,18 +845,18 @@
 2002-08-19 15:37  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/cdt.c: Added option to use surface binary tree storage of
-	  faces.
+	faces.
 
 2002-08-15 16:37  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/boolean.c: Reverted to version 1.11 and added checks when
-	  fixing hidden boundary vertices. This stuff can be improved and
-	  is not robust in all cases.
+	fixing hidden boundary vertices. This stuff can be improved and is
+	not robust in all cases.
 
 2002-08-15 15:44  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/boolean.c: Added trial implementation for simplification of
-	  short edges. It sort of works but is complicated.
+	short edges. It sort of works but is complicated.
 
 2002-08-15 09:05  Ray Jones <rjones@pobox.com>;
 
@@ -714,16 +865,16 @@
 2002-08-14 15:39  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* test/boolean/surfaces/: 1.gts, 2.gts, cube, cube1, cube10, cube2,
-	  cube4, cube5, cube6, cube7, cube8, cube9, cutter, horse4.gts,
-	  horse5.gts, horse6.gts, loc1, loc2, p1, p2, sphere.gts, sponge,
-	  t1, t10, t11, t12, t13, t14, t15, t16, t17, t18, t19, t2, t20,
-	  t21, t22, t23, t24, t25, t26, t27, t28, t29, t3, t30, t31, t32,
-	  t4, t5, t6, t7, t9: Initial revision.
+	cube4, cube5, cube6, cube7, cube8, cube9, cutter, horse4.gts,
+	horse5.gts, horse6.gts, loc1, loc2, p1, p2, sphere.gts, sponge, t1,
+	t10, t11, t12, t13, t14, t15, t16, t17, t18, t19, t2, t20, t21,
+	t22, t23, t24, t25, t26, t27, t28, t29, t3, t30, t31, t32, t4, t5,
+	t6, t7, t9: Initial revision.
 
 2002-08-14 15:38  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* tools/gts2oogl.c: Added options to color surface according to
-	  Mean or Gaussian curvature.
+	Mean or Gaussian curvature.
 
 2002-08-14 15:37  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -752,12 +903,12 @@
 2002-08-14 15:30  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* test/boolean/set.c: Added various outputs for the intersection
-	  curve (in particular graph in dot format).
+	curve (in particular graph in dot format).
 
 2002-08-14 15:28  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* test/boolean/boole.c: Applies stricter consistency checking for
-	  new boolean operations implementation.
+	new boolean operations implementation.
 
 2002-08-14 15:27  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -766,60 +917,60 @@
 2002-08-14 15:24  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* test/boolean/: 1.gts, 2.gts, a1.gts, a2.gts, boole.sh,
-	  boole_cube_cube1, boole_cube_cube1.sh, boole_cube_cube5,
-	  boole_cube_cube5.sh, cube, cube1, cube2, cube4, cube5, cube6,
-	  cube7, cutter, loc1, loc2, p1, p2, set.sh, set_1_2.sh,
-	  set_cube6_cube7.sh, set_cube_cube1, set_cube_cube1.sh,
-	  set_cube_cube2, set_cube_cube2.sh, set_cube_cube4.sh,
-	  set_loc1_loc2.sh, set_p1_p2.sh, set_sponge_cutter.sh,
-	  set_t11_t16, set_t11_t16.sh, set_t14_t15, set_t14_t15.sh,
-	  set_t17_t18, set_t17_t18.sh, set_t19_t20, set_t19_t20.sh,
-	  set_t19_t21, set_t19_t21.sh, set_t1_t10, set_t1_t10.sh,
-	  set_t1_t11, set_t1_t11.sh, set_t1_t12, set_t1_t12.sh, set_t1_t13,
-	  set_t1_t13.sh, set_t1_t2, set_t1_t2.sh, set_t1_t22,
-	  set_t1_t22.sh, set_t1_t23, set_t1_t23.sh, set_t1_t24,
-	  set_t1_t24.sh, set_t1_t3, set_t1_t3.sh, set_t1_t4, set_t1_t4.sh,
-	  set_t1_t5, set_t1_t5.sh, set_t1_t6, set_t1_t6.sh, set_t1_t7,
-	  set_t1_t7.sh, set_t1_t9, set_t1_t9.sh, set_t25_t26.sh,
-	  set_t27_t28, set_t27_t28.sh, sponge, sponge1, t1, t10, t11, t12,
-	  t13, t14, t15, t16, t17, t18, t19, t2, t20, t21, t22, t23, t24,
-	  t25, t26, t27, t28, t3, t4, t5, t6, t7, t9: The tests have been
-	  reorganised (all the test files are now contained in surface/).
+	boole_cube_cube1, boole_cube_cube1.sh, boole_cube_cube5,
+	boole_cube_cube5.sh, cube, cube1, cube2, cube4, cube5, cube6,
+	cube7, cutter, loc1, loc2, p1, p2, set.sh, set_1_2.sh,
+	set_cube6_cube7.sh, set_cube_cube1, set_cube_cube1.sh,
+	set_cube_cube2, set_cube_cube2.sh, set_cube_cube4.sh,
+	set_loc1_loc2.sh, set_p1_p2.sh, set_sponge_cutter.sh, set_t11_t16,
+	set_t11_t16.sh, set_t14_t15, set_t14_t15.sh, set_t17_t18,
+	set_t17_t18.sh, set_t19_t20, set_t19_t20.sh, set_t19_t21,
+	set_t19_t21.sh, set_t1_t10, set_t1_t10.sh, set_t1_t11,
+	set_t1_t11.sh, set_t1_t12, set_t1_t12.sh, set_t1_t13,
+	set_t1_t13.sh, set_t1_t2, set_t1_t2.sh, set_t1_t22, set_t1_t22.sh,
+	set_t1_t23, set_t1_t23.sh, set_t1_t24, set_t1_t24.sh, set_t1_t3,
+	set_t1_t3.sh, set_t1_t4, set_t1_t4.sh, set_t1_t5, set_t1_t5.sh,
+	set_t1_t6, set_t1_t6.sh, set_t1_t7, set_t1_t7.sh, set_t1_t9,
+	set_t1_t9.sh, set_t25_t26.sh, set_t27_t28, set_t27_t28.sh, sponge,
+	sponge1, t1, t10, t11, t12, t13, t14, t15, t16, t17, t18, t19, t2,
+	t20, t21, t22, t23, t24, t25, t26, t27, t28, t3, t4, t5, t6, t7,
+	t9: The tests have been reorganised (all the test files are now
+	contained in surface/).
 
 2002-08-14 14:54  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/boolean.c: Fix for case of SoS intersection between a
-	  triangle and a coplanar edge.  Saves and restores arbitrary edge
-	  classes.
+	triangle and a coplanar edge.  Saves and restores arbitrary edge
+	classes.
 
 2002-08-14 14:28  Ray Jones <rjones@pobox.com>;
 
-	* src/curvature.c: Fixed bug in gts_vertex_principal_curvatures().
-	  Check for and handle divides by zero in several cases.
+	* src/curvature.c: Fixed bug in gts_vertex_principal_curvatures(). 
+	Check for and handle divides by zero in several cases.
 
 2002-08-14 12:36  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/boolean.c: Added fix for endpoints not belonging to
-	  triangulation boundary. Changed intersection check for
-	  self-intersecting surfaces.
+	triangulation boundary. Changed intersection check for
+	self-intersecting surfaces.
 
 2002-08-14 11:41  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/boolean.c: Complete overhaul now using Simulation of
-	  Simplicity to deal with degenerate cases. Should be much more
-	  robust but needs further testing.
+	Simplicity to deal with degenerate cases. Should be much more
+	robust but needs further testing.
 
 2002-08-14 11:40  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/cdt.c: Functions do not destroy faces systematically anymore,
-	  but just remove them from the triangulation considered. If
-	  "floating faces" are not allowed the faces will be destroyed if
-	  they are not used by any other surface.
+	but just remove them from the triangulation considered. If
+	"floating faces" are not allowed the faces will be destroyed if
+	they are not used by any other surface.
 
 2002-08-14 11:37  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/gts.h: Added new function declarations (differential
-	  operators, new graph functions, etc...).
+	operators, new graph functions, etc...).
 
 2002-08-14 11:35  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -836,13 +987,13 @@
 2002-08-14 11:33  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/object.c: Set object->klass to NULL after destruction
-	  (provides limited checking of double frees).
+	(provides limited checking of double frees).
 
 2002-08-14 11:32  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/graph.c: Added DOT graph format write function, graph
-	  constructor for list of segments, and generic graph nodes with
-	  pointer data.
+	constructor for list of segments, and generic graph nodes with
+	pointer data.
 
 2002-08-14 11:30  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -851,7 +1002,7 @@
 2002-08-14 11:29  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/container.c: Added gts_containee_replace() and foreach()
-	  method for containees.
+	method for containees.
 
 2002-08-14 11:28  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -860,7 +1011,7 @@
 2002-08-14 09:52  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/curvature.c: Added principal curvature directions (Ray
-	  Jones).
+	Jones).
 
 2002-08-13 11:16  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -889,13 +1040,13 @@
 2002-08-01 21:56  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* test/boolean/: set_t17_t18, set_t19_t20, set_t19_t21, set_t1_t10,
-	  set_t1_t11, set_t1_t12, set_t1_t22, set_t1_t23, set_t1_t24,
-	  set_t1_t7, set_t27_t28: Updated.
+	set_t1_t11, set_t1_t12, set_t1_t22, set_t1_t23, set_t1_t24,
+	set_t1_t7, set_t27_t28: Updated.
 
 2002-08-01 21:55  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* test/boolean/set.c: Check surfaces before trying operations and
-	  check for duplicate edges.
+	check for duplicate edges.
 
 2002-08-01 21:53  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -904,7 +1055,7 @@
 2002-08-01 21:46  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/: point.c, gts.h: Added 3D Simulation Of Simplicity
-	  orientation test.
+	orientation test.
 
 2002-08-01 21:45  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -925,15 +1076,15 @@
 2002-06-17 16:53  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/bbtree.c: Changed comments formatting (to avoid bug in
-	  gtk-doc).
+	gtk-doc).
 
 2002-06-17 16:53  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* doc/: gts-sections.txt, tmpl/boolean.sgml, tmpl/fifo.sgml,
-	  tmpl/graph.sgml, tmpl/gts-unused.sgml, tmpl/matrices.sgml,
-	  tmpl/misc.sgml, tmpl/partition.sgml, tmpl/psurface.sgml,
-	  tmpl/simplify.sgml, tmpl/stats.sgml, tmpl/surfaces.sgml,
-	  .cvsignore: Updated.
+	tmpl/graph.sgml, tmpl/gts-unused.sgml, tmpl/matrices.sgml,
+	tmpl/misc.sgml, tmpl/partition.sgml, tmpl/psurface.sgml,
+	tmpl/simplify.sgml, tmpl/stats.sgml, tmpl/surfaces.sgml,
+	.cvsignore: Updated.
 
 2002-06-17 16:32  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -950,8 +1101,8 @@
 2002-06-17 15:43  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/misc.c: gts_file_next_token() classification is better (i.e.
-	  "e", "E", "." etc... are considered as GTS_STRING not GTS_INT or
-	  GTS_FLOAT as before).
+	"e", "E", "." etc... are considered as GTS_STRING not GTS_INT or
+	GTS_FLOAT as before).
 
 2002-06-17 15:41  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -960,12 +1111,12 @@
 2002-06-17 15:14  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* examples/split.c: Added missing header (thanks to John (Ebo)
-	  David).
+	David).
 
 2002-06-17 15:13  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* examples/coarsen.c: Added option for angle-based criterium
-	  (experimental).
+	(experimental).
 
 2002-06-06 18:01  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -982,8 +1133,8 @@
 2002-05-16 13:21  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* tools/gts2oogl.c: It is now possible to "flatten" a surface in
-	  any direction.  Added a simple "feature edges" detection (based
-	  on angle).
+	any direction.	Added a simple "feature edges" detection (based on
+	angle).
 
 2002-05-16 13:19  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -996,7 +1147,7 @@
 2002-05-16 13:18  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* examples/set.c: Added check for self-intersection of the
-	  resulting surface.
+	resulting surface.
 
 2002-05-16 13:17  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -1005,7 +1156,7 @@
 2002-05-16 13:16  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* Makefile.am: ChangeLog is now generated automatically using
-	  cvs2cl.pl.
+	cvs2cl.pl.
 
 2002-05-16 13:15  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -1014,7 +1165,7 @@
 2002-05-16 13:14  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/gts.h: Added gts_vector_norm and gts_vector_normalize macros.
-	  gts_surface_refine() prototype has changed.
+	gts_surface_refine() prototype has changed.
 
 2002-05-16 13:13  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -1023,7 +1174,7 @@
 2002-05-16 12:43  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/surface.c: Fixed bug in gts_range_update() when range is
-	  empty.
+	empty.
 
 2002-04-10 10:32  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -1044,7 +1195,7 @@
 2002-04-10 10:30  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* examples/Makefile.am: Added surface refining example and
-	  preliminary smoothing example.
+	preliminary smoothing example.
 
 2002-04-10 10:29  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -1053,7 +1204,7 @@
 2002-04-10 10:28  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* examples/set.c: Added option to check for self-intersecting
-	  surfaces.
+	surfaces.
 
 2002-04-10 10:27  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -1062,13 +1213,13 @@
 2002-04-10 10:26  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* examples/partition.c: Added option giving some control over
-	  imbalance.
+	imbalance.
 
 2002-04-02 17:18  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/: gts.h, partition.c: Bisection algorithms now takes an extra
-	  "imbalance" argument which allows some crontrol over the weight
-	  balancing of the partition.
+	"imbalance" argument which allows some crontrol over the weight
+	balancing of the partition.
 
 2002-03-27 12:43  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -1077,17 +1228,17 @@
 2002-03-27 12:42  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* test/boolean/: a1.gts, a2.gts: a1.gts and a2.gts (Olivier
-	  Parisy).
+	Parisy).
 
 2002-03-27 12:40  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/misc.c: Fixed strcmp() declaration (thanks to John (EBo)
-	  David).
+	David).
 
 2002-03-27 12:39  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/graph.c: New nodes in gts_graph_read() are added to graph as
-	  they are read.
+	they are read.
 
 2002-03-27 12:37  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -1104,8 +1255,8 @@
 2002-03-04 14:56  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/cdt.c: Checks for degenerate triangles when looking for root
-	  of the search (thanks to Mashuda Glencross for reporting this
-	  problem).
+	of the search (thanks to Mashuda Glencross for reporting this
+	problem).
 
 2002-03-04 14:55  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -1114,54 +1265,54 @@
 2002-03-04 09:53  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/boolean.c: Fixed memory leak in the case of three vertices
-	  only (thanks to Olivier Parisy).
+	only (thanks to Olivier Parisy).
 
 2002-02-26 15:43  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/graph.c: Fixed serious memory bug for deallocation of
-	  GtsEdges linking a GtsGNode with itself.
+	GtsEdges linking a GtsGNode with itself.
 
 2002-02-25 18:18  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* tools/gtstemplate: Rewritten as a proper script. New options for
-	  method overloading etc...
+	method overloading etc...
 
 2002-02-25 18:17  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/: gts.h, misc.c: "Generalized" GTS_STRING type. There should
-	  be a better implementation for type specification in
-	  gts_file_assign_variables().
+	be a better implementation for type specification in
+	gts_file_assign_variables().
 
 2002-02-25 18:16  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/: refine.c, surface.c: Added function pointers cast for picky
-	  compilers (Cray).
+	compilers (Cray).
 
 2002-02-18 15:38  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/: gts.h, misc.c, surface.c: GtsRange can now be used with
-	  "intermediary" readings (i.e. updates).
+	"intermediary" readings (i.e. updates).
 
 2002-02-15 18:08  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/: graph.c, gts.h, misc.c, named.c, point.c, psurface.c,
-	  split.c, surface.c: Complete overhaul of the
-	  gts_file_next_token() etc... functions (again!).
+	split.c, surface.c: Complete overhaul of the gts_file_next_token()
+	etc... functions (again!).
 
 2002-02-14 14:51  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/object.c: New check on class imbrication sizes when creating
-	  new objects.
+	new objects.
 
 2002-02-14 14:49  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/: gts.h, misc.c: New function to deal with errors when using
-	  gts_file_assign_variables().
+	gts_file_assign_variables().
 
 2002-02-14 14:48  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/container.c: Elements can now be removed from a
-	  GtsSListContainer while using gts_container_foreach().
+	GtsSListContainer while using gts_container_foreach().
 
 2002-02-13 18:23  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -1174,22 +1325,22 @@
 2002-02-13 13:41  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* test/: boolean/.cvsignore, coarsen/.cvsignore,
-	  delaunay/.cvsignore: Updated.
+	delaunay/.cvsignore: Updated.
 
 2002-02-13 13:39  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* examples/cleanup.c, examples/coarsen.c, examples/gtstoc.c,
-	  examples/partition.c, examples/set.c, examples/split.c,
-	  examples/transform.c, examples/traverse.c, examples/volume.c,
-	  src/graph.c, src/gts.h, src/misc.c, src/named.c, src/point.c,
-	  src/split.c, src/surface.c, test/boolean/boole.c,
-	  test/boolean/set.c, tools/gts2oogl.c, tools/gtscompare.c: Now
-	  uses new input functions + error reporting.
+	examples/partition.c, examples/set.c, examples/split.c,
+	examples/transform.c, examples/traverse.c, examples/volume.c,
+	src/graph.c, src/gts.h, src/misc.c, src/named.c, src/point.c,
+	src/split.c, src/surface.c, test/boolean/boole.c,
+	test/boolean/set.c, tools/gts2oogl.c, tools/gtscompare.c: Now uses
+	new input functions + error reporting.
 
 2002-02-12 16:36  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/gts-config.in: Added options for gmodule and gthread flags
-	  and libs.
+	and libs.
 
 2002-02-08 18:39  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -1206,7 +1357,7 @@
 2002-02-08 13:33  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* tools/gts2oogl.c: Picky C compilers would complain about missing
-	  statement in default: case.
+	statement in default: case.
 
 2002-02-08 13:28  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -1231,12 +1382,12 @@
 2002-02-08 13:20  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* examples/set.c: Added "normal" getopt options processing + new
-	  options.
+	options.
 
 2002-02-08 13:20  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* examples/partition.c: Updated to reflect changes in graph input
-	  function.
+	function.
 
 2002-02-08 13:19  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -1245,7 +1396,7 @@
 2002-02-08 13:18  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* acconfig.h, configure.in, src/rounding.h: Now checks for working
-	  #warning directive in C preprocessor.
+	#warning directive in C preprocessor.
 
 2002-02-04 12:10  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -1270,7 +1421,7 @@
 2002-02-01 15:26  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* examples/coarsen.c: New option for logging cost. The cost
-	  stopping option did not worked before => fixed.
+	stopping option did not worked before => fixed.
 
 2002-02-01 14:48  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -1283,7 +1434,7 @@
 2001-12-13 09:51  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* examples/cleanup.c: Fixed "sever" ordering bug (thanks to Ray
-	  Jones).
+	Jones).
 
 2001-11-27 10:49  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -1299,12 +1450,12 @@
 
 2001-11-12 10:46  Stéphane Popinet <popinet@users.sourceforge.net>;
 
-	* ChangeLog, configure.in: Updated.
+	* ChangeLog, ChangeLog, configure.in: Updated.
 
 2001-11-12 10:43  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* tools/gts2oogl.c: Chaining of isolines segments. New default
-	  "jet" colormap.
+	"jet" colormap.
 
 2001-11-12 10:41  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -1321,7 +1472,7 @@
 2001-11-12 10:38  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* configure.in: Removed default optimization from defauls gcc
-	  CFLAGS.
+	CFLAGS.
 
 2001-10-08 14:28  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -1342,9 +1493,9 @@
 2001-10-08 13:53  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* examples/Makefile.am, test/boolean/Makefile.am,
-	  test/clipping/Makefile.am, test/coarsen/Makefile.am,
-	  test/delaunay/Makefile.am, tools/Makefile.am: Cleaned up
-	  dependencies for linking (thanks to Volodymyr).
+	test/clipping/Makefile.am, test/coarsen/Makefile.am,
+	test/delaunay/Makefile.am, tools/Makefile.am: Cleaned up
+	dependencies for linking (thanks to Volodymyr).
 
 2001-10-08 12:19  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -1357,13 +1508,13 @@
 2001-10-08 12:15  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* configure.in: Includes glib libraries and header files by
-	  default. Generates gts-config script.
+	default. Generates gts-config script.
 
 2001-10-08 12:12  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/Makefile.am: Now builds shared libraries (thanks to Volodymyr
-	  Babin), rebuilds gts.def before making a distribution, includes a
-	  gts-config script (a la glib) and gts.m4 autoconf macros.
+	Babin), rebuilds gts.def before making a distribution, includes a
+	gts-config script (a la glib) and gts.m4 autoconf macros.
 
 2001-10-08 12:10  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -1372,7 +1523,7 @@
 2001-10-08 12:10  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/triangle.c: New gts_triangle_is_stabbed() function. Updated
-	  docs.
+	docs.
 
 2001-10-08 12:09  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -1401,18 +1552,18 @@
 2001-10-08 11:58  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/face.c: Clone() method now resets the surfaces list pointer
-	  of the cloned face.
+	of the cloned face.
 
 2001-10-08 11:56  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/boolean.c: New faces created when computing GtsSurfaceInter
-	  now inherit (via their attributes()) method, the attributes of
-	  their parent faces.
+	now inherit (via their attributes()) method, the attributes of
+	their parent faces.
 
 2001-10-08 11:55  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/bbtree.c: New functions to check for "stabbed" bounding
-	  boxed.
+	boxed.
 
 2001-10-08 11:54  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -1445,12 +1596,12 @@
 2001-10-08 11:47  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* test/boolean/: 1.gts, 2.gts, Makefile.am, set_1_2.sh: Added new
-	  test case by Darie Aron.
+	test case by Darie Aron.
 
 2001-10-08 11:45  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* tools/Makefile.am: Renamed srf2oogl to gts2oogl. Glib flags are
-	  now included implicitely.
+	now included implicitely.
 
 2001-10-08 11:43  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -1475,7 +1626,7 @@
 2001-10-08 11:36  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* examples/transform.c: New options to translate and turn surface
-	  inside-out.
+	inside-out.
 
 2001-10-08 11:35  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -1492,15 +1643,15 @@
 2001-10-08 11:24  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* doc/: tmpl/bb-trees.sgml, tmpl/boolean.sgml, tmpl/containee.sgml,
-	  tmpl/container.sgml, tmpl/edges.sgml, tmpl/extended_heaps.sgml,
-	  tmpl/faces.sgml, tmpl/graph.sgml, tmpl/gts-unused.sgml,
-	  tmpl/hsplit.sgml, tmpl/hsurface.sgml, tmpl/iso.sgml,
-	  tmpl/object.sgml, tmpl/oocs.sgml, tmpl/partition.sgml,
-	  tmpl/pgraph.sgml, tmpl/points.sgml, tmpl/psurface.sgml,
-	  tmpl/segments.sgml, tmpl/simplify.sgml, tmpl/split.sgml,
-	  tmpl/stats.sgml, tmpl/surfaces.sgml, tmpl/triangles.sgml,
-	  tmpl/vertices.sgml, tmpl/wgraph.sgml, .cvsignore, Makefile.am,
-	  gts-sections.txt: Updated.
+	tmpl/container.sgml, tmpl/edges.sgml, tmpl/extended_heaps.sgml,
+	tmpl/faces.sgml, tmpl/graph.sgml, tmpl/gts-unused.sgml,
+	tmpl/hsplit.sgml, tmpl/hsurface.sgml, tmpl/iso.sgml,
+	tmpl/object.sgml, tmpl/oocs.sgml, tmpl/partition.sgml,
+	tmpl/pgraph.sgml, tmpl/points.sgml, tmpl/psurface.sgml,
+	tmpl/segments.sgml, tmpl/simplify.sgml, tmpl/split.sgml,
+	tmpl/stats.sgml, tmpl/surfaces.sgml, tmpl/triangles.sgml,
+	tmpl/vertices.sgml, tmpl/wgraph.sgml, .cvsignore, Makefile.am,
+	gts-sections.txt: Updated.
 
 2001-10-08 11:21  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -1517,17 +1668,17 @@
 2001-10-05 11:00  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* examples/set.c: Uses new gts_bb_tree_surface() function. Checks
-	  for orientable manifold input surfaces.
+	for orientable manifold input surfaces.
 
 2001-08-29 19:38  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* ChangeLog, TODO, configure.in, src/gts.h, src/predicates_init.h:
-	  Updated.
+	Updated.
 
 2001-08-29 19:36  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* tools/srf2oogl.c: New "height" option to create z valued color
-	  maps.
+	maps.
 
 2001-08-29 19:34  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -1543,8 +1694,8 @@
 
 2001-08-29 19:28  Stéphane Popinet <popinet@users.sourceforge.net>;
 
-	* src/vertex.c: New function gts_vertex_has_parent_surface().
-	  Updated destroyed objects handling.
+	* src/vertex.c: New function gts_vertex_has_parent_surface(). 
+	Updated destroyed objects handling.
 
 2001-08-29 19:23  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -1553,19 +1704,19 @@
 2001-08-29 19:22  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/surface.c: New methods add_face(), remove_face().  Support
-	  for color using the color() method of objects.  New function
-	  gts_surface_foreach_face_remove().  New GtsSurfaceTraverse
-	  structure and associated functions.
+	for color using the color() method of objects.	New function
+	gts_surface_foreach_face_remove().  New GtsSurfaceTraverse
+	structure and associated functions.
 
 2001-08-29 19:16  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/split.c: Changed destroyed objects handling and handling of
-	  input methods.
+	input methods.
 
 2001-08-29 19:12  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/segment.c: Changed destroyed vertices handling (flags changed
-	  in object.c).
+	in object.c).
 
 2001-08-29 19:11  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -1578,7 +1729,7 @@
 2001-08-29 19:06  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/object.c: Added object name registration and updated flags
-	  handling.
+	handling.
 
 2001-08-29 19:04  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -1587,7 +1738,7 @@
 2001-08-12 22:25  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/matrix.c: New function gts_matrix_assign() + cosmetic
-	  changes.
+	changes.
 
 2001-08-12 22:23  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -1612,22 +1763,22 @@
 2001-08-12 22:16  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/cdt.c: gts_delaunay_add_vertex() now takes an extra guess
-	  argument. New function gts_delaunay_add_vertex_to_face().
+	argument. New function gts_delaunay_add_vertex_to_face().
 
 2001-08-12 22:13  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/boolean.c: Fixed bug in the case of an open surface (with
-	  boundary edges).
+	boundary edges).
 
 2001-08-12 22:10  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/Makefile.am: Added new sources files for graphs, graph
-	  partitioning, triangulation refinement and fifos.
+	partitioning, triangulation refinement and fifos.
 
 2001-08-12 22:09  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* examples/transform.c: Added independent scaling of x, y and z
-	  axis.
+	axis.
 
 2001-08-12 22:07  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -1636,13 +1787,13 @@
 2001-08-12 22:05  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* examples/delaunay.c: Initial version for hole removal (buggy).
-	  Mesh refinement (Ruppert and Shewchuk), conforming Delaunay
-	  triangulation, randomization of input vertices.
+	Mesh refinement (Ruppert and Shewchuk), conforming Delaunay
+	triangulation, randomization of input vertices.
 
 2001-08-12 22:01  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* examples/Makefile.am: New examples partition, traverse,
-	  cartesian.
+	cartesian.
 
 2001-08-12 21:59  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -1651,27 +1802,27 @@
 2001-08-12 21:56  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* doc/: gts-docs.sgml, gts-sections.txt, tmpl/delaunay.sgml,
-	  tmpl/edges.sgml, tmpl/extended_heaps.sgml, tmpl/faces.sgml,
-	  tmpl/gts-unused.sgml, tmpl/heaps.sgml, tmpl/matrices.sgml,
-	  tmpl/object.sgml, tmpl/oocs.sgml, tmpl/surfaces.sgml,
-	  tmpl/triangles.sgml, tmpl/vertices.sgml: Updated.
+	tmpl/edges.sgml, tmpl/extended_heaps.sgml, tmpl/faces.sgml,
+	tmpl/gts-unused.sgml, tmpl/heaps.sgml, tmpl/matrices.sgml,
+	tmpl/object.sgml, tmpl/oocs.sgml, tmpl/surfaces.sgml,
+	tmpl/triangles.sgml, tmpl/vertices.sgml: Updated.
 
 2001-08-12 21:53  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* doc/tmpl/containee.sgml, doc/tmpl/container.sgml,
-	  doc/tmpl/fifo.sgml, doc/tmpl/graph.sgml, doc/tmpl/partition.sgml,
-	  doc/tmpl/pgraph.sgml, doc/tmpl/wgraph.sgml, test/clipping/c10:
-	  Initial revision.
+	doc/tmpl/fifo.sgml, doc/tmpl/graph.sgml, doc/tmpl/partition.sgml,
+	doc/tmpl/pgraph.sgml, doc/tmpl/wgraph.sgml, test/clipping/c10:
+	Initial revision.
 
 2001-08-12 21:50  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* test/delaunay/cartesian.sh, test/delaunay/random.c,
-	  test/delaunay/random_speed.sh, test/delaunay/squarehole.gts,
-	  test/delaunay/too_close.gts, test/delaunay/too_close.sh,
-	  test/delaunay/two_segments.gts, test/delaunay/two_segments.sh,
-	  src/fifo.c, src/graph.c, src/partition.c, src/pgraph.c,
-	  src/refine.c, examples/cartesian.c, examples/partition.c,
-	  examples/traverse.c: Initial revision.
+	test/delaunay/random_speed.sh, test/delaunay/squarehole.gts,
+	test/delaunay/too_close.gts, test/delaunay/too_close.sh,
+	test/delaunay/two_segments.gts, test/delaunay/two_segments.sh,
+	src/fifo.c, src/graph.c, src/partition.c, src/pgraph.c,
+	src/refine.c, examples/cartesian.c, examples/partition.c,
+	examples/traverse.c: Initial revision.
 
 2001-02-23 03:43  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -1680,12 +1831,12 @@
 2001-02-23 03:42  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* test/clipping/: Makefile.am, c1, c2, c3, c4, c5, c6, c7, c8, c9,
-	  clipping.sh, clipping_c1_c2.sh, clipping_c1_c3.sh,
-	  clipping_c1_c4.sh, clipping_c1_c5.sh, clipping_c1_c6.sh,
-	  clipping_c1_c7.sh, clipping_c1_c8.sh, clipping_c1_c9.sh,
-	  clipping_l1_l2.sh, clipping_l1_l3.sh, clipping_l1_l4.sh,
-	  clipping_l1_l5.sh, l1, l2, l3, l4, l5: New tests for 2D boolean
-	  operations.
+	clipping.sh, clipping_c1_c2.sh, clipping_c1_c3.sh,
+	clipping_c1_c4.sh, clipping_c1_c5.sh, clipping_c1_c6.sh,
+	clipping_c1_c7.sh, clipping_c1_c8.sh, clipping_c1_c9.sh,
+	clipping_l1_l2.sh, clipping_l1_l3.sh, clipping_l1_l4.sh,
+	clipping_l1_l5.sh, l1, l2, l3, l4, l5: New tests for 2D boolean
+	operations.
 
 2001-02-23 03:41  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -1722,12 +1873,11 @@
 2001-02-23 02:38  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* doc/tmpl/: bb-trees.sgml, boolean.sgml, delaunay.sgml,
-	  edges.sgml, extended_heaps.sgml, faces.sgml, gts-unused.sgml,
-	  heaps.sgml, hsplit.sgml, hsurface.sgml, iso.sgml, kd-Trees.sgml,
-	  matrices.sgml, misc.sgml, object.sgml, oocs.sgml, points.sgml,
-	  psurface.sgml, segments.sgml, simplify.sgml, split.sgml,
-	  stats.sgml, surfaces.sgml, triangles.sgml, vertices.sgml:
-	  Updated.
+	edges.sgml, extended_heaps.sgml, faces.sgml, gts-unused.sgml,
+	heaps.sgml, hsplit.sgml, hsurface.sgml, iso.sgml, kd-Trees.sgml,
+	matrices.sgml, misc.sgml, object.sgml, oocs.sgml, points.sgml,
+	psurface.sgml, segments.sgml, simplify.sgml, split.sgml,
+	stats.sgml, surfaces.sgml, triangles.sgml, vertices.sgml: Updated.
 
 2001-02-22 04:30  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -1740,13 +1890,13 @@
 2001-02-22 04:25  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/: gts.h, vertex.c: New function
-	  gts_vertex_has_parent_surface().
+	gts_vertex_has_parent_surface().
 
 2001-02-22 04:23  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/cdt.c: Fixed problem when walking through degenerate
-	  triangles.  More robust edge removal in the case of degenerate
-	  constrained triangulations.
+	triangles.  More robust edge removal in the case of degenerate
+	constrained triangulations.
 
 2001-02-19 06:37  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -1755,22 +1905,22 @@
 2001-02-19 06:37  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/split.c: Fixed precondition problem in
-	  gts_psurface_read_vertex.
+	gts_psurface_read_vertex.
 
 2001-02-19 06:35  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/psurface.c: Fixed infinite loop problem in
-	  gts_psurface_set_vertex_number.
+	gts_psurface_set_vertex_number.
 
 2001-02-19 06:33  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* examples/set.c: Fixed problem with orientation for the difference
-	  operation.
+	operation.
 
 2001-02-19 06:31  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* test/boolean/: cutter, set_sponge_cutter.sh, sponge: New test by
-	  B. Petit.
+	B. Petit.
 
 2001-02-19 06:28  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -1783,7 +1933,7 @@
 2001-02-15 04:02  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/makefile.msc: Added dependencies and commands for automatic
-	  generation of predicates_init.h.
+	generation of predicates_init.h.
 
 2001-02-15 04:01  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -1792,17 +1942,16 @@
 2001-02-15 03:58  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* THANKS, TODO, doc/gts-sections.txt, doc/tmpl/bb-trees.sgml,
-	  doc/tmpl/boolean.sgml, doc/tmpl/delaunay.sgml,
-	  doc/tmpl/edges.sgml, doc/tmpl/extended_heaps.sgml,
-	  doc/tmpl/faces.sgml, doc/tmpl/gts-unused.sgml,
-	  doc/tmpl/heaps.sgml, doc/tmpl/hsplit.sgml,
-	  doc/tmpl/hsurface.sgml, doc/tmpl/iso.sgml,
-	  doc/tmpl/kd-Trees.sgml, doc/tmpl/matrices.sgml,
-	  doc/tmpl/misc.sgml, doc/tmpl/object.sgml, doc/tmpl/oocs.sgml,
-	  doc/tmpl/points.sgml, doc/tmpl/psurface.sgml,
-	  doc/tmpl/segments.sgml, doc/tmpl/simplify.sgml,
-	  doc/tmpl/split.sgml, doc/tmpl/stats.sgml, doc/tmpl/surfaces.sgml,
-	  doc/tmpl/triangles.sgml, doc/tmpl/vertices.sgml: Updated.
+	doc/tmpl/boolean.sgml, doc/tmpl/delaunay.sgml, doc/tmpl/edges.sgml,
+	doc/tmpl/extended_heaps.sgml, doc/tmpl/faces.sgml,
+	doc/tmpl/gts-unused.sgml, doc/tmpl/heaps.sgml,
+	doc/tmpl/hsplit.sgml, doc/tmpl/hsurface.sgml, doc/tmpl/iso.sgml,
+	doc/tmpl/kd-Trees.sgml, doc/tmpl/matrices.sgml, doc/tmpl/misc.sgml,
+	doc/tmpl/object.sgml, doc/tmpl/oocs.sgml, doc/tmpl/points.sgml,
+	doc/tmpl/psurface.sgml, doc/tmpl/segments.sgml,
+	doc/tmpl/simplify.sgml, doc/tmpl/split.sgml, doc/tmpl/stats.sgml,
+	doc/tmpl/surfaces.sgml, doc/tmpl/triangles.sgml,
+	doc/tmpl/vertices.sgml: Updated.
 
 2001-02-14 06:35  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -1815,18 +1964,18 @@
 2001-02-14 04:08  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* examples/cleanup.c, examples/coarsen.c, examples/delaunay.c,
-	  examples/transform.c, examples/volume.c, tools/gtscompare.c,
-	  tools/srf2oogl.c: Support for getopt (and no getopt_long).
+	examples/transform.c, examples/volume.c, tools/gtscompare.c,
+	tools/srf2oogl.c: Support for getopt (and no getopt_long).
 
 2001-02-14 03:25  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* examples/Makefile.am: Changed order of libraries for IRIX
-	  compatibility.
+	compatibility.
 
 2001-02-14 03:24  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* tools/Makefile.am: Changed order of libraries for IRIX
-	  compatiblity.
+	compatiblity.
 
 2001-02-10 06:35  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -1851,8 +2000,8 @@
 2001-02-06 05:04  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/rounding.h: Changed HAVE_FLOATING_POINT_H to __FreeBSD__.
-	  Apparently SunOS does have floating_point.h but the functions in
-	  there are different from those in BSD.
+	Apparently SunOS does have floating_point.h but the functions in
+	there are different from those in BSD.
 
 2001-02-06 04:51  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -1861,7 +2010,7 @@
 2001-02-06 04:50  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* doc/gts-sections.txt: Changed Group to Grid and (re)added
-	  gts_surface_strip.
+	gts_surface_strip.
 
 2001-02-06 04:38  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -1874,17 +2023,17 @@
 2001-02-05 13:09  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/surface.c: Replaced __PRETTY_FUNCTION__ with
-	  G_GNUC_PRETTY_FUNCTION (win32 compilation).
+	G_GNUC_PRETTY_FUNCTION (win32 compilation).
 
 2001-02-05 13:07  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/predicates.c: Removed <sys/time.h> and function using
-	  random() (win32 compilation).
+	random() (win32 compilation).
 
 2001-02-05 13:05  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/object.c: Removed code for gts_object_is_from_class and
-	  gts_class_is_from_class in case of inlining.
+	gts_class_is_from_class in case of inlining.
 
 2001-02-05 13:03  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -1893,7 +2042,7 @@
 2001-02-05 13:01  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/gts.h: More consistent defines for inline functions (for
-	  win32 compilation).
+	win32 compilation).
 
 2001-02-05 13:00  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -1906,7 +2055,7 @@
 2001-02-05 12:20  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/gts.h: ClusterGroup changed to ClusterGrid and
-	  gts_surface_strip (re)added.
+	gts_surface_strip (re)added.
 
 2001-02-05 12:18  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -1919,7 +2068,7 @@
 2001-02-05 12:00  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/: gts.h, oocs.c: GtsClusterId now uses triplet of integers
-	  (no need for long long int anymore).
+	(no need for long long int anymore).
 
 2001-02-04 11:21  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -1952,7 +2101,7 @@
 2001-02-04 08:30  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* doc/: gts-docs.sgml, gts-sections.txt: Added out-of-core
-	  simplication doc.
+	simplication doc.
 
 2001-02-04 08:29  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -1965,17 +2114,17 @@
 2001-02-04 08:27  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* examples/oocs.c: New example for out-of-core simplification via
-	  vertex clustering.  Initial revision.
+	vertex clustering.  Initial revision.
 
 2001-02-04 08:25  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/oocs.c: Implementation of the out-of-core simplification
-	  algorithm of Lindstrom and Turk. Initial revision.
+	algorithm of Lindstrom and Turk. Initial revision.
 
 2001-02-04 08:23  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* doc/tmpl/oocs.sgml: Doc for out-of-core simplification. Initial
-	  revision.
+	revision.
 
 2001-02-02 07:12  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -2004,27 +2153,27 @@
 2001-02-02 06:59  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* test/boolean/: loc1, loc2, set_loc1_loc2.sh: New test by T.
-	  Binder.
+	Binder.
 
 2001-02-02 06:58  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/bbtree.c: (gts_bbox_set): New function.  (gts_bbox_new):
-	  Added check for class.
+	Added check for class.
 
 2001-02-02 06:57  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/segment.c: (gts_segment_is_ok): Fixed bug in testing for
-	  duplicate.
+	duplicate.
 
 2001-02-02 06:56  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* test/boolean/set.c: Added test for correctness of vertices, edges
-	  and faces of surfaces after operation.
+	and faces of surfaces after operation.
 
 2001-02-02 06:55  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/boolean.c: (gts_surface_inter_new): Fixed bug for reset of
-	  reserved pointer in edges.
+	reserved pointer in edges.
 
 2001-02-01 10:14  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -2033,12 +2182,12 @@
 2001-02-01 10:13  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* test/: boolean/.cvsignore, coarsen/.cvsignore,
-	  delaunay/.cvsignore: Initial revision.
+	delaunay/.cvsignore: Initial revision.
 
 2001-02-01 10:10  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* test/delaunay/: Makefile.am, cartesian.c, cartesian.sh: Delaunay
-	  triangulation test. Initial revision.
+	triangulation test. Initial revision.
 
 2001-02-01 10:01  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -2047,29 +2196,28 @@
 2001-02-01 09:55  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* test/coarsen/: Makefile.am, c1.c, c2.c, c3.c, cartesian.c,
-	  double_prism.c, flat.sh, flat1.sh: Coarsening test. Initial
-	  revision.
+	double_prism.c, flat.sh, flat1.sh: Coarsening test. Initial
+	revision.
 
 2001-02-01 09:53  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* test/boolean/: Makefile.am, boole.c, boole.sh, boole_cube_cube1,
-	  boole_cube_cube1.sh, boole_cube_cube5, boole_cube_cube5.sh, cube,
-	  cube1, cube2, cube4, cube5, cube6, cube7, errors, set.c, set.sh,
-	  set_cube6_cube7.sh, set_cube_cube1, set_cube_cube1.sh,
-	  set_cube_cube2, set_cube_cube2.sh, set_cube_cube4.sh,
-	  set_t11_t16, set_t11_t16.sh, set_t14_t15, set_t14_t15.sh,
-	  set_t17_t18, set_t17_t18.sh, set_t19_t20, set_t19_t20.sh,
-	  set_t19_t21, set_t19_t21.sh, set_t1_t10, set_t1_t10.sh,
-	  set_t1_t11, set_t1_t11.sh, set_t1_t12, set_t1_t12.sh, set_t1_t13,
-	  set_t1_t13.sh, set_t1_t2, set_t1_t2.sh, set_t1_t22,
-	  set_t1_t22.sh, set_t1_t23, set_t1_t23.sh, set_t1_t24,
-	  set_t1_t24.sh, set_t1_t3, set_t1_t3.sh, set_t1_t4, set_t1_t4.sh,
-	  set_t1_t5, set_t1_t5.sh, set_t1_t6, set_t1_t6.sh, set_t1_t7,
-	  set_t1_t7.sh, set_t1_t9, set_t1_t9.sh, set_t25_t26.sh,
-	  set_t27_t28, set_t27_t28.sh, t1, t10, t11, t12, t13, t14, t15,
-	  t16, t17, t18, t19, t2, t20, t21, t22, t23, t24, t25, t26, t27,
-	  t28, t3, t4, t5, t6, t7, t9: Boolean operation test. Initial
-	  revision.
+	boole_cube_cube1.sh, boole_cube_cube5, boole_cube_cube5.sh, cube,
+	cube1, cube2, cube4, cube5, cube6, cube7, errors, set.c, set.sh,
+	set_cube6_cube7.sh, set_cube_cube1, set_cube_cube1.sh,
+	set_cube_cube2, set_cube_cube2.sh, set_cube_cube4.sh, set_t11_t16,
+	set_t11_t16.sh, set_t14_t15, set_t14_t15.sh, set_t17_t18,
+	set_t17_t18.sh, set_t19_t20, set_t19_t20.sh, set_t19_t21,
+	set_t19_t21.sh, set_t1_t10, set_t1_t10.sh, set_t1_t11,
+	set_t1_t11.sh, set_t1_t12, set_t1_t12.sh, set_t1_t13,
+	set_t1_t13.sh, set_t1_t2, set_t1_t2.sh, set_t1_t22, set_t1_t22.sh,
+	set_t1_t23, set_t1_t23.sh, set_t1_t24, set_t1_t24.sh, set_t1_t3,
+	set_t1_t3.sh, set_t1_t4, set_t1_t4.sh, set_t1_t5, set_t1_t5.sh,
+	set_t1_t6, set_t1_t6.sh, set_t1_t7, set_t1_t7.sh, set_t1_t9,
+	set_t1_t9.sh, set_t25_t26.sh, set_t27_t28, set_t27_t28.sh, t1, t10,
+	t11, t12, t13, t14, t15, t16, t17, t18, t19, t2, t20, t21, t22,
+	t23, t24, t25, t26, t27, t28, t3, t4, t5, t6, t7, t9: Boolean
+	operation test. Initial revision.
 
 2001-02-01 09:43  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -2086,58 +2234,58 @@
 2001-02-01 09:34  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* examples/delaunay.c, examples/gtstoc.c, examples/transform.c,
-	  tools/gtscompare.c: New example. Initial release.
+	tools/gtscompare.c: New example. Initial release.
 
 2001-02-01 09:32  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* examples/coarsen.c: Uses new interface for coarsening and volume
-	  optimization.  Options for progressive surface generation and
-	  fold control.
+	optimization.  Options for progressive surface generation and fold
+	control.
 
 2001-02-01 09:30  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* examples/: cleanup.c, iso.c, set.c, volume.c: Uses new object
-	  hierarchy.
+	hierarchy.
 
 2001-02-01 09:27  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* examples/Makefile.am: New examples: delaunay, transform and
-	  gtstoc.
+	gtstoc.
 
 2001-02-01 09:25  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* ChangeLog, Makefile.am, NEWS, README, TODO, acconfig.h,
-	  configure.in, doc/Makefile.am, doc/gts-docs.sgml,
-	  doc/gts-sections.txt, doc/tmpl/bb-trees.sgml,
-	  doc/tmpl/delaunay.sgml, doc/tmpl/extended_heaps.sgml,
-	  doc/tmpl/gts-unused.sgml, doc/tmpl/iso.sgml,
-	  doc/tmpl/kd-Trees.sgml, doc/tmpl/matrices.sgml,
-	  doc/tmpl/points.sgml, doc/tmpl/segments.sgml,
-	  doc/tmpl/simplify.sgml, doc/tmpl/surfaces.sgml,
-	  doc/tmpl/triangles.sgml: Updated for new object hierarchy.
+	configure.in, doc/Makefile.am, doc/gts-docs.sgml,
+	doc/gts-sections.txt, doc/tmpl/bb-trees.sgml,
+	doc/tmpl/delaunay.sgml, doc/tmpl/extended_heaps.sgml,
+	doc/tmpl/gts-unused.sgml, doc/tmpl/iso.sgml,
+	doc/tmpl/kd-Trees.sgml, doc/tmpl/matrices.sgml,
+	doc/tmpl/points.sgml, doc/tmpl/segments.sgml,
+	doc/tmpl/simplify.sgml, doc/tmpl/surfaces.sgml,
+	doc/tmpl/triangles.sgml: Updated for new object hierarchy.
 
 2001-02-01 09:23  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* doc/tmpl/: boolean.sgml, edges.sgml, faces.sgml, hsplit.sgml,
-	  hsurface.sgml, misc.sgml, object.sgml, psurface.sgml, split.sgml,
-	  stats.sgml, vertices.sgml: Doc for new object. Initial revision.
+	hsurface.sgml, misc.sgml, object.sgml, psurface.sgml, split.sgml,
+	stats.sgml, vertices.sgml: Doc for new object. Initial revision.
 
 2001-02-01 09:18  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/vopt.c: Uses new object framework. The collapse topological
-	  and folding constraints are now dealt with by the generic
-	  coarsening routine.
+	and folding constraints are now dealt with by the generic
+	coarsening routine.
 
 2001-02-01 09:15  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/surface.c: Uses new object framework.  I/O operations are now
-	  also object-oriented.  Boolean operations have been moved to
-	  boolean.c.
+	also object-oriented.  Boolean operations have been moved to
+	boolean.c.
 
 2001-02-01 09:09  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/triangle.c: New object framework. Face specific part has been
-	  moved to face.c.
+	moved to face.c.
 
 2001-02-01 09:08  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -2146,17 +2294,17 @@
 2001-02-01 09:07  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/segment.c: New object framework. Edge specific part has been
-	  moved to edge.c.
+	moved to edge.c.
 
 2001-02-01 09:06  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/: predicates.c, predicates_init.c: Now uses rounding.h for
-	  floating point control.
+	floating point control.
 
 2001-02-01 09:04  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/point.c: New object framework. Vertex specific part has been
-	  moved to vertex.c.
+	moved to vertex.c.
 
 2001-02-01 09:01  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -2184,9 +2332,9 @@
 
 2001-02-01 08:06  Stéphane Popinet <popinet@users.sourceforge.net>;
 
-	* src/eheap.c: gts_eheap_insert_with_key: new function.
-	  gts_eheap_remove_top: now returns last key correctly.
-	  gts_eheap_top: new function.	gts_eheap_update: new function.
+	* src/eheap.c: gts_eheap_insert_with_key: new function. 
+	gts_eheap_remove_top: now returns last key correctly. 
+	gts_eheap_top: new function.  gts_eheap_update: new function.
 
 2001-02-01 08:02  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -2251,12 +2399,12 @@
 2001-02-01 07:22  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/bbtree.c: Added support for GtsBBox objects and for distance
-	  computation between tree and objects.
+	computation between tree and objects.
 
 2001-02-01 07:18  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/Makefile.am: Updated source file listing. Added extra
-	  distribution for win32 files.
+	distribution for win32 files.
 
 2000-07-24 23:45  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -2281,12 +2429,12 @@
 2000-07-24 23:22  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/vopt.c: Changed relative weighting of boundary and volume
-	  costs.
+	costs.
 
 2000-07-24 23:21  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/: point.c, segment.c, surface.c: Changed .._reset_data to
-	  .._reset_private.
+	.._reset_private.
 
 2000-07-24 23:19  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -2295,12 +2443,12 @@
 2000-07-24 23:17  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/: predicates.c, predicates_init.c: Floating point rounding
-	  and precision behaviour control now uses symbolic constants.
+	and precision behaviour control now uses symbolic constants.
 
 2000-07-24 23:16  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* tools/srf2oogl.c: "boundary" option now outputs boundary edges
-	  instead of coloring boundary triangles.
+	instead of coloring boundary triangles.
 
 2000-07-24 23:14  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -2309,10 +2457,10 @@
 2000-07-24 23:10  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* doc/: tmpl/extended_heaps.sgml, tmpl/gts-unused.sgml,
-	  tmpl/heaps.sgml, tmpl/iso.sgml, tmpl/matrices.sgml,
-	  tmpl/points.sgml, tmpl/segments.sgml, tmpl/simplify.sgml,
-	  tmpl/surfaces.sgml, tmpl/triangles.sgml, gts-sections.txt:
-	  Updated docs.
+	tmpl/heaps.sgml, tmpl/iso.sgml, tmpl/matrices.sgml,
+	tmpl/points.sgml, tmpl/segments.sgml, tmpl/simplify.sgml,
+	tmpl/surfaces.sgml, tmpl/triangles.sgml, gts-sections.txt: Updated
+	docs.
 
 2000-07-22 03:33  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -2321,7 +2469,7 @@
 2000-07-22 03:32  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* tools/srf2oogl.c: Updated calls to new library interface.  New
-	  oundary' option to color triangles which have a boundary edge.
+	oundary' option to color triangles which have a boundary edge.
 
 2000-07-22 03:30  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -2330,29 +2478,29 @@
 2000-07-22 03:29  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/vopt.c: Implementation of Lindstrom and Turk memoryless
-	  simplification functions.
+	simplification functions.
 
 2000-07-22 03:28  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/iso.c: Implementation of isosurfaces of a function f(x, y,
-	  z).
+	z).
 
 2000-07-22 03:28  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/matrix.c: Matrix operations have been moved to this new file.
-	  (gts_matrix_new): The order of the arguments has been
-	  transposed.  (gts_vector_print): New function.
+	 (gts_matrix_new): The order of the arguments has been transposed. 
+	(gts_vector_print): New function.
 
 2000-07-22 03:25  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/surface.c: (gts_surface_coarsen, gts_surface_refine): New
-	  (consistent) stopping interface.  (gts_surface_read): Error
-	  checking in case indices are equal to zero.
+	(consistent) stopping interface.  (gts_surface_read): Error
+	checking in case indices are equal to zero.
 
 2000-07-22 03:20  Stéphane Popinet <popinet@users.sourceforge.net>;
 
-	* src/triangle.c: Changed ->data to ->private and GList to GSList.
-	  (gts_triangle_use_segments): New function.
+	* src/triangle.c: Changed ->data to ->private and GList to GSList. 
+	(gts_triangle_use_segments): New function.
 
 2000-07-22 03:17  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -2360,26 +2508,26 @@
 
 2000-07-22 03:15  Stéphane Popinet <popinet@users.sourceforge.net>;
 
-	* src/segment.c: Changed ->data to ->private and GList to GSList.
-	  (gts_segment_is_boundary): Now works with a NULL argument for
-	  surface.  (gts_segments_are_intersecting): Now returns GTS_IN,
-	  GTS_ON, GTS_OUT.
+	* src/segment.c: Changed ->data to ->private and GList to GSList. 
+	(gts_segment_is_boundary): Now works with a NULL argument for
+	surface.  (gts_segments_are_intersecting): Now returns GTS_IN,
+	GTS_ON, GTS_OUT.
 
 2000-07-22 03:12  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/point.c: Changed ->data to ->private and GList to GSList. New
-	  functions gts_point_is_boundary(), gts_point_neighbors().
-	  (gts_point_triangles): Now takes a list as an extra argument.
-	  (gts_segment_triangle_intersection): Removed the part which was
-	  specific to the surface intersection stuff. This function can now
-	  be used on its own as it should.  (gts_point_is_in_triangle): Now
-	  returns GTS_IN, GTS_ON, GTS_OUT.
+	functions gts_point_is_boundary(), gts_point_neighbors(). 
+	(gts_point_triangles): Now takes a list as an extra argument. 
+	(gts_segment_triangle_intersection): Removed the part which was
+	specific to the surface intersection stuff. This function can now
+	be used on its own as it should.  (gts_point_is_in_triangle): Now
+	returns GTS_IN, GTS_ON, GTS_OUT.
 
 2000-07-22 03:06  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/misc.c: GList changed to GSList. Debugging functions
-	  gts_write_segment() and gts_write_triangle() now take an origin
-	  point as extra argument.
+	gts_write_segment() and gts_write_triangle() now take an origin
+	point as extra argument.
 
 2000-07-22 03:04  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -2392,18 +2540,18 @@
 2000-07-22 03:00  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/gts.h: Updated interface. Major changes are move from GList
-	  to GSList and new functions for matrix computations, memoryless
-	  simplification algorithm and isosurface computations.
+	to GSList and new functions for matrix computations, memoryless
+	simplification algorithm and isosurface computations.
 
 2000-07-22 02:58  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/gts-private.h: GList changed to GSList. GtsSurface is now an
-	  opaque structure.
+	opaque structure.
 
 2000-07-22 02:56  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/eheap.c: gts_eheap_remove_top() Now takes an extra @key
-	  argument.
+	argument.
 
 2000-07-22 02:53  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -2428,7 +2576,7 @@
 2000-07-22 02:41  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* examples/coarsen.c: New options for using memoryless
-	  simplification.
+	simplification.
 
 2000-07-22 02:39  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -2440,12 +2588,11 @@
 
 2000-07-04 06:39  Stéphane Popinet <popinet@users.sourceforge.net>;
 
-	* src/surface.c: (gts_segment_collapse_is_valid): New function.
-	  (gts_surface_coarsen): Now stops if the key of the segment to be
-	  collapsed is equal to G_MAXDOUBLE.
-	  (gts_surface_foreach_triangle): Now takes a GtsFunc as a callback
-	  function as it should have from the start.
-	  (gts_surface_triangle_number): New function.
+	* src/surface.c: (gts_segment_collapse_is_valid): New function. 
+	(gts_surface_coarsen): Now stops if the key of the segment to be
+	collapsed is equal to G_MAXDOUBLE.  (gts_surface_foreach_triangle):
+	Now takes a GtsFunc as a callback function as it should have from
+	the start.  (gts_surface_triangle_number): New function.
 
 2000-02-29 23:13  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -2466,54 +2613,53 @@
 2000-02-21 09:22  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* tools/srf2oogl.c: Added --incomp option to color incompatible
-	  triangles.
+	triangles.
 
 2000-02-21 09:18  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/surface.c: (gts_surface_coarsen): Fixed a bug when the
-	  collapse went down to two similar triangles (back to back).
-	  (gts_surface_read): Don't stupidly use hash tables anymore use
-	  simple arrays instead (simpler, faster, better).
-	  (gts_surface_coarsen): Bug fix in the case of input surface with
-	  degenerate or duplicate edges.  (gts_surface_write): Does not use
-	  hash tables anymore. Simpler, more memory efficient and slightly
-	  faster.  (gts_surface_coarsen): New type GtsStopFunc is now used
-	  as a stopping criterium. Two functions gts_coarsen_number_stop()
-	  and gts_coarsen_length_stop() are provided.
-	  (gts_surface_refine): New type GtsStopFunc is now used as a
-	  stopping criterium. Two functions gts_refine_number_stop() and
-	  gts_refine_length_stop() are provided.  (gts_surface_volume): New
-	  function.  (gts_surface_stats): New fields n_boundary_segments,
-	  n_non_manifold_segments.  New functions for topological
-	  properties: manifold, orientable, closed.
-	  (gts_surface_remove_triangle): New function.	(gts_surface_copy):
-	  New function.
+	collapse went down to two similar triangles (back to back). 
+	(gts_surface_read): Don't stupidly use hash tables anymore use
+	simple arrays instead (simpler, faster, better). 
+	(gts_surface_coarsen): Bug fix in the case of input surface with
+	degenerate or duplicate edges.	(gts_surface_write): Does not use
+	hash tables anymore. Simpler, more memory efficient and slightly
+	faster.  (gts_surface_coarsen): New type GtsStopFunc is now used as
+	a stopping criterium. Two functions gts_coarsen_number_stop() and
+	gts_coarsen_length_stop() are provided.  (gts_surface_refine): New
+	type GtsStopFunc is now used as a stopping criterium. Two functions
+	gts_refine_number_stop() and gts_refine_length_stop() are provided.
+	 (gts_surface_volume): New function.  (gts_surface_stats): New
+	fields n_boundary_segments, n_non_manifold_segments.  New functions
+	for topological properties: manifold, orientable, closed. 
+	(gts_surface_remove_triangle): New function.  (gts_surface_copy):
+	New function.
 
 2000-02-21 09:14  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/triangle.c: New function gts_triangle_is_duplicate(). Test
-	  for degenerate triangle in the gts_triangle_quality() function.
+	for degenerate triangle in the gts_triangle_quality() function.
 
 2000-02-21 09:12  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/segment.c: gts_segment_is_duplicate(): Bug fix for the case
-	  when the input segment is degenerate. New functions
-	  gts_segment_triangles(). New reallocation function
-	  gts_segment_resize (class inheritance).
+	when the input segment is degenerate. New functions
+	gts_segment_triangles(). New reallocation function
+	gts_segment_resize (class inheritance).
 
 2000-02-21 09:09  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/point.c: gts_point_merge() has been rewritten. Now destroys
-	  merge points and returns the updated list of points. Much faster.
-	  gts_segment_triangle_intersection() now uses robust orientation
-	  tests. Obviously a great improvement for the robustness of the
-	  set operations on surfaces. Added first functions for
-	  reallocation of memory (class inheritance).
+	merge points and returns the updated list of points. Much faster.
+	gts_segment_triangle_intersection() now uses robust orientation
+	tests. Obviously a great improvement for the robustness of the set
+	operations on surfaces. Added first functions for reallocation of
+	memory (class inheritance).
 
 2000-02-21 09:06  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/misc.c: Replaced g_return_if_fail by g_assert in memory
-	  debugging functions.
+	debugging functions.
 
 2000-02-21 09:05  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -2534,7 +2680,7 @@
 2000-02-21 08:58  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* examples/: cleanup.c, Makefile.am, coarsen.c, set.c, volume.c,
-	  .cvsignore: Initial revision.
+	.cvsignore: Initial revision.
 
 2000-02-09 07:37  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -2543,8 +2689,8 @@
 2000-02-09 07:32  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/point.c: Complete rewrite of
-	  gts_segment_triangle_intersection(). Now uses only robust
-	  orientation tests.
+	gts_segment_triangle_intersection(). Now uses only robust
+	orientation tests.
 
 2000-02-03 01:35  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -2553,18 +2699,18 @@
 2000-02-03 01:34  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/surface.c: More generic interface for gts_surface_refine().
-	  Now uses binary heaps => speed up of at least a factor two.
+	Now uses binary heaps => speed up of at least a factor two.
 
 2000-02-03 01:32  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/stripe.c: Simplified look ahead for neighbors. Only one level
-	  ahead now as the multilevel look ahead of the previous version
-	  did not seem to improve things.
+	ahead now as the multilevel look ahead of the previous version did
+	not seem to improve things.
 
 2000-02-03 01:30  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/gts.h: New gts_triangles_common_edge() function. Changes in
-	  the interfaces for gts_surface_strip() and gts_surface_refine().
+	the interfaces for gts_surface_strip() and gts_surface_refine().
 
 2000-02-03 01:28  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -2573,12 +2719,12 @@
 2000-02-03 01:27  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* doc/tmpl/: gts-unused.sgml, segments.sgml, surfaces.sgml,
-	  triangles.sgml: Interfaces changes.
+	triangles.sgml: Interfaces changes.
 
 2000-02-03 01:26  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* doc/: gts-docs.sgml, gts-sections.txt: Sections about binary
-	  heaps have been added.
+	heaps have been added.
 
 2000-02-03 01:24  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -2591,7 +2737,7 @@
 2000-02-03 01:22  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* doc/tmpl/extended_heaps.sgml: Initial doc for extended binary
-	  heaps.
+	heaps.
 
 2000-02-03 01:21  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -2624,18 +2770,18 @@
 2000-01-31 22:27  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/surface.c: Improved gts_surface_coarsen() function. Now uses
-	  GtsEHeap and more generic user interface. Speedup is a least a
-	  factor 2.
+	GtsEHeap and more generic user interface. Speedup is a least a
+	factor 2.
 
 2000-01-31 22:25  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/triangle.c: New functions gts_triangle_neighbor_number() and
-	  gts_triangle_neighbors().
+	gts_triangle_neighbors().
 
 2000-01-31 22:24  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/segment.c: gts_segment_midpoint is now a function (instead of
-	  a macro).
+	a macro).
 
 2000-01-31 22:22  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -2648,7 +2794,7 @@
 2000-01-31 22:19  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/eheap.c: Keys are now stored in GtsEHeapPair structure and a
-	  decrease_key() function has been defined.
+	decrease_key() function has been defined.
 
 2000-01-29 03:09  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -2661,7 +2807,7 @@
 2000-01-18 02:55  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/cdt.c: The data field of the constraints is not supposed to
-	  contain NULL initially anymore. Some cosmetic changes.
+	contain NULL initially anymore. Some cosmetic changes.
 
 2000-01-18 02:53  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -2670,19 +2816,19 @@
 2000-01-18 02:52  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/surface.c: The gts_surfaces_intersection and union no longer
-	  assume that the data field of the triangles is NULL but still
-	  assume that the data field of the edges of the triangles is NULL.
-	  The methods have been checked against memory leaks.
+	assume that the data field of the triangles is NULL but still
+	assume that the data field of the edges of the triangles is NULL.
+	The methods have been checked against memory leaks.
 
 2000-01-18 02:48  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/triangle.c: The destroy method now takes an extra argument to
-	  allow for recursively destroying the hierarchy.
+	allow for recursively destroying the hierarchy.
 
 2000-01-18 02:46  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/segment.c: The destroy method now takes an extra argument to
-	  allow for destroying recursively the hierarchy.
+	allow for destroying recursively the hierarchy.
 
 2000-01-18 02:42  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -2699,13 +2845,13 @@
 2000-01-18 02:36  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/bbtree.c: The leaves of the bounding box tree can now be
-	  freed as well.
+	freed as well.
 
 2000-01-18 02:31  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* doc/: gts-sections.txt, tmpl/bb-trees.sgml, tmpl/gts-unused.sgml,
-	  tmpl/segments.sgml, tmpl/surfaces.sgml, tmpl/triangles.sgml:
-	  Updated docs.
+	tmpl/segments.sgml, tmpl/surfaces.sgml, tmpl/triangles.sgml:
+	Updated docs.
 
 2000-01-18 02:30  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -2746,11 +2892,11 @@
 2000-01-11 23:26  steph
 
 	* doc/gts-sections.txt, doc/tmpl/bb-trees.sgml,
-	  doc/tmpl/delaunay.sgml, doc/tmpl/gts-unused.sgml,
-	  doc/tmpl/kd-Trees.sgml, doc/tmpl/matrices.sgml,
-	  doc/tmpl/points.sgml, doc/tmpl/segments.sgml,
-	  doc/tmpl/surfaces.sgml, doc/tmpl/triangles.sgml, src/kdtree.c,
-	  src/segment.c: Updated documentation
+	doc/tmpl/delaunay.sgml, doc/tmpl/gts-unused.sgml,
+	doc/tmpl/kd-Trees.sgml, doc/tmpl/matrices.sgml,
+	doc/tmpl/points.sgml, doc/tmpl/segments.sgml,
+	doc/tmpl/surfaces.sgml, doc/tmpl/triangles.sgml, src/kdtree.c,
+	src/segment.c: Updated documentation
 
 2000-01-08 04:13  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -2763,7 +2909,7 @@
 2000-01-08 03:10  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/surface.c: Changed call to gts_surface_free to
-	  gts_surface_destroy.
+	gts_surface_destroy.
 
 2000-01-08 03:05  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -2772,12 +2918,12 @@
 2000-01-08 03:04  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/kdtree.c: New docs. Fixed a bug in gts_kdtree_range (was
-	  partly 2D partly 3D before!).
+	partly 2D partly 3D before!).
 
 2000-01-08 03:03  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/gts.h: New docs for macros. Replaced some elementary
-	  functions with macros.
+	functions with macros.
 
 2000-01-08 03:01  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -2802,7 +2948,7 @@
 1999-12-07 03:46  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* src/Makefile.am: Fixed (I hope) dependency problem with
-	  predicates_init.h.
+	predicates_init.h.
 
 1999-12-07 03:30  Stéphane Popinet <popinet@users.sourceforge.net>;
 
@@ -2811,32 +2957,32 @@
 1999-12-07 02:56  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* .cvsignore, AUTHORS, COPYING, ChangeLog, Makefile.am, NEWS,
-	  README, acconfig.h, acinclude.m4, configure.in, doc/.cvsignore,
-	  doc/Makefile.am, doc/gts-docs.sgml, doc/gts-sections.txt,
-	  doc/tmpl/bb-trees.sgml, doc/tmpl/delaunay.sgml,
-	  doc/tmpl/gts-unused.sgml, doc/tmpl/kd-Trees.sgml,
-	  doc/tmpl/matrices.sgml, doc/tmpl/points.sgml,
-	  doc/tmpl/segments.sgml, doc/tmpl/surfaces.sgml,
-	  doc/tmpl/triangles.sgml, src/.cvsignore, src/Makefile.am,
-	  src/bbtree.c, src/cdt.c, src/gts-private.h, src/gts.h,
-	  src/heap.c, src/kdtree.c, src/misc.c, src/point.c,
-	  src/predicates.c, src/predicates.h, src/predicates_init.c,
-	  src/segment.c, src/surface.c, src/triangle.c, tools/.cvsignore,
-	  tools/Makefile.am, tools/srf2oogl.c: Imported sources
+	README, acconfig.h, acinclude.m4, configure.in, doc/.cvsignore,
+	doc/Makefile.am, doc/gts-docs.sgml, doc/gts-sections.txt,
+	doc/tmpl/bb-trees.sgml, doc/tmpl/delaunay.sgml,
+	doc/tmpl/gts-unused.sgml, doc/tmpl/kd-Trees.sgml,
+	doc/tmpl/matrices.sgml, doc/tmpl/points.sgml,
+	doc/tmpl/segments.sgml, doc/tmpl/surfaces.sgml,
+	doc/tmpl/triangles.sgml, src/.cvsignore, src/Makefile.am,
+	src/bbtree.c, src/cdt.c, src/gts-private.h, src/gts.h, src/heap.c,
+	src/kdtree.c, src/misc.c, src/point.c, src/predicates.c,
+	src/predicates.h, src/predicates_init.c, src/segment.c,
+	src/surface.c, src/triangle.c, tools/.cvsignore, tools/Makefile.am,
+	tools/srf2oogl.c: Initial revision
 
 1999-12-07 02:56  Stéphane Popinet <popinet@users.sourceforge.net>;
 
 	* .cvsignore, AUTHORS, COPYING, ChangeLog, Makefile.am, NEWS,
-	  README, acconfig.h, acinclude.m4, configure.in, doc/.cvsignore,
-	  doc/Makefile.am, doc/gts-docs.sgml, doc/gts-sections.txt,
-	  doc/tmpl/bb-trees.sgml, doc/tmpl/delaunay.sgml,
-	  doc/tmpl/gts-unused.sgml, doc/tmpl/kd-Trees.sgml,
-	  doc/tmpl/matrices.sgml, doc/tmpl/points.sgml,
-	  doc/tmpl/segments.sgml, doc/tmpl/surfaces.sgml,
-	  doc/tmpl/triangles.sgml, src/.cvsignore, src/Makefile.am,
-	  src/bbtree.c, src/cdt.c, src/gts-private.h, src/gts.h,
-	  src/heap.c, src/kdtree.c, src/misc.c, src/point.c,
-	  src/predicates.c, src/predicates.h, src/predicates_init.c,
-	  src/segment.c, src/surface.c, src/triangle.c, tools/.cvsignore,
-	  tools/Makefile.am, tools/srf2oogl.c: Initial revision
+	README, acconfig.h, acinclude.m4, configure.in, doc/.cvsignore,
+	doc/Makefile.am, doc/gts-docs.sgml, doc/gts-sections.txt,
+	doc/tmpl/bb-trees.sgml, doc/tmpl/delaunay.sgml,
+	doc/tmpl/gts-unused.sgml, doc/tmpl/kd-Trees.sgml,
+	doc/tmpl/matrices.sgml, doc/tmpl/points.sgml,
+	doc/tmpl/segments.sgml, doc/tmpl/surfaces.sgml,
+	doc/tmpl/triangles.sgml, src/.cvsignore, src/Makefile.am,
+	src/bbtree.c, src/cdt.c, src/gts-private.h, src/gts.h, src/heap.c,
+	src/kdtree.c, src/misc.c, src/point.c, src/predicates.c,
+	src/predicates.h, src/predicates_init.c, src/segment.c,
+	src/surface.c, src/triangle.c, tools/.cvsignore, tools/Makefile.am,
+	tools/srf2oogl.c: Imported sources
 

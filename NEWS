@@ -1,3 +1,21 @@
+18/10/2004:
+
+Release of version 0.7.3
+
+New features/important changes include:
+
+- Autodetection and support for glib >= 2.4 (but glib >= 1.2.8 is
+  still supported): glib >= 2.0 and < 2.4 is not supported (send me
+  patches!).
+- pkgconfig preliminary support
+- Mingwin support.
+- Changes to the interface of gts_graph_read().
+
+Bug Fixes:
+
+- Constrained Delaunay Triangulation guess selection
+- Boolean operations: Now uses SOS for segment/triangle intersections.
+
 15/05/2004:
 
 Release of version 0.7.2

@@ -1,0 +1,3 @@
+precious ^gts-config$
+precious ^gtsconfig\.h$
+precious ^predicates_init$

@@ -13,7 +13,9 @@ if HAS_NETPBM
 NETPBM_EXTRA = happrox
 endif
 
-bin_PROGRAMS = transform \
+bin_PROGRAMS = \
+	transform \
+	delaunay \
 	$(NETPBM_EXTRA)
 
 noinst_PROGRAMS = \
@@ -23,7 +25,6 @@ noinst_PROGRAMS = \
 	coarsen \
 	refine \
 	iso \
-	delaunay \
 	gtstoc \
 	oocs \
 	partition \

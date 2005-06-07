@@ -29,6 +29,11 @@
 #endif /* HAVE_UNISTD_H */
 #include "gts.h"
 
+#ifdef NATIVE_WIN32
+#  include <fcntl.h>
+#  include <io.h>
+#endif 
+
 static GPtrArray * stl_read (FILE * fp)
 {
   GPtrArray * a = g_ptr_array_new ();
@@ -85,6 +90,10 @@ static GPtrArray * stl_read (FILE * fp)
     guint32 nf;
     gchar header[80];
     guint i;
+
+#ifdef NATIVE_WIN32
+    _setmode ( _fileno (fp), _O_BINARY);
+#endif 
 
     if (fread (header, sizeof (gchar), 80, fp) != 80) {
       fprintf (stderr, "Input file is not a valid STL file\n"

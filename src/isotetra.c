@@ -176,10 +176,10 @@ static GtsVertex * get_vertex_bcl (gint mz,
 				   GtsCartesianGrid * g,
 				   GtsVertexClass * klass)
 {
-  tetra_vertex_t w1, w2;
   GtsVertex * v;
   GHashTable * table;
   gchar * str;
+  gchar * s1, * s2, * hash;
   gdouble x1, x2, y1, y2, z1, z2, d;
 
   g_assert (v1->d - v2->d != 0.);
@@ -190,43 +190,37 @@ static GtsVertex * get_vertex_bcl (gint mz,
   else
     table = help->vbot;
 
-  /* sort vertices */
-  if ((v1->mid && v2->mid) || (!v1->mid && !v2->mid)){
-    w1 = (v1->x != v2->x) ? (v1->x < v2->x) ? *v1 : *v2 :
-      (v1->y != v2->y) ? (v1->y < v2->y) ? *v1 : *v2 :
-      (v1->z < v2->z) ? *v1 : *v2;
-    w2 = (v1->x != v2->x) ? (v1->x < v2->x) ? *v2 : *v1 :
-      (v1->y != v2->y) ? (v1->y < v2->y) ? *v2 : *v1 :
-      (v1->z < v2->z) ? *v2 : *v1;
-  }
-  else{
-    w1 = (v1->mid) ? *v1 : *v2;
-    w2 = (v1->mid) ? *v2 : *v1;
-  }
+  d = v1->d / (v1->d - v2->d);
 
-  /* make hash */
-  str = g_strdup_printf ("%d %d %d %d %d %d %d %d",
-			 w1.x, w1.y, w1.z, w1.mid, w2.x, w2.y, w2.z, w2.mid);
+  /* sort vertices */
+  s1 = g_strdup_printf ("%d %d %d %d", v1->x, v1->y, v1->z, v1->mid);
+  s2 = g_strdup_printf ("%d %d %d %d", v2->x, v2->y, v2->z, v2->mid);
+
+  hash = (d == 0.0) ? g_strdup (s1) :
+    (d == 1.0) ? g_strdup (s2) :
+    (strcmp (s1, s2) < 0) ? g_strjoin (" ", s1, s2, NULL) :
+    g_strjoin (" ", s2, s1, NULL);
 
   /* return existing vertex or make a new one */
-  v = g_hash_table_lookup (table, str);
+  v = g_hash_table_lookup (table, hash);
   if (!v){
-    d = w1.d / (w1.d - w2.d);
 
-    x1 = g->dx * (w1.x + (w1.mid / 2.0)) + g->x;
-    x2 = g->dx * (w2.x + (w2.mid / 2.0)) + g->x;
-    y1 = g->dy * (w1.y + (w1.mid / 2.0)) + g->y;
-    y2 = g->dy * (w2.y + (w2.mid / 2.0)) + g->y;
-    z1 = g->dz * (w1.z + (w1.mid / 2.0)) + g->z;
-    z2 = g->dz * (w2.z + (w2.mid / 2.0)) + g->z;
+    x1 = g->dx * (v1->x + (v1->mid / 2.0)) + g->x;
+    x2 = g->dx * (v2->x + (v2->mid / 2.0)) + g->x;
+    y1 = g->dy * (v1->y + (v1->mid / 2.0)) + g->y;
+    y2 = g->dy * (v2->y + (v2->mid / 2.0)) + g->y;
+    z1 = g->dz * (v1->z + (v1->mid / 2.0)) + g->z;
+    z2 = g->dz * (v2->z + (v2->mid / 2.0)) + g->z;
 
     v = gts_vertex_new (klass, x1 * (1.0 - d) + d * x2,
 			y1 * (1.0 - d) + d * y2,
 			z1 * (1.0 - d) + d * z2);
 
-    g_hash_table_insert (table, g_strdup(str), v);
+    g_hash_table_insert (table, g_strdup(hash), v);
   }
-  g_free (str);
+  g_free (s1);
+  g_free (s2);
+  g_free (hash);
 
   return v;
 }
@@ -298,9 +292,8 @@ static void add_face_bcl (GtsSurface * surface,
   GtsVertex * v2 = get_vertex_bcl (z, b1, b2, help, g, surface->vertex_class);
   GtsVertex * v3 = get_vertex_bcl (z, c1, c2, help, g, surface->vertex_class);
 
-  g_assert (v1 != v2);
-  g_assert (v2 != v3);
-  g_assert (v1 != v3);
+  if (v1 == v2 || v2 == v3 || v1 == v3)
+    return;
 
   if (!rev) {
     e1 = get_edge (v1, v2, surface->edge_class);
@@ -311,7 +304,7 @@ static void add_face_bcl (GtsSurface * surface,
     e2 = get_edge (v2, v3, surface->edge_class);
     e3 = get_edge (v1, v2, surface->edge_class);	
   }
-  
+
   t = gts_face_new (surface->face_class, e1, e2, e3);	
   gts_surface_add_face (surface, t);
 }
@@ -417,7 +410,7 @@ static void analyze_tetrahedra_bcl (const tetra_vertex_t * a,
   if (b->d >= 0.) code |= 2; 
   if (c->d >= 0.) code |= 4; 
   if (d->d >= 0.) code |= 8;
-		
+
   switch (code) {
   case 15:
   case 0: return; /* all inside or outside */		

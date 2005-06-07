@@ -825,6 +825,7 @@ void gts_delaunay_remove_vertex (GtsSurface * surface, GtsVertex * v)
     g_return_if_fail (ref);
   }
   triangulate_polygon (gts_vertex_fan_oriented (v, surface), surface, ref);
+  i = triangles;
   while (i) {
     if (GTS_IS_FACE (i->data) &&
 	gts_face_has_parent_surface (i->data, surface))

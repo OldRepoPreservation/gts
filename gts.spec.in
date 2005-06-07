@@ -7,7 +7,7 @@ Version: %{version}
 Release: %{release}
 URL: http://gfs.sf.net
 License: GPL
-Copyright: Stephane Popinet
+Source: gts-%{version}.tar.gz
 Group: Libraries/Research
 BuildRoot: %{mybuildroot}
 
@@ -62,17 +62,14 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %doc {NEWS,ChangeLog,INSTALL,README,AUTHORS,THANKS}
-/usr/bin/gts2oogl
-/usr/bin/gtscheck
-/usr/bin/gtscompare
-/usr/bin/gts-config
-/usr/bin/gtstemplate
-/usr/bin/stl2gts
-/usr/bin/transform
+/usr/bin
 /usr/lib
 /usr/include
 /usr/share/aclocal/gts.m4
 
 %changelog
+* Thu Oct 21 2004 Tim Fenn <fenn@stanford.edu>
+- Fix lack of source declaration, dual license problems
+
 * Mon Apr 26 2004 Stephane Popinet <popinet@users.sf.net>
 - Initial build.

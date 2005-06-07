@@ -249,6 +249,7 @@ AC_CHECK_FUNCS(getopt_long)
 AC_CONFIG_FILES([
 Makefile
 gts.pc
+gts.spec
 src/Makefile
 src/gts-config
 tools/Makefile

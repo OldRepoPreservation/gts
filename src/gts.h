@@ -301,7 +301,7 @@ gpointer gts_object_class_is_from_class (gpointer klass,
 }
 #endif /* G_CAN_INLINE */
 
-GtsObjectClass * gts_object_class_from_name     (gchar * name);
+GtsObjectClass * gts_object_class_from_name     (const gchar * name);
 
 GtsObject *      gts_object_new                 (GtsObjectClass * klass);
 GtsObject *      gts_object_clone               (GtsObject * object);

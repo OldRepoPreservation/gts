@@ -178,7 +178,6 @@ static GtsVertex * get_vertex_bcl (gint mz,
 {
   GtsVertex * v;
   GHashTable * table;
-  gchar * str;
   gchar * s1, * s2, * hash;
   gdouble x1, x2, y1, y2, z1, z2, d;
 

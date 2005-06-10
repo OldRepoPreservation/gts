@@ -73,7 +73,7 @@ gpointer gts_object_class_new (GtsObjectClass * parent_class,
  * Returns: the #GtsObjectClass with name @name or %NULL if it hasn't been 
  * instantiated yet.
  */
-GtsObjectClass * gts_object_class_from_name (gchar * name)
+GtsObjectClass * gts_object_class_from_name (const gchar * name)
 {
   g_return_val_if_fail (name != NULL, NULL);
 

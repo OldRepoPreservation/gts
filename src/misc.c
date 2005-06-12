@@ -38,20 +38,13 @@ static gboolean char_in_string (char c, const char * s)
   return FALSE;
 }
 
-/**
- * gts_file_new:
- * @fp: a file pointer.
- *
- * Returns: a new #GtsFile.
- */
-GtsFile * gts_file_new (FILE * fp)
+static GtsFile * file_new (void)
 {
   GtsFile * f;
 
-  g_return_val_if_fail (fp != NULL, NULL);
-
   f = g_malloc (sizeof (GtsFile));
-  f->fp = fp;
+  f->fp = NULL;
+  f->s = NULL;
   f->curline = 1;
   f->curpos = 0;
   f->token = g_string_new ("");
@@ -64,6 +57,42 @@ GtsFile * gts_file_new (FILE * fp)
   f->comments = g_strdup (GTS_COMMENTS);
   f->tokens = g_strdup ("\n{}()=");
 
+  return f;
+}
+
+/**
+ * gts_file_new:
+ * @fp: a file pointer.
+ *
+ * Returns: a new #GtsFile.
+ */
+GtsFile * gts_file_new (FILE * fp)
+{
+  GtsFile * f;
+
+  g_return_val_if_fail (fp != NULL, NULL);
+
+  f = file_new ();
+  f->fp = fp;
+  gts_file_next_token (f);
+
+  return f;
+}
+
+/**
+ * gts_file_new_from_string:
+ * @s: a string.
+ *
+ * Returns: a new #GtsFile.
+ */
+GtsFile * gts_file_new_from_string (gchar * s)
+{
+  GtsFile * f;
+
+  g_return_val_if_fail (s != NULL, NULL);
+
+  f = file_new ();
+  f->s = s;
   gts_file_next_token (f);
 
   return f;
@@ -152,7 +181,14 @@ gint gts_file_getc (GtsFile * f)
   if (f->type == GTS_ERROR)
     return EOF;
 
-  c = fgetc (f->fp); f->curpos++;
+  if (f->fp)
+    c = fgetc (f->fp);
+  else if (*f->s == '\0')
+    c = EOF;
+  else
+    c = *(f->s++);
+    
+  f->curpos++;
   switch (c) {
   case '\n': 
     f->curline++;
@@ -193,6 +229,7 @@ guint gts_file_read (GtsFile * f, gpointer ptr, guint size, guint nmemb)
 
   g_return_val_if_fail (f != NULL, 0);
   g_return_val_if_fail (ptr != NULL, 0);
+  g_return_val_if_fail (f->fp != NULL, 0);
 
   if (f->type == GTS_ERROR)
     return 0;

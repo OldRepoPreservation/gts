@@ -85,7 +85,7 @@ GtsFile * gts_file_new (FILE * fp)
  *
  * Returns: a new #GtsFile.
  */
-GtsFile * gts_file_new_from_string (gchar * s)
+GtsFile * gts_file_new_from_string (const gchar * s)
 {
   GtsFile * f;
 

@@ -128,7 +128,7 @@ typedef enum {
 
 struct _GtsFile {
   FILE * fp;
-  const gchar * s;
+  gchar * s, * s1;
   guint line, pos;
   GString * token;
   GtsTokenType type;

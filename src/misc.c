@@ -44,7 +44,7 @@ static GtsFile * file_new (void)
 
   f = g_malloc (sizeof (GtsFile));
   f->fp = NULL;
-  f->s = NULL;
+  f->s = f->s1 = NULL;
   f->curline = 1;
   f->curpos = 0;
   f->token = g_string_new ("");
@@ -92,7 +92,7 @@ GtsFile * gts_file_new_from_string (const gchar * s)
   g_return_val_if_fail (s != NULL, NULL);
 
   f = file_new ();
-  f->s = s;
+  f->s1 = f->s = g_strdup (s);
   gts_file_next_token (f);
 
   return f;
@@ -113,6 +113,8 @@ void gts_file_destroy (GtsFile * f)
   g_free (f->tokens);
   if (f->error)
     g_free (f->error);
+  if (f->s1)
+    g_free (f->s1);
   g_string_free (f->token, TRUE);
   g_free (f);
 }

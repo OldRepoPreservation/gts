@@ -167,6 +167,15 @@ void gts_file_error (GtsFile * f,
   va_end (args);
 }
 
+static gint next_char (GtsFile * f)
+{
+  if (f->fp)
+    return fgetc (f->fp);
+  else if (*f->s == '\0')
+    return EOF;
+  return *(f->s++);
+}
+
 /**
  * gts_file_getc :
  * @f: a #GtsFile.
@@ -183,14 +192,17 @@ gint gts_file_getc (GtsFile * f)
   if (f->type == GTS_ERROR)
     return EOF;
 
-  if (f->fp)
-    c = fgetc (f->fp);
-  else if (*f->s == '\0')
-    c = EOF;
-  else
-    c = *(f->s++);
-    
+  c = next_char (f);
   f->curpos++;
+  while (char_in_string (c, f->comments)) {
+    while (c != EOF && c != '\n')
+      c = next_char (f);
+    if (c == '\n') {
+      f->curline++;
+      f->curpos = 0;
+      c = next_char (f);
+    }
+  }
   switch (c) {
   case '\n': 
     f->curline++;
@@ -274,15 +286,6 @@ gint gts_file_getc_scope (GtsFile * f)
   return c;
 }
 
-static void jump_to (GtsFile * f, gchar c)
-{
-  gint a;
-  
-  a = gts_file_getc_scope (f);
-  while (a != EOF && a != c)
-    a = gts_file_getc_scope (f);
-}
-
 /**
  * gts_file_next_token:
  * @f: a #GtsFile.
@@ -318,9 +321,7 @@ void gts_file_next_token (GtsFile * f)
     c = gts_file_getc_scope (f);
   f->type = GTS_NONE;
   while (c != EOF && (!in_string || !char_in_string (c, f->delimiters))) {
-    if (char_in_string (c, f->comments))
-      jump_to (f, '\n');
-    else if (in_string) {
+    if (in_string) {
       if (char_in_string (c, f->tokens)) {
 	f->next_token = c;
 	break;

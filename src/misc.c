@@ -46,7 +46,7 @@ static GtsFile * file_new (void)
   f->fp = NULL;
   f->s = f->s1 = NULL;
   f->curline = 1;
-  f->curpos = 0;
+  f->curpos = 1;
   f->token = g_string_new ("");
   f->type = '\0';
   f->error = NULL;
@@ -199,14 +199,14 @@ gint gts_file_getc (GtsFile * f)
       c = next_char (f);
     if (c == '\n') {
       f->curline++;
-      f->curpos = 0;
+      f->curpos = 1;
       c = next_char (f);
     }
   }
   switch (c) {
   case '\n': 
     f->curline++;
-    f->curpos = 0; 
+    f->curpos = 1; 
     break;
   case '{':
     f->scope++; 
@@ -253,7 +253,7 @@ guint gts_file_read (GtsFile * f, gpointer ptr, guint size, guint nmemb)
     f->curpos++;
     if (*p == '\n') {
       f->curline++;
-      f->curpos = 0;
+      f->curpos = 1;
     }
   }
   return n;

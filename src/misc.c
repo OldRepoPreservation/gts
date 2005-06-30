@@ -301,15 +301,22 @@ void gts_file_next_token (GtsFile * f)
   f->token->str[0] = '\0';
   f->token->len = 0;
   if (f->next_token != '\0') {
-    f->line = f->curline;
-    f->pos = f->curpos - 1;
-    g_string_append_c (f->token, f->next_token);
-    f->type = f->next_token;
-    f->next_token = '\0';
-    return;
+    if (char_in_string (f->next_token, f->tokens)) {
+      f->line = f->curline;
+      f->pos = f->curpos - 1;
+      g_string_append_c (f->token, f->next_token);
+      f->type = f->next_token;
+      f->next_token = '\0';
+      return;
+    }
+    else {
+      c = f->next_token;
+      f->next_token = '\0';
+    }
   }
+  else
+    c = gts_file_getc_scope (f);
   f->type = GTS_NONE;
-  c = gts_file_getc_scope (f);
   while (c != EOF && (!in_string || !char_in_string (c, f->delimiters))) {
     if (char_in_string (c, f->comments))
       jump_to (f, '\n');

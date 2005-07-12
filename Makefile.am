@@ -5,5 +5,5 @@ SUBDIRS = src tools examples doc test
 pkgconfigdir = $(libdir)/pkgconfig
 pkgconfig_DATA = gts.pc
 
-changelog:
+ChangeLog:
 	darcs changes > ChangeLog

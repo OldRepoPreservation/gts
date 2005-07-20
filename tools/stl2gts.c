@@ -151,12 +151,6 @@ static GPtrArray * stl_read (FILE * fp)
 	       "stdin: missing attribute byte count\n");
 	exit (1);
       }
-      if (attbytecount != 0) {
-	fprintf (stderr, "Input file is not a valid STL file\n"
-	       "stdin: attribute byte count is not zero\n");
-	exit (1);
-      }
-      
       i--;
     }
   }

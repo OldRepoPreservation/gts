@@ -501,6 +501,40 @@ gboolean gts_bbox_overlaps_triangle (GtsBBox * bb, GtsTriangle * t)
 }
 
 /**
+ * gts_bbox_overlaps_segment:
+ * @bb: a #GtsBBox.
+ * @s: a #GtsSegment.
+ *
+ * This functions uses gts_bbox_overlaps_triangle() with a degenerate
+ * triangle.
+ *
+ * Returns: %TRUE if @bb overlaps with @s, %FALSE otherwise.
+ */
+gboolean gts_bbox_overlaps_segment (GtsBBox * bb, GtsSegment * s)
+{
+  double bc[3], bh[3], tv[3][3];
+  GtsPoint * p1, * p2, * p3;
+
+  g_return_val_if_fail (bb != NULL, FALSE);
+  g_return_val_if_fail (s != NULL, FALSE);
+
+  bc[0] = (bb->x2 + bb->x1)/2.;
+  bh[0] = (bb->x2 - bb->x1)/2.;
+  bc[1] = (bb->y2 + bb->y1)/2.;
+  bh[1] = (bb->y2 - bb->y1)/2.;
+  bc[2] = (bb->z2 + bb->z1)/2.;
+  bh[2] = (bb->z2 - bb->z1)/2.;
+  p1 = GTS_POINT (s->v1);
+  p2 = GTS_POINT (s->v2);
+  p3 = p1;
+  tv[0][0] = p1->x; tv[0][1] = p1->y; tv[0][2] = p1->z;
+  tv[1][0] = p2->x; tv[1][1] = p2->y; tv[1][2] = p2->z;
+  tv[2][0] = p3->x; tv[2][1] = p3->y; tv[2][2] = p3->z;
+
+  return triBoxOverlap (bc, bh, tv);
+}
+
+/**
  * gts_bb_tree_new:
  * @bboxes: a list of #GtsBBox.
  *

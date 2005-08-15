@@ -398,8 +398,9 @@ void gts_bbox_point_distance2 (GtsBBox * bb, GtsPoint * p,
 			       gdouble * min, gdouble * max)
 {
   gdouble x1, y1, z1, x2, y2, z2, x, y, z;
-  gdouble dmin = 0.0, dmax, xd1, xd2, yd1, yd2, zd1, zd2;
-
+  gdouble dmin, dmax, xd1, xd2, yd1, yd2, zd1, zd2;
+  gdouble mx, Mx, my, My, mz, Mz;
+    
   g_return_if_fail (bb != NULL);
   g_return_if_fail (p != NULL);
   g_return_if_fail (min != NULL);
@@ -416,27 +417,17 @@ void gts_bbox_point_distance2 (GtsBBox * bb, GtsPoint * p,
   zd1 = (z1 - z)*(z1 - z);
   zd2 = (z - z2)*(z - z2);
   
-  dmin += x < x1 ? xd1 : x > x2 ? xd2 : 0.0;
+  dmin = x < x1 ? xd1 : x > x2 ? xd2 : 0.0;
   dmin += y < y1 ? yd1 : y > y2 ? yd2 : 0.0;
   dmin += z < z1 ? zd1 : z > z2 ? zd2 : 0.0;
 
-#if 0
-  dmax = MAX (xd1, xd2);
-  dmax += MAX (yd1, yd2);
-  dmax += MAX (zd1, zd2);
-#else
-  {
-    gdouble mx, Mx, my, My, mz, Mz;
-    
-    MINMAX (xd1, xd2, mx, Mx);
-    MINMAX (yd1, yd2, my, My);
-    MINMAX (zd1, zd2, mz, Mz);
-
-    dmax = mx + My + Mz;
-    dmax = MIN (dmax, Mx + my + Mz);
-    dmax = MIN (dmax, Mx + My + mz);
-  }
-#endif
+  MINMAX (xd1, xd2, mx, Mx);
+  MINMAX (yd1, yd2, my, My);
+  MINMAX (zd1, zd2, mz, Mz);
+  
+  dmax = mx + My + Mz;
+  dmax = MIN (dmax, Mx + my + Mz);
+  dmax = MIN (dmax, Mx + My + mz);
   
   *min = dmin;
   *max = dmax;

@@ -364,7 +364,7 @@ int main (int argc, char * argv[])
   gboolean write_holes = FALSE;
   int c = 0;
   CartesianGrid * grid;
-  guint line;
+  guint line = 0;
   GtsSurface * s;
   GTimer * timer;
 

@@ -269,15 +269,15 @@ static GtsClusterId cluster_index (GtsPoint * p,
 				   GtsBBox * bb,
 				   GtsVector n)
 {
-  GtsClusterId id;
+  GtsClusterId id = {0, 0, 0};
   
   g_return_val_if_fail (p->x >= bb->x1 && p->x <= bb->x2, id);
   g_return_val_if_fail (p->y >= bb->y1 && p->y <= bb->y2, id);
   g_return_val_if_fail (p->z >= bb->z1 && p->z <= bb->z2, id);
   
-  id.x = p->x == bb->x2 ? n[0] - 1. : n[0]*(p->x - bb->x1)/(bb->x2 - bb->x1);
-  id.y = p->y == bb->y2 ? n[1] - 1. : n[1]*(p->y - bb->y1)/(bb->y2 - bb->y1);
-  id.z = p->z == bb->z2 ? n[2] - 1. : n[2]*(p->z - bb->z1)/(bb->z2 - bb->z1);
+  id.x = (guint) (p->x == bb->x2 ? n[0] - 1. : n[0]*(p->x - bb->x1)/(bb->x2 - bb->x1));
+  id.y = (guint) (p->y == bb->y2 ? n[1] - 1. : n[1]*(p->y - bb->y1)/(bb->y2 - bb->y1));
+  id.z = (guint) (p->z == bb->z2 ? n[2] - 1. : n[2]*(p->z - bb->z1)/(bb->z2 - bb->z1));
 
   return id;
 }

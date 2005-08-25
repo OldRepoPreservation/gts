@@ -1049,7 +1049,7 @@ void gts_bb_tree_triangle_distance (GNode * tree,
     gdouble y = t2*p1p3[1];
     gdouble z = t2*p1p3[2];
     gdouble l2 = sqrt (x*x + y*y + z*z);
-    guint j, n2 = l2/delta + 1;
+    guint j, n2 = (guint) (l2/delta + 1);
     gdouble dt2 = t2/(gdouble) n2;
 
     x = t2*p1->x + t1*p2->x;
@@ -1112,7 +1112,7 @@ void gts_bb_tree_segment_distance (GNode * tree,
   p = GTS_POINT (gts_object_new (GTS_OBJECT_CLASS (gts_point_class())));
 
   l = sqrt (gts_vector_scalar (p1p2, p1p2));
-  n = l/delta + 1;
+  n = (guint) (l/delta + 1);
   dt = 1.0/(gdouble) n;
   t = 0.0;
   for (i = 0; i <= n; i++, t += dt) {

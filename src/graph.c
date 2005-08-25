@@ -1060,7 +1060,7 @@ gfloat gts_graph_weight (GtsGraph * g)
 
   if (GTS_GRAPH_CLASS (GTS_OBJECT (g)->klass)->weight)
     return (* GTS_GRAPH_CLASS (GTS_OBJECT (g)->klass)->weight) (g);
-  return gts_container_size (GTS_CONTAINER (g));
+  return (gfloat) gts_container_size (GTS_CONTAINER (g));
 }
 
 /**

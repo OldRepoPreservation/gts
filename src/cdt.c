@@ -118,7 +118,7 @@ static GtsFace * closest_face (GtsSurface * s, GtsPoint * p)
   fc.dmin = G_MAXDOUBLE;
   fc.closest = NULL;
   fc.p = p;
-  fc.stop = exp (log ((gdouble) g_hash_table_size (s->faces))/3.);
+  fc.stop = (gint) exp (log ((gdouble) g_hash_table_size (s->faces))/3.);
   g_hash_table_find (s->faces, find_closest, &fc);
   
   return fc.closest;

@@ -17,6 +17,9 @@ When destroying a #GtsSurface, all the faces not used by another surface are als
 
 </para>
 
+<!-- ##### SECTION Stability_Level ##### -->
+
+
 <!-- ##### MACRO GTS_SURFACE_CLASS ##### -->
 <para>
 Casts @klass to #GtsSurfaceClass.

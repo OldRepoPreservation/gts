@@ -14,6 +14,9 @@ Faces are derived from #GtsTriangle. A collection of faces defined a #GtsSurface
 
 </para>
 
+<!-- ##### SECTION Stability_Level ##### -->
+
+
 <!-- ##### MACRO GTS_FACE_CLASS ##### -->
 <para>
 Casts @klass to #GtsFaceClass.
@@ -112,6 +115,16 @@ The face object.
 @s: 
 @func: 
 @data: 
+
+
+<!-- ##### FUNCTION gts_face_is_compatible ##### -->
+<para>
+
+</para>
+
+@f: 
+@s: 
+@Returns: 
 
 
 <!-- ##### FUNCTION gts_faces_from_edges ##### -->

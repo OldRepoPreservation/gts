@@ -20,6 +20,9 @@ Clusters are grouped using the #GtsClusterGrid object which is just an implement
 
 </para>
 
+<!-- ##### SECTION Stability_Level ##### -->
+
+
 <!-- ##### MACRO GTS_CLUSTER_CLASS ##### -->
 <para>
 Casts @klass to #GtsClusterClass.

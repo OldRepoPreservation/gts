@@ -14,6 +14,9 @@ The basic operations gts_heap_insert() and gts_heap_remove_top() are performed i
 
 </para>
 
+<!-- ##### SECTION Stability_Level ##### -->
+
+
 <!-- ##### STRUCT GtsHeap ##### -->
 <para>
 An opaque data structure describing a binary heap.

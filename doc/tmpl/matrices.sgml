@@ -14,16 +14,7 @@ The functions described in this section allow to perform simple transformations 
 
 </para>
 
-<!-- ##### TYPEDEF GtsVector[3] ##### -->
-<para>
-A #GtsVector is just an array of three coordinates.
-</para>
-
-
-<!-- ##### TYPEDEF GtsVector4[4] ##### -->
-<para>
-
-</para>
+<!-- ##### SECTION Stability_Level ##### -->
 
 
 <!-- ##### MACRO gts_vector_init ##### -->

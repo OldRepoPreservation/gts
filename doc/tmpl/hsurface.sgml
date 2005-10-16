@@ -17,6 +17,9 @@ Hierarchical surfaces maintain two priority heaps one containing the next vertic
 
 </para>
 
+<!-- ##### SECTION Stability_Level ##### -->
+
+
 <!-- ##### MACRO GTS_HSURFACE_CLASS ##### -->
 <para>
 Casts @klass to #GtsHSurfaceClass.

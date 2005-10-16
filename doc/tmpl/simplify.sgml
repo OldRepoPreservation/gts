@@ -23,6 +23,9 @@ The coarsening or refinement processes are stopped using a user-defined stop fun
 
 </para>
 
+<!-- ##### SECTION Stability_Level ##### -->
+
+
 <!-- ##### FUNCTION gts_surface_refine ##### -->
 <para>
 

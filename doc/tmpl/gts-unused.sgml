@@ -77,6 +77,18 @@ These two values are used to control the behaviour of the refinement and coarsen
 </para>
 
 
+<!-- ##### TYPEDEF GtsVector4[4] ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### TYPEDEF GtsVector[3] ##### -->
+<para>
+A #GtsVector is just an array of three coordinates.
+</para>
+
+
 <!-- ##### MACRO IS_GTS_GRAPH ##### -->
 <para>
 

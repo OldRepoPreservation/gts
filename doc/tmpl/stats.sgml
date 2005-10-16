@@ -14,6 +14,9 @@ Using gts_range_init(), gts_range_add_value() and gts_range_update(), you can ea
 
 </para>
 
+<!-- ##### SECTION Stability_Level ##### -->
+
+
 <!-- ##### STRUCT GtsRange ##### -->
 <para>
 A simple statistics structure.

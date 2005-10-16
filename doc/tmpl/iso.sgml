@@ -14,6 +14,9 @@ Using the gts_isosurface_cartesian() function, it is possible to build a triangu
 
 </para>
 
+<!-- ##### SECTION Stability_Level ##### -->
+
+
 <!-- ##### STRUCT GtsCartesianGrid ##### -->
 <para>
 A regular cartesian grid is defined by the number of points in each direction, the spatial increment in each direction and the coordinates of the first point.

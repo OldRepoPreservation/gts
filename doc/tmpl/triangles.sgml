@@ -17,6 +17,9 @@ When destroying a #GtsTriangle, all the edges not used by another triangle are a
 
 </para>
 
+<!-- ##### SECTION Stability_Level ##### -->
+
+
 <!-- ##### MACRO GTS_TRIANGLE_CLASS ##### -->
 <para>
 Casts @klass to #GtsTriangleClass.
@@ -337,5 +340,14 @@ Evaluates to the #GtsVertex of @t not used by @t->e1.
 
 @edges: 
 @Returns: 
+
+
+<!-- ##### FUNCTION gts_triangle_interpolate_height ##### -->
+<para>
+
+</para>
+
+@t: 
+@p: 
 
 

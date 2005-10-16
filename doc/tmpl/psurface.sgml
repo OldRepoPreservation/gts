@@ -17,6 +17,9 @@ Using the gts_psurface_write() function a text representation of a progressive s
 
 </para>
 
+<!-- ##### SECTION Stability_Level ##### -->
+
+
 <!-- ##### MACRO GTS_PSURFACE_CLASS ##### -->
 <para>
 Casts @klass to #GtsPSurfaceClass.

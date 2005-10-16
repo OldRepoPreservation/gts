@@ -23,6 +23,9 @@ The functions gts_delaunay_conform() and gts_delaunay_refine() can be used to bu
 
 </para>
 
+<!-- ##### SECTION Stability_Level ##### -->
+
+
 <!-- ##### MACRO GTS_CONSTRAINT_CLASS ##### -->
 <para>
 Casts @klass to #GtsConstraintClass.

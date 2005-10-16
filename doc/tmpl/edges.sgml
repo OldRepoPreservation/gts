@@ -14,6 +14,9 @@ Edges are derived from #GtsSegment. They are used to define #GtsTriangle.
 
 </para>
 
+<!-- ##### SECTION Stability_Level ##### -->
+
+
 <!-- ##### MACRO GTS_EDGE_CLASS ##### -->
 <para>
 Casts @klass to #GtsEdgeClass.

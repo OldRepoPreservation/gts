@@ -14,6 +14,9 @@ All GTS objects are derived from this base class. Objects of any class can be co
 
 </para>
 
+<!-- ##### SECTION Stability_Level ##### -->
+
+
 <!-- ##### MACRO GTS_CLASS_NAME_LENGTH ##### -->
 <para>
 Maximum class name length for #GtsObjectClass.

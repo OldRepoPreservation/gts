@@ -14,6 +14,9 @@ This data structure is similar to the binary heap implementation but adds the tw
 
 </para>
 
+<!-- ##### SECTION Stability_Level ##### -->
+
+
 <!-- ##### STRUCT GtsEHeapPair ##### -->
 <para>
 The extended heap structure.

@@ -17,6 +17,9 @@ Together with #GtsEHeapPair fields these informations allow to manage any valid 
 
 </para>
 
+<!-- ##### SECTION Stability_Level ##### -->
+
+
 <!-- ##### MACRO GTS_HSPLIT_CLASS ##### -->
 <para>
 Casts @klass to #GtsHSplitClass.

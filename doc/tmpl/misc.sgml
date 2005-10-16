@@ -14,6 +14,9 @@ The gts_get_token() and gts_get_newline() functions are used for parsing GTS geo
 
 </para>
 
+<!-- ##### SECTION Stability_Level ##### -->
+
+
 <!-- ##### MACRO GTS_COMMENTS ##### -->
 <para>
 Set of characters used as comments identifiers in GTS geometric files.
@@ -27,6 +30,8 @@ Set of characters used as comments identifiers in GTS geometric files.
 </para>
 
 @fp: 
+@s: 
+@s1: 
 @line: 
 @pos: 
 @token: 

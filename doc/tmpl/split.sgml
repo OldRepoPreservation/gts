@@ -14,6 +14,9 @@ The vertex split object is the building block of the progressive mesh representa
 
 </para>
 
+<!-- ##### SECTION Stability_Level ##### -->
+
+
 <!-- ##### MACRO GTS_SPLIT_CLASS ##### -->
 <para>
 Casts @klass to #GtsSplitClass.

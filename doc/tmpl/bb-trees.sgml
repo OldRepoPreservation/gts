@@ -14,6 +14,9 @@ Axis-aligned bounding box trees can be used for intersection/collision detection
 
 </para>
 
+<!-- ##### SECTION Stability_Level ##### -->
+
+
 <!-- ##### MACRO GTS_BBOX_CLASS ##### -->
 <para>
 Casts @klass to #GtsBBoxClass.
@@ -206,6 +209,16 @@ Evaluates to %TRUE if @p is inside (or on the boundary) of @bbox, %FALSE otherwi
 
 @bb: 
 @p: 
+@Returns: 
+
+
+<!-- ##### FUNCTION gts_bbox_overlaps_triangle ##### -->
+<para>
+
+</para>
+
+@bb: 
+@t: 
 @Returns: 
 
 

@@ -1,3 +1,25 @@
+17/10/2005:
+
+Release of version 0.7.4
+
+Important changes:
+
+- Switched to darcs for version control (the CVS tree is obsolete).
+
+Bug Fixes:
+
+- For constrained Delaunay, closest face for glib >= 2.4 did not use planar distance.
+- Several fixes for gts_delaunay_add_constraint.
+- Fix for degenerate case in isotetra_bcl().
+- Fix for comments not being fully ignored by GtsFile.
+
+Minor changes and features:
+
+- delaunay and happrox are installed.
+- Fast triangle-box intersection test by Tomas Akenine-Moller.
+- New function gts_triangle_interpolate_height().
+- binary STL files work on win32.
+
 18/10/2004:
 
 Release of version 0.7.3

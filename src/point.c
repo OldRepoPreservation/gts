@@ -21,9 +21,7 @@
 #include <stdlib.h>
 #include "gts.h"
 #include "gts-private.h"
-#ifdef USE_ROBUST_PREDICATES
 #include "predicates.h"
-#endif /* USE_ROBUST_PREDICATES */
 
 static void point_read (GtsObject ** o, GtsFile * f)
 {
@@ -211,32 +209,10 @@ gdouble gts_point_orientation_3d (GtsPoint * p1,
 {
   g_return_val_if_fail (p1 != NULL && p2 != NULL && 
 			p3 != NULL && p4 != NULL, 0.0);
-#ifdef USE_ROBUST_PREDICATES
   return orient3d ((gdouble *) &p1->x, 
 		   (gdouble *) &p2->x, 
 		   (gdouble *) &p3->x, 
 		   (gdouble *) &p4->x);
-#else
-  {
-    gdouble adx, bdx, cdx;
-    gdouble ady, bdy, cdy;
-    gdouble adz, bdz, cdz;
-    
-    adx = p1->x - p4->x;
-    bdx = p2->x - p4->x;
-    cdx = p3->x - p4->x;
-    ady = p1->y - p4->y;
-    bdy = p2->y - p4->y;
-    cdy = p3->y - p4->y;
-    adz = p1->z - p4->z;
-    bdz = p2->z - p4->z;
-    cdz = p3->z - p4->z;
-    
-    return adx * (bdy * cdz - bdz * cdy)
-      + bdx * (cdy * adz - cdz * ady)
-      + cdx * (ady * bdz - adz * bdy);
-  }
-#endif /* USE_ROBUST_PREDICATES */
 }
 
 /**
@@ -298,43 +274,10 @@ gdouble gts_point_in_triangle_circle (GtsPoint * p, GtsTriangle * t)
 			 (GtsVertex **) &p2, 
 			 (GtsVertex **) &p3);
 
-#ifdef USE_ROBUST_PREDICATES
   return incircle ((gdouble *) &p1->x, 
 		   (gdouble *) &p2->x, 
 		   (gdouble *) &p3->x, 
 		   (gdouble *) &p->x);
-#else
-  {
-    gdouble adx, bdx, cdx, ady, bdy, cdy;
-    gdouble bdxcdy, cdxbdy, cdxady, adxcdy, adxbdy, bdxady;
-    gdouble alift, blift, clift;
-    gdouble det;
-    
-    adx = p1->x - p->x;
-    bdx = p2->x - p->x;
-    cdx = p3->x - p->x;
-    ady = p1->y - p->y;
-    bdy = p2->y - p->y;
-    cdy = p3->y - p->y;
-    
-    bdxcdy = bdx*cdy;
-    cdxbdy = cdx*bdy;
-    alift = adx*adx + ady*ady;
-    
-    cdxady = cdx*ady;
-    adxcdy = adx*cdy;
-    blift = bdx*bdx + bdy*bdy;
-    
-    adxbdy = adx*bdy;
-    bdxady = bdx*ady;
-    clift = cdx*cdx + cdy*cdy;
-    
-    det = alift*(bdxcdy - cdxbdy)
-      + blift*(cdxady - adxcdy)
-      + clift*(adxbdy - bdxady);
-    return det;
-  }
-#endif /* USE_ROBUST_PREDICATES */
 }
 
 /**
@@ -357,43 +300,10 @@ gdouble gts_point_in_circle (GtsPoint * p,
   g_return_val_if_fail (p != NULL && p1 != NULL && p2 != NULL && p3 != NULL, 
 			0.0);
 
-#ifdef USE_ROBUST_PREDICATES
   return incircle ((gdouble *) &p1->x, 
 		   (gdouble *) &p2->x, 
 		   (gdouble *) &p3->x, 
 		   (gdouble *) &p->x);
-#else
-  {
-    gdouble adx, bdx, cdx, ady, bdy, cdy;
-    gdouble bdxcdy, cdxbdy, cdxady, adxcdy, adxbdy, bdxady;
-    gdouble alift, blift, clift;
-    gdouble det;
-    
-    adx = p1->x - p->x;
-    bdx = p2->x - p->x;
-    cdx = p3->x - p->x;
-    ady = p1->y - p->y;
-    bdy = p2->y - p->y;
-    cdy = p3->y - p->y;
-    
-    bdxcdy = bdx*cdy;
-    cdxbdy = cdx*bdy;
-    alift = adx*adx + ady*ady;
-    
-    cdxady = cdx*ady;
-    adxcdy = adx*cdy;
-    blift = bdx*bdx + bdy*bdy;
-    
-    adxbdy = adx*bdy;
-    bdxady = bdx*ady;
-    clift = cdx*cdx + cdy*cdy;
-    
-    det = alift*(bdxcdy - cdxbdy)
-      + blift*(cdxady - adxcdy)
-      + clift*(adxbdy - bdxady);
-    return det;
-  }
-#endif /* USE_ROBUST_PREDICATES */
 }
 
 /**
@@ -757,23 +667,11 @@ void gts_point_transform (GtsPoint * p, GtsMatrix * m)
  */
 gdouble gts_point_orientation (GtsPoint * p1, GtsPoint * p2, GtsPoint * p3)
 {
-#ifdef USE_ROBUST_PREDICATES
   g_return_val_if_fail (p1 != NULL && p2 != NULL && p3 != NULL, 0.0);
 
   return orient2d ((gdouble *) &p1->x, 
 		   (gdouble *) &p2->x, 
 		   (gdouble *) &p3->x);
-#else
-  gdouble acx, bcx, acy, bcy;
-  
-  g_return_val_if_fail (p1 != NULL && p2 != NULL && p3 != NULL, 0.0);
-
-  acx = p1->x - p3->x;
-  bcx = p2->x - p3->x;
-  acy = p1->y - p3->y;
-  bcy = p2->y - p3->y;
-  return acx * bcy - acy * bcx;
-#endif /* USE_ROBUST_PREDICATES */
 }
 
 static gboolean ray_intersects_triangle (GtsPoint * D, GtsPoint * E,
@@ -892,10 +790,6 @@ gint gts_point_orientation_3d_sos (GtsPoint * p1,
 				   GtsPoint * p3,
 				   GtsPoint * p4)
 {
-#ifndef USE_ROBUST_PREDICATES
-  g_assert_not_reached ();
-  return 0;
-#else /* USE_ROBUST_PREDICATES */
   gdouble o;
 
   g_return_val_if_fail (p1 != NULL && p2 != NULL && 
@@ -1004,7 +898,6 @@ gint gts_point_orientation_3d_sos (GtsPoint * p1,
     /* epsilon^21/2 */
     return sign;
   }
-#endif /* USE_ROBUST_PREDICATES */
 }
 
 /**
@@ -1028,10 +921,6 @@ gint gts_point_orientation_sos (GtsPoint * p1,
 				GtsPoint * p2,
 				GtsPoint * p3)
 {
-#ifndef USE_ROBUST_PREDICATES
-  g_assert_not_reached ();
-  return 0;
-#else /* USE_ROBUST_PREDICATES */
   gdouble o;
 
   g_return_val_if_fail (p1 != NULL && p2 != NULL && p3 != NULL, 0);
@@ -1066,5 +955,4 @@ gint gts_point_orientation_sos (GtsPoint * p1,
     /* epsilon^3/2 */
     return sign;
   }
-#endif /* USE_ROBUST_PREDICATES */
 }

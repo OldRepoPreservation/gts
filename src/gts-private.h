@@ -20,8 +20,6 @@
 #ifndef __GTS_PRIVATE_H__
 #define __GTS_PRIVATE_H__
 
-#define USE_ROBUST_PREDICATES
-
 /* Debugging flags */
   
 /* #define DEBUG_FUNCTIONS */

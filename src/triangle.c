@@ -330,10 +330,11 @@ gdouble gts_triangle_perimeter (GtsTriangle * t)
  * gts_triangle_quality:
  * @t: a #GtsTriangle.
  *
- * The quality of a triangle is defined as the ratio of its surface to 
- * its perimeter relative to this same ratio for an equilateral
- * triangle with the same area. The quality is then one for an
- * equilateral triangle and tends to zero for a very stretched triangle.
+ * The quality of a triangle is defined as the ratio of the square
+ * root of its surface area to its perimeter relative to this same
+ * ratio for an equilateral triangle with the same area. The quality
+ * is then one for an equilateral triangle and tends to zero for a
+ * very stretched triangle.
  *
  * Returns: the quality of the triangle @t.
  */

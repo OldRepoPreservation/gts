@@ -19,26 +19,26 @@ Edges are derived from #GtsSegment. They are used to define #GtsTriangle.
 
 <!-- ##### MACRO GTS_EDGE_CLASS ##### -->
 <para>
-Casts @klass to #GtsEdgeClass.
+
 </para>
 
-@klass: a descendant of #GtsObjectClass.
+@klass: 
 
 
 <!-- ##### MACRO GTS_EDGE ##### -->
 <para>
-Casts @obj to #GtsEdge.
+
 </para>
 
-@obj: a descendant of #GtsObject.
+@obj: 
 
 
 <!-- ##### MACRO GTS_IS_EDGE ##### -->
 <para>
-Evaluates to %TRUE if @obj is a #GtsEdge, %FALSE otherwise.
+
 </para>
 
-@obj: a pointer to test.
+@obj: 
 
 
 <!-- ##### STRUCT GtsEdgeClass ##### -->
@@ -86,10 +86,10 @@ The edge object.
 
 <!-- ##### MACRO gts_edge_is_unattached ##### -->
 <para>
-Evaluates to %TRUE if no triangles uses @s as an edge, %FALSE otherwise.
+
 </para>
 
-@s: a #GtsEdge.
+@s: 
 
 
 <!-- ##### FUNCTION gts_edge_is_duplicate ##### -->

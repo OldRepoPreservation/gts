@@ -24,12 +24,262 @@ Differential geometry operators
 </para>
 
 
+<!-- ##### SECTION ./tmpl/gts.sgml:Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION ./tmpl/gts.sgml:See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION ./tmpl/gts.sgml:Short_Description ##### -->
+
+
+
+<!-- ##### SECTION ./tmpl/gts.sgml:Stability_Level ##### -->
+
+
+
+<!-- ##### SECTION ./tmpl/gts.sgml:Title ##### -->
+GtsPGraph
+
+
+<!-- ##### SECTION ./tmpl/gtsconfig.sgml:Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION ./tmpl/gtsconfig.sgml:See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION ./tmpl/gtsconfig.sgml:Short_Description ##### -->
+
+
+
+<!-- ##### SECTION ./tmpl/gtsconfig.sgml:Stability_Level ##### -->
+
+
+
+<!-- ##### SECTION ./tmpl/gtsconfig.sgml:Title ##### -->
+gtsconfig
+
+
+<!-- ##### SECTION ./tmpl/predicates_init.sgml:Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION ./tmpl/predicates_init.sgml:See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION ./tmpl/predicates_init.sgml:Short_Description ##### -->
+
+
+
+<!-- ##### SECTION ./tmpl/predicates_init.sgml:Stability_Level ##### -->
+
+
+
+<!-- ##### SECTION ./tmpl/predicates_init.sgml:Title ##### -->
+predicates_init
+
+
+<!-- ##### MACRO GTS_CHECK_VERSION ##### -->
+<para>
+
+</para>
+
+@major: 
+@minor: 
+@micro: 
+
+<!-- ##### MACRO GTS_COLOR_VERTEX ##### -->
+<para>
+
+</para>
+
+@obj: 
+
+<!-- ##### MACRO GTS_C_VAR ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### MACRO GTS_IS_COLOR_VERTEX ##### -->
+<para>
+
+</para>
+
+@obj: 
+
+<!-- ##### MACRO GTS_IS_LIST_FACE ##### -->
+<para>
+
+</para>
+
+@obj: 
+
+<!-- ##### MACRO GTS_IS_NEDGE ##### -->
+<para>
+
+</para>
+
+@obj: 
+
+<!-- ##### MACRO GTS_IS_NFACE ##### -->
+<para>
+
+</para>
+
+@obj: 
+
+<!-- ##### MACRO GTS_IS_NGNODE ##### -->
+<para>
+
+</para>
+
+@obj: 
+
+<!-- ##### MACRO GTS_IS_NVERTEX ##### -->
+<para>
+
+</para>
+
+@obj: 
+
 <!-- ##### MACRO GTS_IS_OOCS ##### -->
 <para>
 
 </para>
 
 @obj: 
+
+<!-- ##### MACRO GTS_IS_PGEDGE ##### -->
+<para>
+
+</para>
+
+@obj: 
+
+<!-- ##### MACRO GTS_IS_PNODE ##### -->
+<para>
+
+</para>
+
+@obj: 
+
+<!-- ##### MACRO GTS_IS_VERTEX_NORMAL ##### -->
+<para>
+
+</para>
+
+@obj: 
+
+<!-- ##### MACRO GTS_LIST_FACE ##### -->
+<para>
+
+</para>
+
+@obj: 
+
+<!-- ##### MACRO GTS_MAINTAINER ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### MACRO GTS_MAJOR_VERSION ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### MACRO GTS_MICRO_VERSION ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### MACRO GTS_MINOR_VERSION ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### MACRO GTS_NAME_LENGTH ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### MACRO GTS_NEDGE ##### -->
+<para>
+
+</para>
+
+@obj: 
+
+<!-- ##### MACRO GTS_NEDGE_CLASS ##### -->
+<para>
+
+</para>
+
+@klass: 
+
+<!-- ##### MACRO GTS_NFACE ##### -->
+<para>
+
+</para>
+
+@obj: 
+
+<!-- ##### MACRO GTS_NFACE_CLASS ##### -->
+<para>
+
+</para>
+
+@klass: 
+
+<!-- ##### MACRO GTS_NGNODE ##### -->
+<para>
+
+</para>
+
+@obj: 
+
+<!-- ##### MACRO GTS_NGNODE_CLASS ##### -->
+<para>
+
+</para>
+
+@klass: 
+
+<!-- ##### MACRO GTS_NVERTEX ##### -->
+<para>
+
+</para>
+
+@obj: 
+
+<!-- ##### MACRO GTS_NVERTEX_CLASS ##### -->
+<para>
+
+</para>
+
+@klass: 
 
 <!-- ##### MACRO GTS_OBJECT_DESTROYABLE ##### -->
 <para>
@@ -59,6 +309,55 @@ Sets @object as not destroyable. You should not need to use this macro.
 
 @klass: 
 
+<!-- ##### MACRO GTS_PGEDGE ##### -->
+<para>
+
+</para>
+
+@obj: 
+
+<!-- ##### MACRO GTS_PGEDGE_CLASS ##### -->
+<para>
+
+</para>
+
+@klass: 
+
+<!-- ##### MACRO GTS_PNODE ##### -->
+<para>
+
+</para>
+
+@obj: 
+
+<!-- ##### MACRO GTS_PNODE_CLASS ##### -->
+<para>
+
+</para>
+
+@klass: 
+
+<!-- ##### MACRO GTS_VERTEX_NORMAL ##### -->
+<para>
+
+</para>
+
+@obj: 
+
+<!-- ##### STRUCT GtsColorVertex ##### -->
+<para>
+
+</para>
+
+@c: 
+
+<!-- ##### STRUCT GtsListFace ##### -->
+<para>
+
+</para>
+
+@points: 
+
 <!-- ##### STRUCT GtsOocs ##### -->
 <para>
 
@@ -77,6 +376,18 @@ These two values are used to control the behaviour of the refinement and coarsen
 </para>
 
 
+<!-- ##### TYPEDEF GtsVector ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### TYPEDEF GtsVector4 ##### -->
+<para>
+
+</para>
+
+
 <!-- ##### TYPEDEF GtsVector4[4] ##### -->
 <para>
 
@@ -88,6 +399,13 @@ These two values are used to control the behaviour of the refinement and coarsen
 A #GtsVector is just an array of three coordinates.
 </para>
 
+
+<!-- ##### STRUCT GtsVertexNormal ##### -->
+<para>
+
+</para>
+
+@n: 
 
 <!-- ##### MACRO IS_GTS_GRAPH ##### -->
 <para>
@@ -103,6 +421,28 @@ A #GtsVector is just an array of three coordinates.
 
 @tree: 
 @bbox: 
+@Returns: 
+
+<!-- ##### FUNCTION gts_bbox_overlaps_segment ##### -->
+<para>
+
+</para>
+
+@bb: 
+@s: 
+@Returns: 
+
+<!-- ##### VARIABLE gts_binary_age ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### FUNCTION gts_color_vertex_class ##### -->
+<para>
+
+</para>
+
 @Returns: 
 
 <!-- ##### FUNCTION gts_delaunay_triangulation ##### -->
@@ -121,6 +461,14 @@ A #GtsVector is just an array of three coordinates.
 </para>
 
 @f: 
+
+<!-- ##### FUNCTION gts_file_new_from_string ##### -->
+<para>
+
+</para>
+
+@s: 
+@Returns: 
 
 <!-- ##### FUNCTION gts_get_newline ##### -->
 <para>
@@ -149,6 +497,12 @@ A #GtsVector is just an array of three coordinates.
 @parent: 
 @Returns: 
 
+<!-- ##### VARIABLE gts_interface_age ##### -->
+<para>
+
+</para>
+
+
 <!-- ##### FUNCTION gts_kdtree_draw ##### -->
 <para>
 
@@ -160,6 +514,68 @@ A #GtsVector is just an array of three coordinates.
 @compare: 
 @p1: 
 @p2: 
+
+<!-- ##### FUNCTION gts_list_face_class ##### -->
+<para>
+
+</para>
+
+@Returns: 
+
+<!-- ##### VARIABLE gts_major_version ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### VARIABLE gts_micro_version ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### VARIABLE gts_minor_version ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### FUNCTION gts_nedge_class ##### -->
+<para>
+
+</para>
+
+@Returns: 
+
+<!-- ##### FUNCTION gts_nface_class ##### -->
+<para>
+
+</para>
+
+@Returns: 
+
+<!-- ##### FUNCTION gts_ngnode_class ##### -->
+<para>
+
+</para>
+
+@Returns: 
+
+<!-- ##### FUNCTION gts_ngnode_new ##### -->
+<para>
+
+</para>
+
+@klass: 
+@id: 
+@Returns: 
+
+<!-- ##### FUNCTION gts_nvertex_class ##### -->
+<para>
+
+</para>
+
+@Returns: 
 
 <!-- ##### FUNCTION gts_oocs_add_triangle ##### -->
 <para>
@@ -197,6 +613,40 @@ A #GtsVector is just an array of three coordinates.
 </para>
 
 @oocs: 
+@Returns: 
+
+<!-- ##### FUNCTION gts_pgedge_class ##### -->
+<para>
+
+</para>
+
+@Returns: 
+
+<!-- ##### FUNCTION gts_pgedge_new ##### -->
+<para>
+
+</para>
+
+@klass: 
+@n1: 
+@n2: 
+@data: 
+@Returns: 
+
+<!-- ##### FUNCTION gts_pnode_class ##### -->
+<para>
+
+</para>
+
+@Returns: 
+
+<!-- ##### FUNCTION gts_pnode_new ##### -->
+<para>
+
+</para>
+
+@klass: 
+@data: 
 @Returns: 
 
 <!-- ##### FUNCTION gts_point_destroy ##### -->
@@ -686,6 +1136,13 @@ A #GtsVector is just an array of three coordinates.
 
 @segments: 
 @parent: 
+@Returns: 
+
+<!-- ##### FUNCTION gts_vertex_normal_class ##### -->
+<para>
+
+</para>
+
 @Returns: 
 
 <!-- ##### FUNCTION gts_volume_optimized_point ##### -->

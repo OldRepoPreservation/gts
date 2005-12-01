@@ -19,26 +19,26 @@ Faces are derived from #GtsTriangle. A collection of faces defined a #GtsSurface
 
 <!-- ##### MACRO GTS_FACE_CLASS ##### -->
 <para>
-Casts @klass to #GtsFaceClass.
+
 </para>
 
-@klass: a descendant of #GtsFaceClass.
+@klass: 
 
 
 <!-- ##### MACRO GTS_FACE ##### -->
 <para>
-Casts @obj to #GtsFace.
+
 </para>
 
-@obj: a descendant of #GtsFace.
+@obj: 
 
 
 <!-- ##### MACRO GTS_IS_FACE ##### -->
 <para>
-Evaluates to %TRUE if @obj is a #GtsFace, %FALSE otherwise.
+
 </para>
 
-@obj: a pointer to test.
+@obj: 
 
 
 <!-- ##### STRUCT GtsFaceClass ##### -->
@@ -135,7 +135,5 @@ The face object.
 @edges: 
 @s: 
 @Returns: 
-<!-- # Unused Parameters # -->
-@parent: 
 
 

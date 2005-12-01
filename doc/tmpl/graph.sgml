@@ -285,8 +285,6 @@ Graph class
 
 @fp: 
 @Returns: 
-<!-- # Unused Parameters # -->
-@g: 
 
 
 <!-- ##### FUNCTION gts_graph_read_jostle ##### -->

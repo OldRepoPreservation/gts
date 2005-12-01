@@ -19,26 +19,26 @@ The three-dimensional curve intersection of two surfaces is described by a #GtsS
 
 <!-- ##### MACRO GTS_SURFACE_INTER_CLASS ##### -->
 <para>
-Casts @klass to #GtsSurfaceInterClass.
+
 </para>
 
-@klass: a descendant of #GtsSurfaceInterClass.
+@klass: 
 
 
 <!-- ##### MACRO GTS_SURFACE_INTER ##### -->
 <para>
-Casts @obj to #GtsSurfaceInter.
+
 </para>
 
-@obj: a descendant of #GtsSurfaceInter.
+@obj: 
 
 
 <!-- ##### MACRO GTS_IS_SURFACE_INTER ##### -->
 <para>
-Evaluates to %TRUE if @obj is a #GtsSurfaceInter, %FALSE otherwise.
+
 </para>
 
-@obj: a pointer to test.
+@obj: 
 
 
 <!-- ##### STRUCT GtsSurfaceInterClass ##### -->
@@ -105,16 +105,7 @@ The surface intersection object.
 
 <!-- ##### ENUM GtsBooleanOperation ##### -->
 <para>
-@GTS_1_OUT_2 identifies the part of the first surface which lies outside the second surface.
-</para>
-<para>
-@GTS_1_IN_2 identifies the part of the first surface which lies inside the second surface.
-</para>
-<para>
-@GTS_2_OUT_1 identifies the part of the second surface which lies outside the first surface.
-</para>
-<para>
-@GTS_2_IN_1 identifies the part of the second surface which lies inside the first surface.
+
 </para>
 
 @GTS_1_OUT_2: 

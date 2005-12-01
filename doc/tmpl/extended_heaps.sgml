@@ -19,26 +19,26 @@ This data structure is similar to the binary heap implementation but adds the tw
 
 <!-- ##### STRUCT GtsEHeapPair ##### -->
 <para>
-The extended heap structure.
+
 </para>
 
-@data: Points to the item stored in the heap.
-@key: Value of the key for this item.
-@pos: Private field.
+@data: 
+@key: 
+@pos: 
 
 <!-- ##### USER_FUNCTION GtsKeyFunc ##### -->
 <para>
 
 </para>
 
-@item: A pointer to an item to be stored in the heap.
-@data: User data passed to gts_eheap_new().
-@Returns: the value of the key for the given item.
+@item: 
+@data: 
+@Returns: 
 
 
 <!-- ##### STRUCT GtsEHeap ##### -->
 <para>
-An opaque data structure describing an extended binary heap.
+
 </para>
 
 
@@ -146,8 +146,6 @@ An opaque data structure describing an extended binary heap.
 </para>
 
 @heap: 
-<!-- # Unused Parameters # -->
-@h: 
 
 
 <!-- ##### FUNCTION gts_eheap_thaw ##### -->

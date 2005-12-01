@@ -19,26 +19,26 @@ Axis-aligned bounding box trees can be used for intersection/collision detection
 
 <!-- ##### MACRO GTS_BBOX_CLASS ##### -->
 <para>
-Casts @klass to #GtsBBoxClass.
+
 </para>
 
-@klass: a descendant of #GtsBBoxClass.
+@klass: 
 
 
 <!-- ##### MACRO GTS_BBOX ##### -->
 <para>
-Casts @obj to #GtsBBox.
+
 </para>
 
-@obj: a descendant of #GtsBBox.
+@obj: 
 
 
 <!-- ##### MACRO GTS_IS_BBOX ##### -->
 <para>
-Evaluates to %TRUE if @obj is a #GtsBBox, %FALSE otherwise.
+
 </para>
 
-@obj: a pointer to test.
+@obj: 
 
 
 <!-- ##### STRUCT GtsBBoxClass ##### -->
@@ -162,11 +162,11 @@ The bounding box structure.
 
 <!-- ##### MACRO gts_bbox_point_is_inside ##### -->
 <para>
-Evaluates to %TRUE if @p is inside (or on the boundary) of @bbox, %FALSE otherwise.
+
 </para>
 
-@bbox: a #GtsBBox.
-@p: a #GtsPoint.
+@bbox: 
+@p: 
 
 
 <!-- ##### FUNCTION gts_bboxes_are_overlapping ##### -->
@@ -177,9 +177,6 @@ Evaluates to %TRUE if @p is inside (or on the boundary) of @bbox, %FALSE otherwi
 @bb1: 
 @bb2: 
 @Returns: 
-<!-- # Unused Parameters # -->
-@s1: 
-@s2: 
 
 
 <!-- ##### FUNCTION gts_bbox_diagonal2 ##### -->
@@ -224,13 +221,12 @@ Evaluates to %TRUE if @p is inside (or on the boundary) of @bbox, %FALSE otherwi
 
 <!-- ##### USER_FUNCTION GtsBBTreeTraverseFunc ##### -->
 <para>
-User function called for each pair of overlapping bounding boxes. See 
-gts_bb_tree_traverse_overlapping().
+
 </para>
 
-@bb1: a #GtsBBox.
-@bb2: another #GtsBBox.
-@data: user data passed to the function.
+@bb1: 
+@bb2: 
+@data: 
 
 
 <!-- ##### FUNCTION gts_bb_tree_new ##### -->
@@ -280,8 +276,6 @@ gts_bb_tree_traverse_overlapping().
 @tree2: 
 @func: 
 @data: 
-<!-- # Unused Parameters # -->
-@Param3: 
 
 
 <!-- ##### FUNCTION gts_bb_tree_draw ##### -->
@@ -305,22 +299,22 @@ gts_bb_tree_traverse_overlapping().
 
 <!-- ##### USER_FUNCTION GtsBBoxDistFunc ##### -->
 <para>
-User function returning the (minimum) distance between the object defined by @bounded and point @p.
+
 </para>
 
-@p: a #GtsPoint.
-@bounded: an object bounded by a #GtsBBox.
-@Returns: the distance between @p and @bounded.
+@p: 
+@bounded: 
+@Returns: 
 
 
 <!-- ##### USER_FUNCTION GtsBBoxClosestFunc ##### -->
 <para>
-User function returning a #GtsPoint belonging to the object defined by @bounded and closest to @p.
+
 </para>
 
-@p: a #GtsPoint.
-@bounded: an object bounded by a #GtsBBox.
-@Returns: a #GtsPoint.
+@p: 
+@bounded: 
+@Returns: 
 
 
 <!-- ##### FUNCTION gts_bb_tree_point_distance ##### -->

@@ -28,37 +28,37 @@ The functions gts_delaunay_conform() and gts_delaunay_refine() can be used to bu
 
 <!-- ##### MACRO GTS_CONSTRAINT_CLASS ##### -->
 <para>
-Casts @klass to #GtsConstraintClass.
+
 </para>
 
-@klass: a descendant of #GtsConstraintClass.
+@klass: 
 
 
 <!-- ##### MACRO GTS_CONSTRAINT ##### -->
 <para>
-Casts @obj to #GtsConstraint.
+
 </para>
 
-@obj: a descendant of #GtsConstraint.
+@obj: 
 
 
 <!-- ##### MACRO GTS_IS_CONSTRAINT ##### -->
 <para>
-Evaluates to %TRUE if @obj is a #GtsConstraint, %FALSE otherwise.
+
 </para>
 
-@obj: a pointer to test.
+@obj: 
 
 
 <!-- ##### STRUCT GtsConstraintClass ##### -->
 <para>
-The constraint class derived from #GtsEdgeClass.
+
 </para>
 
 
 <!-- ##### STRUCT GtsConstraint ##### -->
 <para>
-The constraint object derived from #GtsEdge.
+
 </para>
 
 
@@ -120,9 +120,6 @@ The constraint object derived from #GtsEdge.
 @surface: 
 @c: 
 @Returns: 
-<!-- # Unused Parameters # -->
-@s: 
-@parent: 
 
 
 <!-- ##### FUNCTION gts_delaunay_check ##### -->

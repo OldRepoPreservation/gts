@@ -93,6 +93,13 @@ typedef void         (*GtsArgGetFunc)          (GtsObject * obj);
 typedef gdouble                  GtsVector[3];
 typedef gdouble                  GtsVector4[4];
 typedef GtsVector4               GtsMatrix;
+/**
+ * GtsKeyFunc:
+ * @item: A pointer to an item to be stored in the heap.
+ * @data: User data passed to gts_eheap_new().
+ *
+ * Returns: the value of the key for the given item.
+ */
 typedef gdouble                  (*GtsKeyFunc)    (gpointer item,
 						   gpointer data);
 typedef enum 
@@ -588,6 +595,12 @@ GtsEdgeClass * gts_edge_class                     (void);
 GtsEdge *     gts_edge_new                        (GtsEdgeClass * klass,
 						   GtsVertex * v1,
 						   GtsVertex * v2);
+/**
+ * gts_edge_is_unattached:
+ * @s: a #GtsEdge.
+ *
+ * Evaluates to %TRUE if no triangles uses @s as an edge, %FALSE otherwise.
+ */
 #define       gts_edge_is_unattached(s) ((s)->triangles == NULL ? TRUE : FALSE)
 GtsFace *     gts_edge_has_parent_surface         (GtsEdge * e, 
 						   GtsSurface * surface);
@@ -833,19 +846,66 @@ GSList *      gts_kdtree_range                       (GNode * tree,
 
 /* Bboxtrees: bbtree.c */
 
+/**
+ * GtsBBTreeTraverseFunc:
+ * @bb1: a #GtsBBox.
+ * @bb2: another #GtsBBox.
+ * @data: user data passed to the function.
+ *
+ * User function called for each pair of overlapping bounding
+ * boxes. See gts_bb_tree_traverse_overlapping().
+ */
 typedef void   (*GtsBBTreeTraverseFunc)          (GtsBBox * bb1,
 						  GtsBBox * bb2,
 						  gpointer data);
+/**
+ * GtsBBoxDistFunc:
+ * @p: a #GtsPoint.
+ * @bounded: an object bounded by a #GtsBBox.
+ *
+ * User function returning the (minimum) distance between the object
+ * defined by @bounded and point @p.
+ *
+ * Returns: the distance between @p and @bounded.
+ */
 typedef gdouble (*GtsBBoxDistFunc)               (GtsPoint * p,
 						  gpointer bounded);
+/**
+ * GtsBBoxClosestFunc:
+ * @p: a #GtsPoint.
+ * @bounded: an object bounded by a #GtsBBox.
+ * 
+ * User function returning a #GtsPoint belonging to the object defined
+ * by @bounded and closest to @p.
+ *
+ * Returns: a #GtsPoint.
+ */
 typedef GtsPoint * (*GtsBBoxClosestFunc)         (GtsPoint * p,
 						  gpointer bounded);
 
+/**
+ * GTS_IS_BBOX:
+ * @obj: a #GtsObject.
+ *
+ * Evaluates to %TRUE if @obj is a #GtsBBox, %FALSE otherwise.
+ */
 #define GTS_IS_BBOX(obj)  (gts_object_is_from_class (obj,\
 						     gts_bbox_class ()))
+/**
+ * GTS_BBOX:
+ * @obj: a #GtsObject.
+ *
+ * Casts @obj to #GtsBBox.
+ */
 #define GTS_BBOX(obj)         GTS_OBJECT_CAST (obj,\
 					       GtsBBox,\
 					       gts_bbox_class ())
+/**
+ * GTS_BBOX_CLASS:
+ * @klass: a descendant of #GtsBBoxClass.
+ *
+ * Casts @klass to #GtsBBoxClass.
+ */
 #define GTS_BBOX_CLASS(klass) GTS_OBJECT_CLASS_CAST (klass,\
 						     GtsBBoxClass,\
 						     gts_bbox_class ())
@@ -888,6 +948,13 @@ GtsBBox *  gts_bbox_bboxes                   (GtsBBoxClass * klass,
 					      GSList * bboxes);
 GtsBBox *  gts_bbox_points                   (GtsBBoxClass * klass,
 					      GSList * points);
+/**
+ * gts_bbox_point_is_inside:
+ * @bbox: a #GtsBBox.
+ * @p: a #GtsPoint.
+ *
+ * Evaluates to %TRUE if @p is inside (or on the boundary) of @bbox, %FALSE otherwise.
+ */
 #define    gts_bbox_point_is_inside(bbox, p) ((p)->x >= (bbox)->x1 &&\
 					     (p)->y >= (bbox)->y1 &&\
                                              (p)->z >= (bbox)->z1 &&\
@@ -1159,16 +1226,45 @@ GSList *     gts_surface_intersection      (GtsSurface * s1,
 
 typedef struct _GtsSurfaceInter         GtsSurfaceInter;
 typedef struct _GtsSurfaceInterClass    GtsSurfaceInterClass;
+/**
+ * GtsBooleanOperation:
+ * @GTS_1_OUT_2: identifies the part of the first surface which lies
+ * outside the second surface.
+ * @GTS_1_IN_2: identifies the part of the first surface which lies
+ * inside the second surface.
+ * @GTS_2_OUT_1: identifies the part of the second surface which lies
+ * outside the first surface.
+ * @GTS_2_IN_1: identifies the part of the second surface which lies
+ * inside the first surface.
+ */
 typedef enum { GTS_1_OUT_2, 
 	       GTS_1_IN_2, 
 	       GTS_2_OUT_1, 
 	       GTS_2_IN_1 }             GtsBooleanOperation;
 
+/**
+ * GTS_IS_SURFACE_INTER:
+ * @obj: a #GtsObject.
+ *
+ * Evaluates to %TRUE if @obj is a #GtsSurfaceInter, %FALSE otherwise.
+ */
 #define GTS_IS_SURFACE_INTER(obj) (gts_object_is_from_class (obj,\
 					      gts_surface_inter_class ()))
+/**
+ * GTS_SURFACE_INTER:
+ * @obj: a descendant of #GtsSurfaceInter.
+ *
+ * Casts @obj to #GtsSurfaceInter.
+ */
 #define GTS_SURFACE_INTER(obj)         GTS_OBJECT_CAST (obj,\
 						  GtsSurfaceInter,\
 						  gts_surface_inter_class ())
+/**
+ * GTS_SURFACE_INTER_CLASS:
+ * @klass: a descendant of #GtsSurfaceInterClass.
+ *
+ * Casts @klass to #GtsSurfaceInterClass.
+ */
 #define GTS_SURFACE_INTER_CLASS(klass) GTS_OBJECT_CLASS_CAST (klass,\
 						 GtsSurfaceInterClass,\
 						 gts_surface_inter_class ())
@@ -1229,6 +1325,12 @@ void         gts_heap_destroy      (GtsHeap * heap);
 typedef struct _GtsEHeap         GtsEHeap;
 typedef struct _GtsEHeapPair     GtsEHeapPair;
 
+/**
+ * _GtsEHeapPair:
+ * @data: Points to the item stored in the heap.
+ * @key: Value of the key for this item.
+ * @pos: Private field.
+ */
 struct _GtsEHeapPair {
   gpointer data;
   gdouble key;
@@ -1485,11 +1587,29 @@ guint         gts_hsurface_height        (GtsHSurface *        hsurface);
 
 /* Constrained Delaunay triangulation: cdt.c */
 
+/**
+ * GTS_IS_CONSTRAINT:
+ * @obj: a #GtsObject.
+ *
+ * Evaluates to %TRUE if @obj is a #GtsConstraint, %FALSE otherwise.
+ */
 #define GTS_IS_CONSTRAINT(obj)      (gts_object_is_from_class (obj,\
 						    gts_constraint_class ()))
+/**
+ * GTS_CONSTRAINT:
+ * @obj: a descendant of #GtsConstraint.
+ *
+ * Casts @obj to #GtsConstraint.
+ */
 #define GTS_CONSTRAINT(obj)          GTS_OBJECT_CAST (obj,\
 						  GtsConstraint,\
 						  gts_constraint_class ())
+/**
+ * GTS_CONSTRAINT_CLASS:
+ * @klass: a desscendant of #GtsConstraintClass.
+ *
+ * Casts @klass to #GtsConstraintClass.
+ */
 #define GTS_CONSTRAINT_CLASS(klass)  GTS_OBJECT_CLASS_CAST (klass,\
 						  GtsConstraintClass,\
 						  gts_constraint_class ())

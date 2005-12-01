@@ -1,0 +1,103 @@
+#!/usr/bin/make -f
+# Sample debian/rules that uses debhelper.
+# GNU copyright 1997 to 1999 by Joey Hess.
+
+export DH_VERBOSE
+export DH_OPTIONS
+export DH_COMPAT=4
+
+ARCH=$(shell dpkg-architecture -qDEB_BUILD_GNU_TYPE)
+
+CFLAGS = -O2 -Wall
+
+ifeq ($(ARCH),alpha-linux)
+  CFLAGS += -mieee
+endif
+
+ifneq (,$(findstring debug,$(DEB_BUILD_OPTIONS)))
+CFLAGS += -g
+endif
+
+DTMPDIR=$(CURDIR)/debian/tmp
+
+CONFIG_GUESS := /usr/share/misc/config.guess
+CONFIG_SUB   := /usr/share/misc/config.sub
+
+build: build-stamp
+build-stamp:
+	dh_testdir
+
+	cp $(CONFIG_GUESS) .
+	cp $(CONFIG_SUB) .
+	CFLAGS="$(CFLAGS)" ./configure \
+		--prefix=/usr --mandir=\$${prefix}/share/man \
+		--infodir=\$${prefix}/share/info \
+		$(ARCH)
+	$(MAKE)
+	$(MAKE) -C doc scan templates sgml html
+
+	touch build-stamp
+
+clean:
+	dh_testdir
+	dh_testroot
+	rm -f build-stamp
+
+	-$(MAKE) distclean
+
+	$(RM) $(patsubst %.in, %, $(shell find -name Makefile.in))
+	$(RM) config.guess config.sub
+
+	$(RM) src/predicates_init
+
+	cd doc && rm -rf gts-decl-list.txt gts-decl.txt gts-overrides.txt gts-undocumented.txt gts-unused.txt html sgml sgml.stamp html.stamp
+
+	dh_clean
+
+install: build
+	dh_testdir
+	dh_testroot
+	dh_clean -k
+	dh_installdirs -a
+
+	$(MAKE) install DESTDIR=$(DTMPDIR)
+	mv $(DTMPDIR)/usr/bin/transform $(DTMPDIR)/usr/bin/gtstransform
+
+# Build architecture-dependent files here.
+binary-indep: DH_OPTIONS=-i
+binary-indep:
+	dh_testdir
+	dh_testroot
+	dh_clean -k
+	dh_installdirs -plibgts-snapshot-doc usr/share/doc/libgts-snapshot-doc/html
+	cp -a doc/html/*.html debian/libgts-snapshot-doc/usr/share/doc/libgts-snapshot-doc/html
+	dh_installdocs
+	dh_installchangelogs 
+	dh_compress
+	dh_fixperms
+	dh_installdeb
+	dh_gencontrol
+	dh_md5sums
+	dh_builddeb
+
+binary-arch: DH_OPTIONS=-a
+binary-arch: build install
+#	dh_testversion
+	dh_testdir
+	dh_testroot
+	dh_install --sourcedir=debian/tmp --list-missing
+	dh_installdocs NEWS README TODO
+#	dh_installman
+	dh_installchangelogs ChangeLog
+	dh_strip
+	dh_compress
+	dh_fixperms
+	dh_makeshlibs -V 'libgts-snapshot'
+	dh_installdeb
+	dh_shlibdeps
+	dh_gencontrol
+	dh_md5sums
+	dh_builddeb
+
+binary: binary-indep binary-arch
+.PHONY: build clean binary-indep binary-arch binary install

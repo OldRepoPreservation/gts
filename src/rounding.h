@@ -22,12 +22,21 @@
 #ifdef HAVE_FPU_CONTROL_H
 #  include <fpu_control.h>
 #  ifdef _FPU_EXTENDED
+#   if !defined(__alpha__) && !defined(__GLIBC__)
+#    if defined(__arm__)
+     static fpu_control_t fpu_round_double = _FPU_DEFAULT;
+#    else
      static fpu_control_t fpu_round_double =
        (_FPU_DEFAULT & ~ _FPU_EXTENDED)|_FPU_DOUBLE;
+#    endif
      static fpu_control_t fpu_init;
 #    define FPU_ROUND_DOUBLE  { _FPU_GETCW(fpu_init);\
                                 _FPU_SETCW(fpu_round_double); }
 #    define FPU_RESTORE       {_FPU_SETCW(fpu_init);}
+#   else /* __alpha__ && __GLIBC__ */
+#    define FPU_ROUND_DOUBLE
+#    define FPU_RESTORE
+#   endif /* __alpha__ && __GLIBC__ */
 #  else /* not FPU_EXTENDED */
 #    define FPU_ROUND_DOUBLE
 #    define FPU_RESTORE

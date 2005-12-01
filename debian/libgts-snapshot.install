@@ -4,6 +4,8 @@ usr/bin/gtscompare
 usr/bin/gtstemplate
 usr/bin/stl2gts
 usr/bin/gtstransform
+usr/bin/delaunay
+usr/bin/happrox
 usr/lib/*.so.*
 usr/lib/pkgconfig/*.pc
 usr/bin/gts2dxf

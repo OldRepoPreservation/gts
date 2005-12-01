@@ -1,6 +1,5 @@
-
+version=`awk '{if ($1 == "Version:") print $2;}' < gts.pc`
 date=`date "+%a, %e %b %Y %T %z"`
-version=`date "+%y.%m.%d"`
 
 cat <<EOF > debian/changelog
 gts-snapshot ($version) testing; urgency=low

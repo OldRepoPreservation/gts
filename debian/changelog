@@ -1,0 +1,5 @@
+gts-snapshot (0.7.5) testing; urgency=low
+
+  * gts-snapshot release (based on Marcelo's official debian)
+
+ -- Stephane Popinet <popinet@users.sf.net>  Mon,  5 Dec 2005 10:07:31 +1300

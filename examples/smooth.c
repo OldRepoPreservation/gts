@@ -18,6 +18,7 @@
  */
 
 #include <stdio.h>
+#include <locale.h>
 #include <stdlib.h>
 #include <math.h>
 #include "config.h"
@@ -96,6 +97,9 @@ int main (int argc, char * argv[])
   gboolean fold = FALSE;
   gdouble maxcosine2 = 0.;
   guint nfold = 1;
+
+  if (!setlocale (LC_ALL, "POSIX"))
+    g_warning ("cannot set locale to POSIX");
 
   /* parse options using getopt */
   while (c != EOF) {

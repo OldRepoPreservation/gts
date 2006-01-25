@@ -18,6 +18,7 @@
  */
 
 #include <stdlib.h>
+#include <locale.h>
 #include "config.h"
 #ifdef HAVE_GETOPT_H
 #  include <getopt.h>
@@ -37,6 +38,9 @@ int main (int argc, char * argv[])
   gboolean verbose = FALSE;
   guint level=4;
   int c = 0;
+
+  if (!setlocale (LC_ALL, "POSIX"))
+    g_warning ("cannot set locale to POSIX");
 
   /* parse options using getopt */
   while (c != EOF) {

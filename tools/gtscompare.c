@@ -19,6 +19,7 @@
 
 #include <math.h>
 #include <stdlib.h>
+#include <locale.h>
 #include "config.h"
 #ifdef HAVE_GETOPT_H
 #  include <getopt.h>
@@ -223,6 +224,9 @@ int main (int argc, char * argv[])
   GtsRange fd1, fd2, bd1, bd2;
   gdouble delta, v1, v2, l1, l2;
   GtsBBox * bbox;
+
+  if (!setlocale (LC_ALL, "POSIX"))
+    g_warning ("cannot set locale to POSIX");
 
   colormap = colormap_red_blue (); /* default */
   while (c != EOF) {

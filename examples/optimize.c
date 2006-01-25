@@ -18,6 +18,7 @@
  */
 
 #include <stdlib.h>
+#include <locale.h>
 #include <math.h>
 #include "config.h"
 #ifdef HAVE_GETOPT_H
@@ -198,6 +199,9 @@ int main (int argc, char * argv[])
   int c = 0;
   GtsFile * fp;
   GtsRange angle;
+
+  if (!setlocale (LC_ALL, "POSIX"))
+    g_warning ("cannot set locale to POSIX");
 
   /* parse options using getopt */
   while (c != EOF) {

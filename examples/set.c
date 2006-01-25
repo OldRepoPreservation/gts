@@ -18,6 +18,7 @@
  */
 
 #include <stdlib.h>
+#include <locale.h>
 #include <string.h>
 #include "config.h"
 #ifdef HAVE_GETOPT_H
@@ -53,6 +54,9 @@ int main (int argc, char * argv[])
   gboolean check_self_intersection = FALSE;
   gchar * operation, * file1, * file2;
   gboolean closed = TRUE, is_open1, is_open2;
+
+  if (!setlocale (LC_ALL, "POSIX"))
+    g_warning ("cannot set locale to POSIX");
 
   /* parse options using getopt */
   while (c != EOF) {

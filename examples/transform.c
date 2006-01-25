@@ -18,6 +18,7 @@
  */
 
 #include <stdlib.h>
+#include <locale.h>
 #include <math.h>
 #include "config.h"
 #ifdef HAVE_GETOPT_H
@@ -41,6 +42,9 @@ int main (int argc, char * argv[])
   gboolean verbose = FALSE;
   gboolean revert = FALSE;
   gboolean normalize = FALSE;
+
+  if (!setlocale (LC_ALL, "POSIX"))
+    g_warning ("cannot set locale to POSIX");
 
   m = gts_matrix_identity (NULL);
 

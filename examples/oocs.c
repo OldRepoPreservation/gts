@@ -18,6 +18,7 @@
  */
 
 #include <stdlib.h>
+#include <locale.h>
 #include <math.h>
 #include "gts.h"
 
@@ -31,6 +32,9 @@ int main (int argc, char * argv[])
   GtsRange cluster_stats;
   GtsClusterGrid * cluster_grid;
   
+  if (!setlocale (LC_ALL, "POSIX"))
+    g_warning ("cannot set locale to POSIX");
+
   if (argc != 2) {
     fprintf (stderr, "usage: oocs DELTA < infile > outfile\n");
     return 1;

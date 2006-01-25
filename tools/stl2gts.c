@@ -19,6 +19,7 @@
 
 #include <math.h>
 #include <stdlib.h>
+#include <locale.h>
 #include <string.h>
 #include "config.h"
 #ifdef HAVE_GETOPT_H
@@ -253,6 +254,9 @@ int main (int argc, char * argv[])
   gboolean revert  = FALSE;
   GPtrArray * stl;
   GtsSurface * s;
+
+  if (!setlocale (LC_ALL, "POSIX"))
+    g_warning ("cannot set locale to POSIX");
 
   while (c != EOF) {
 #ifdef HAVE_GETOPT_LONG

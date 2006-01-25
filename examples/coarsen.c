@@ -18,6 +18,7 @@
  */
 
 #include <stdlib.h>
+#include <locale.h>
 #include <math.h>
 #include "config.h"
 #ifdef HAVE_GETOPT_H
@@ -139,6 +140,9 @@ int main (int argc, char * argv[])
   gdouble fold = PI/180.;
   GtsVolumeOptimizedParams params = { 0.5, 0.5, 0. };
   gpointer coarsen_data = NULL, cost_data = NULL;
+
+  if (!setlocale (LC_ALL, "POSIX"))
+    g_warning ("cannot set locale to POSIX");
 
   /* parse options using getopt */
   while (c != EOF) {

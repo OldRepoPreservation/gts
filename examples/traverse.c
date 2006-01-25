@@ -19,6 +19,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <locale.h>
 #include <math.h>
 #include "config.h"
 #ifdef HAVE_GETOPT_H
@@ -179,6 +180,9 @@ int main (int argc, char * argv[])
   GtsFace * first = NULL;
   int c = 0;
   gboolean verbose = FALSE;
+
+  if (!setlocale (LC_ALL, "POSIX"))
+    g_warning ("cannot set locale to POSIX");
 
   colormap = colormap_red_blue (); /* default */
 

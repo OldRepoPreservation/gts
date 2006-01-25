@@ -18,6 +18,7 @@
  */
 
 #include <stdlib.h>
+#include <locale.h>
 #include "config.h"
 #ifdef HAVE_GETOPT_H
 #  include <getopt.h>
@@ -35,6 +36,9 @@ int main (int argc, char * argv[])
   gdouble x, y;
   gboolean verbose = FALSE;
   int c = 0;
+
+  if (!setlocale (LC_ALL, "POSIX"))
+    g_warning ("cannot set locale to POSIX");
 
   s = gts_surface_new (gts_surface_class (),
 		       gts_face_class (),

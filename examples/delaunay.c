@@ -18,6 +18,7 @@
  */
 
 #include <stdlib.h>
+#include <locale.h>
 #ifdef HAVE_CONFIG_H
 #  include "config.h"
 #endif
@@ -240,6 +241,9 @@ int main (int argc, char * argv[])
   int c = 0, status = 0;
   const char * fname = NULL;
   GTimer * timer;
+
+  if (!setlocale (LC_ALL, "POSIX"))
+    g_warning ("cannot set locale to POSIX");
 
   /* parse options using getopt */
   while (c != EOF) {

@@ -19,6 +19,7 @@
 
 #include <math.h>
 #include <stdlib.h>
+#include <locale.h>
 #include "config.h"
 #ifdef HAVE_GETOPT_H
 #  include <getopt.h>
@@ -649,6 +650,9 @@ int main (int argc, char * argv[])
   gdouble isoline[256];
   guint niso = 0;
   gboolean gnuplot = FALSE;
+
+  if (!setlocale (LC_ALL, "POSIX"))
+    g_warning ("cannot set locale to POSIX");
 
   colormap = colormap_jet (); /* default */
   while (c != EOF) {

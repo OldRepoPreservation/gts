@@ -18,6 +18,7 @@
  */
 
 #include <stdlib.h>
+#include <locale.h>
 #include <string.h>
 #include "config.h"
 #ifdef HAVE_GETOPT_H
@@ -38,6 +39,9 @@ int main (int argc, char * argv[])
   gchar fname[] = "component";
   guint ncomp = 0;
   GSList * i;
+
+  if (!setlocale (LC_ALL, "POSIX"))
+    g_warning ("cannot set locale to POSIX");
 
   /* parse options using getopt */
   while (c != EOF) {

@@ -18,6 +18,7 @@
  */
 
 #include <math.h>
+#include <locale.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include "config.h"
@@ -102,6 +103,9 @@ int main (int argc, char * argv[])
   gdouble iso;
   gboolean verbose = FALSE, tetra = FALSE, dual = FALSE;
   GtsIsoCartesianFunc func = sphere;
+
+  if (!setlocale (LC_ALL, "POSIX"))
+    g_warning ("cannot set locale to POSIX");
 
   /* parse options using getopt */
   while (c != EOF) {

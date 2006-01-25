@@ -19,6 +19,7 @@
 
 #include <math.h>
 #include <stdlib.h>
+#include <locale.h>
 #include <string.h>
 #include <pgm.h>
 #include "config.h"
@@ -484,6 +485,9 @@ int main (int argc, char * argv[])
   gdouble relative = 0.;
   gboolean keep_enclosing = FALSE;
   gboolean closed = FALSE;
+
+  if (!setlocale (LC_ALL, "POSIX"))
+    g_warning ("cannot set locale to POSIX");
 
   while (c != EOF) {
 #ifdef HAVE_GETOPT_LONG

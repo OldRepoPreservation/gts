@@ -18,6 +18,7 @@
  */
 
 #include <stdlib.h>
+#include <locale.h>
 #include <math.h>
 #ifdef HAVE_CONFIG_H
 #  include "config.h"
@@ -73,6 +74,9 @@ int main (int argc, char * argv[])
   int c = 0;
   gboolean verbose = FALSE;
   gfloat imbalance = 0.1;
+
+  if (!setlocale (LC_ALL, "POSIX"))
+    g_warning ("cannot set locale to POSIX");
 
   /* parse options using getopt */
   while (c != EOF) {

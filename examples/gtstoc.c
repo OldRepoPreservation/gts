@@ -17,6 +17,7 @@
  * Boston, MA 02111-1307, USA.
  */
 
+#include <locale.h>
 #include "gts.h"
 
 static void write_vertex (GtsVertex * v, guint * nv)
@@ -51,6 +52,9 @@ int main (int argc, char * argv[])
   guint i;
   GtsFile * fp;
   guint nv = 1, ne = 1, nf = 1;
+
+  if (!setlocale (LC_ALL, "POSIX"))
+    g_warning ("cannot set locale to POSIX");
 
   s = gts_surface_new (gts_surface_class (),
 		       gts_face_class (),

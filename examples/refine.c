@@ -18,6 +18,7 @@
  */
 
 #include <stdlib.h>
+#include <locale.h>
 #include <math.h>
 #include "config.h"
 #ifdef HAVE_GETOPT_H
@@ -135,6 +136,9 @@ int main (int argc, char * argv[])
   gpointer stop_data = NULL;
   int c = 0;
   GtsFile * fp;
+
+  if (!setlocale (LC_ALL, "POSIX"))
+    g_warning ("cannot set locale to POSIX");
 
   /* parse options using getopt */
   while (c != EOF) {

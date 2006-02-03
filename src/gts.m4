@@ -7,7 +7,7 @@
 dnl AM_PATH_GTS([MINIMUM-VERSION, [ACTION-IF-FOUND [, ACTION-IF-NOT-FOUND ]]])
 dnl Test for GTS, and define GTS_CFLAGS and GTS_LIBS
 dnl
-AC_DEFUN(AM_PATH_GTS,
+AC_DEFUN([AM_PATH_GTS],
 [dnl 
 dnl Get the cflags and libraries from the gts-config script
 dnl

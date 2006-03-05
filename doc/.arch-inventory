@@ -1,9 +1,0 @@
-precious ^gts-decl-list\.txt$
-precious ^gts-decl\.txt$
-precious ^gts-undocumented\.txt$
-precious ^gts-unused\.txt$
-precious ^html$
-precious ^html\.stamp$
-precious ^sgml$
-precious ^sgml\.stamp$
-precious ^tmpl\.stamp$

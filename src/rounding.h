@@ -22,7 +22,7 @@
 #ifdef HAVE_FPU_CONTROL_H
 #  include <fpu_control.h>
 #  ifdef _FPU_EXTENDED
-#   if !defined(__alpha__) && !defined(__GLIBC__)
+#   if !defined(__alpha__) || !defined(__GLIBC__)
 #    if defined(__arm__)
      static fpu_control_t fpu_round_double = _FPU_DEFAULT;
 #    else

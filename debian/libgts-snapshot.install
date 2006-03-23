@@ -3,7 +3,7 @@ usr/bin/gtscheck
 usr/bin/gtscompare
 usr/bin/gtstemplate
 usr/bin/stl2gts
-usr/bin/gtstransform
+usr/bin/transform
 usr/bin/delaunay
 usr/bin/happrox
 usr/lib/*.so.*

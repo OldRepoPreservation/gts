@@ -1,3 +1,13 @@
+29/03/2006:
+
+Release of version 0.7.6
+
+Important changes:
+
+- Debian snapshot package creation.
+- LC_ALL is set to POSIX in all executables to avoid problems with
+locale-dependent floating-point conventions.
+
 17/10/2005:
 
 Release of version 0.7.4

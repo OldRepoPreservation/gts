@@ -490,7 +490,7 @@ guint gts_edge_is_contact (GtsEdge * e)
  */
 void gts_edge_swap (GtsEdge * e, GtsSurface * s)
 {
-  GtsTriangle * t1 = NULL, * t2 = NULL, * t = NULL;
+  GtsTriangle * t1 = NULL, * t2 = NULL, * t;
   GtsFace * f;
   GSList * i;
   GtsVertex * v1, * v2, * v3, * v4, * v5, * v6;
@@ -522,7 +522,7 @@ void gts_edge_swap (GtsEdge * e, GtsSurface * s)
   if (!GTS_IS_EDGE (v3v6))
     v3v6 = GTS_SEGMENT (gts_edge_new (s->edge_class, v3, v6));
   f = gts_face_new (s->face_class, e1, GTS_EDGE (v3v6), e4);
-  if ((t == gts_triangle_is_duplicate (GTS_TRIANGLE (f))) &&
+  if ((t = gts_triangle_is_duplicate (GTS_TRIANGLE (f))) &&
       GTS_IS_FACE (t)) {
     gts_object_destroy (GTS_OBJECT (f));
     f = GTS_FACE (t);
@@ -530,7 +530,7 @@ void gts_edge_swap (GtsEdge * e, GtsSurface * s)
   gts_surface_add_face (s, f);
 
   f = gts_face_new (s->face_class, GTS_EDGE (v3v6), e2, e3);
-  if ((t == gts_triangle_is_duplicate (GTS_TRIANGLE (f))) &&
+  if ((t = gts_triangle_is_duplicate (GTS_TRIANGLE (f))) &&
       GTS_IS_FACE (t)) {
     gts_object_destroy (GTS_OBJECT (f));
     f = GTS_FACE (t);

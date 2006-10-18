@@ -29,7 +29,6 @@ struct _GtsEHeap {
   GtsKeyFunc func;
   gpointer data;
   gboolean frozen, randomized;
-  GMemChunk * mem_chunk;
 };
 
 /**
@@ -50,7 +49,6 @@ GtsEHeap * gts_eheap_new (GtsKeyFunc key_func,
   heap->data = data;
   heap->frozen = FALSE;
   heap->randomized = FALSE;
-  heap->mem_chunk = g_mem_chunk_create (GtsEHeapPair, 512, G_ALLOC_AND_FREE);
   return heap;
 }
 
@@ -98,7 +96,7 @@ GtsEHeapPair * gts_eheap_insert (GtsEHeap * heap, gpointer p)
   g_return_val_if_fail (heap->func != NULL, NULL);
 
   elts = heap->elts;
-  pair = g_chunk_new (GtsEHeapPair, heap->mem_chunk);
+  pair = g_malloc (sizeof (GtsEHeapPair));
   g_ptr_array_add (elts, pair);
   pair->data = p;
   pair->pos = elts->len;
@@ -130,7 +128,7 @@ GtsEHeapPair * gts_eheap_insert_with_key (GtsEHeap * heap,
   g_return_val_if_fail (heap != NULL, NULL);
 
   elts = heap->elts;
-  pair = g_chunk_new (GtsEHeapPair, heap->mem_chunk);
+  pair = g_malloc (sizeof (GtsEHeapPair));
   g_ptr_array_add (elts, pair);
   pair->data = p;
   pair->pos = elts->len;
@@ -209,7 +207,7 @@ gpointer gts_eheap_remove_top (GtsEHeap * heap, gdouble * key)
     root = pair->data;
     if (key) 
       *key = pair->key;
-    g_mem_chunk_free (heap->mem_chunk, pair);
+    g_free (pair);
     return root;
   }
 
@@ -217,7 +215,7 @@ gpointer gts_eheap_remove_top (GtsEHeap * heap, gdouble * key)
   root = pair->data;
   if (key) 
     *key = pair->key;
-  g_mem_chunk_free (heap->mem_chunk, pair);
+  g_free (pair);
   pair = g_ptr_array_remove_index (elts, len - 1);
   elts->pdata[0] = pair;
   pair->pos = 1;
@@ -261,8 +259,8 @@ void gts_eheap_destroy (GtsEHeap * heap)
 {
   g_return_if_fail (heap != NULL);
 
+  g_ptr_array_foreach (heap->elts, (GFunc) g_free, NULL);
   g_ptr_array_free (heap->elts, TRUE);
-  g_mem_chunk_destroy (heap->mem_chunk);
   g_free (heap);
 }
 

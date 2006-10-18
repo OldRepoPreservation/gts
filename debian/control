@@ -8,7 +8,7 @@ Package: libgts-snapshot-dev
 Section: devel
 Priority: extra
 Architecture: any
-Depends: libc6-dev, ${shlibs:Depends}, libgts-snapshot (= ${Source-Version}), libglib2.0-dev
+Depends: libglib2.0-dev, libgts-snapshot (= ${Source-Version})
 Conflicts: libgts-dev
 Replaces: libgts-dev
 Suggests: libgts-snapshot-doc
@@ -24,7 +24,7 @@ Package: libgts-snapshot
 Section: devel
 Priority: extra
 Architecture: any
-Depends: libc6-dev, ${shlibs:Depends}
+Depends: libglib2.0-0, libnetpbm10
 Conflicts: libgts-0.7-1, libgts-dev
 Replaces: libgts-0.7-1
 Description: GTS Library (development snapshot) -- runtime environment

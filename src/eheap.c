@@ -257,9 +257,12 @@ gpointer gts_eheap_top (GtsEHeap * heap, gdouble * key)
  */
 void gts_eheap_destroy (GtsEHeap * heap)
 {
+  guint i;
+
   g_return_if_fail (heap != NULL);
 
-  g_ptr_array_foreach (heap->elts, (GFunc) g_free, NULL);
+  for (i = 0; i < heap->elts->len; i++)
+    g_free (heap->elts->pdata[i]);
   g_ptr_array_free (heap->elts, TRUE);
   g_free (heap);
 }

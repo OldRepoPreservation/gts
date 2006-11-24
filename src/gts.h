@@ -258,15 +258,8 @@ gpointer         gts_object_check_cast     (gpointer object,
 					    gpointer klass);
 gpointer         gts_object_class_check_cast (gpointer klass, 
 					      gpointer from);
-G_INLINE_FUNC
-gpointer         gts_object_is_from_class  (gpointer object,
-					    gpointer klass);
-G_INLINE_FUNC
-gpointer         gts_object_class_is_from_class (gpointer klass,
-						 gpointer from);
 
-#ifdef	G_CAN_INLINE
-G_INLINE_FUNC
+static inline
 gpointer gts_object_is_from_class (gpointer object,
 				   gpointer klass)
 {
@@ -290,7 +283,7 @@ gpointer gts_object_is_from_class (gpointer object,
   return NULL;
 }
 
-G_INLINE_FUNC
+static inline
 gpointer gts_object_class_is_from_class (gpointer klass,
 					 gpointer from)
 {
@@ -308,7 +301,6 @@ gpointer gts_object_class_is_from_class (gpointer klass,
 
   return NULL;
 }
-#endif /* G_CAN_INLINE */
 
 GtsObjectClass * gts_object_class_from_name     (const gchar * name);
 

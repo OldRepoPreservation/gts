@@ -144,65 +144,6 @@ GtsObjectClass * gts_object_class (void)
   return klass;
 }
 
-#ifndef G_CAN_INLINE
-/**
- * gts_object_is_from_class:
- * @object: a #GtsObject.
- * @klass: a #GtsObjectClass.
- *
- * Returns: @object if @object is of class @klass or of a class derived from
- * @klass, %NULL otherwise.
- */
-gpointer gts_object_is_from_class (gpointer object,
-				   gpointer klass)
-{
-  GtsObjectClass * c;
-
-  g_return_val_if_fail (klass != NULL, NULL);
-
-  if (object == NULL)
-    return NULL;
-
-  c = ((GtsObject *) object)->klass;
-
-  g_return_val_if_fail (c != NULL, NULL);
-
-  while (c) {
-    if (c == klass)
-      return object;
-    c = c->parent_class;
-  }
-
-  return NULL;
-}
-
-/**
- * gts_object_class_is_from_class:
- * @klass: a #GtsObjectClass.
- * @from: a #GtsObjectClass.
- *
- * Returns: @klass if @klass is equal to @from or if @klass is derived
- * from @from, %NULL otherwise.
- */
-gpointer gts_object_class_is_from_class (gpointer klass,
-					 gpointer from)
-{
-  GtsObjectClass * c;
-
-  g_return_val_if_fail (klass != NULL, NULL);
-  g_return_val_if_fail (from != NULL, NULL);
-
-  c = (GtsObjectClass *) klass;
-  while (c) {
-    if (c == from)
-      return klass;
-    c = c->parent_class;
-  }
-
-  return NULL;
-}
-#endif /* not G_CAN_INLINE */
-
 /**
  * gts_object_check_cast:
  * @object: a #GtsObject.

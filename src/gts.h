@@ -391,6 +391,11 @@ gdouble       gts_point_in_circle                    (GtsPoint * p,
 						      GtsPoint * p1,
 						      GtsPoint * p2,
 						      GtsPoint * p3);
+gdouble       gts_point_in_sphere                    (GtsPoint * p, 
+						      GtsPoint * p1,
+						      GtsPoint * p2,
+						      GtsPoint * p3,
+						      GtsPoint * p4);
 gdouble       gts_point_in_triangle_circle           (GtsPoint * p, 
 						      GtsTriangle * t);
 gdouble       gts_point_orientation                  (GtsPoint * p1,

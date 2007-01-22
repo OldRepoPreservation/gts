@@ -307,6 +307,34 @@ gdouble gts_point_in_circle (GtsPoint * p,
 }
 
 /**
+ * gts_point_in_sphere:
+ * @p: a #GtsPoint.
+ * @p1: a #GtsPoint.
+ * @p2: a #GtsPoint.
+ * @p3: a #GtsPoint.
+ * @p4: a #GtsPoint.
+ *
+ * Tests if @p is inside or outside the sphere defined by @p1, @p2,
+ * @p3 and @p4.
+ * 
+ * Returns: a positive number if @p lies inside,
+ * a negative number if @p lies outside and zero if @p lies on 
+ * the sphere.
+ */
+gdouble gts_point_in_sphere (GtsPoint * p, 
+			     GtsPoint * p1, GtsPoint * p2, GtsPoint * p3, GtsPoint * p4)
+{
+  g_return_val_if_fail (p != NULL && p1 != NULL && p2 != NULL && p3 != NULL && p4 != NULL, 
+			0.0);
+
+  return insphere ((gdouble *) &p1->x, 
+		   (gdouble *) &p2->x, 
+		   (gdouble *) &p3->x, 
+		   (gdouble *) &p4->x, 
+		   (gdouble *) &p->x);
+}
+
+/**
  * gts_point_segment_distance2:
  * @p: a #GtsPoint.
  * @s: a #GtsSegment.

@@ -264,7 +264,8 @@ int main (int argc, char * argv[])
       {"revert", no_argument, NULL, 'r'},
       {"nomerge", no_argument, NULL, 'n'},
       {"help", no_argument, NULL, 'h'},
-      {"verbose", no_argument, NULL, 'v'}
+      {"verbose", no_argument, NULL, 'v'},
+      { NULL }
     };
     int option_index = 0;
     switch ((c = getopt_long (argc, argv, "hvnr",

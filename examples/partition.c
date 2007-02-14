@@ -87,7 +87,8 @@ int main (int argc, char * argv[])
       {"try", required_argument, NULL, 't'},
       {"mmax", required_argument, NULL, 'm'},
       {"nmin", required_argument, NULL, 'n'},
-      {"imbalance", required_argument, NULL, 'i'}
+      {"imbalance", required_argument, NULL, 'i'},
+      { NULL }
     };
     int option_index = 0;
     switch ((c = getopt_long (argc, argv, "hvt:m:n:i:", 

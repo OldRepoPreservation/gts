@@ -239,7 +239,8 @@ int main (int argc, char * argv[])
       {"help", no_argument, NULL, 'h'},
       {"min", required_argument, NULL, 'm'},
       {"max", required_argument, NULL, 'M'},
-      {"reverse", no_argument, NULL, 'r'}
+      {"reverse", no_argument, NULL, 'r'},
+      { NULL }
     };
     int option_index = 0;
     switch ((c = getopt_long (argc, argv, "c:hm:M:risl",

@@ -65,7 +65,8 @@ int main (int argc, char * argv[])
       {"inter", no_argument, NULL, 'i'},
       {"self", no_argument, NULL, 's'},
       {"help", no_argument, NULL, 'h'},
-      {"verbose", no_argument, NULL, 'v'}
+      {"verbose", no_argument, NULL, 'v'},
+      { NULL }
     };
     int option_index = 0;
     switch ((c = getopt_long (argc, argv, "hvis", 

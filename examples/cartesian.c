@@ -379,7 +379,8 @@ int main (int argc, char * argv[])
       {"holes", no_argument, NULL, 'H'},
       {"keep", no_argument, NULL, 'k'},
       {"help", no_argument, NULL, 'h'},
-      {"verbose", no_argument, NULL, 'v'}
+      {"verbose", no_argument, NULL, 'v'},
+      { NULL }
     };
     int option_index = 0;
     switch ((c = getopt_long (argc, argv, "hvHk", 

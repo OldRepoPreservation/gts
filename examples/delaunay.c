@@ -262,7 +262,8 @@ int main (int argc, char * argv[])
       {"conform", no_argument, NULL, 'o'},
       {"steiner", required_argument, NULL, 's'},
       {"quality", required_argument, NULL, 'q'},
-      {"area", required_argument, NULL, 'a'}
+      {"area", required_argument, NULL, 'a'},
+      { NULL }
     };
     int option_index = 0;
     switch ((c = getopt_long (argc, argv, "hvbecf:os:q:a:HSrd",

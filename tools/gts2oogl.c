@@ -682,7 +682,8 @@ int main (int argc, char * argv[])
       {"max", required_argument, NULL, 'M'},
       {"nosurface", no_argument, NULL, 'n'},
       {"reverse", no_argument, NULL, 'r'},
-      {"verbose", no_argument, NULL, 'v'}
+      {"verbose", no_argument, NULL, 'v'},
+      { NULL }
     };
     int option_index = 0;
     switch ((c = getopt_long (argc, argv, "c:hm:M:rvf:i:nF:e:H:CgI:tG",

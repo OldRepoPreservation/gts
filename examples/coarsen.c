@@ -160,7 +160,8 @@ int main (int argc, char * argv[])
       {"vweight", required_argument, NULL, 'w'},
       {"bweight", required_argument, NULL, 'b'},
       {"sweight", required_argument, NULL, 's'},
-      {"log", no_argument, NULL, 'L'}
+      {"log", no_argument, NULL, 'L'},
+      { NULL }
     };
     int option_index = 0;
     switch ((c = getopt_long (argc, argv, "hvmc:n:lpf:w:b:s:La",

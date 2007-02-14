@@ -47,7 +47,8 @@ int main (int argc, char * argv[])
     static struct option long_options[] = {
       {"cm", no_argument, NULL, 'c'},
       {"help", no_argument, NULL, 'h'},
-      {"verbose", no_argument, NULL, 'v'}
+      {"verbose", no_argument, NULL, 'v'},
+      { NULL }
     };
     int option_index = 0;
     switch ((c = getopt_long (argc, argv, "hvc", 

@@ -148,7 +148,8 @@ int main (int argc, char * argv[])
       {"verbose", no_argument, NULL, 'v'},
       {"number", required_argument, NULL, 'n'},
       {"cost", required_argument, NULL, 'c'},
-      {"log", no_argument, NULL, 'L'}
+      {"log", no_argument, NULL, 'L'},
+      { NULL }
     };
     int option_index = 0;
     switch ((c = getopt_long (argc, argv, "hvc:n:L",

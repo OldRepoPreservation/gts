@@ -9,6 +9,7 @@ ChangeLog:
 	darcs changes > ChangeLog
 
 debian-snapshot:
+	darcs changes > ChangeLog
 	sh debian/changelog.sh
 	dpkg-buildpackage -rfakeroot -b
 	rm -f debian/repo/*

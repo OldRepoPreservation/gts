@@ -7,5 +7,5 @@ Name: GTS
 Description: GNU Triangulated Surface Library
 Version: @VERSION@
 Requires: glib-2.0,gthread-2.0,gmodule-2.0
-Libs: -L${libdir} @LIBS@ -lgts
+Libs: -L${libdir} @LIBS@ -lgts -lm
 Cflags: -I${includedir}

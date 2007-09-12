@@ -65,7 +65,7 @@ int main (int argc, char * argv[])
     case 'h': /* help */
       fprintf (stderr,
              "Usage: volume [OPTION] < file.gts\n"
-	     "Compute the volume of the domain bounded by the surface defined by file.srf.\n"
+	     "Compute the volume of the domain bounded by the surface defined by file.gts.\n"
 	     "Print the volume and exit successfully if the surface is a closed orientable\n"
 	     "manifold. Exit unsuccessfully otherwise.\n"
 	     "\n"
@@ -97,8 +97,10 @@ int main (int argc, char * argv[])
   }
 
   /* if verbose on print stats */
-  if (verbose)
+  if (verbose) {
     gts_surface_print_stats (s, stdout);
+    printf ("#   Total area: %g\n", gts_surface_area (s));
+  }
 
   /* test if surface is a closed and orientable manifold.
      we don't need to test if s is a manifold since both tests below

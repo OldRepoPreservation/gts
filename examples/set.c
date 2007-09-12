@@ -87,7 +87,7 @@ int main (int argc, char * argv[])
       fprintf (stderr,
              "Usage: set [OPTION] OPERATION FILE1 FILE2\n"
              "Compute set operations between surfaces, where OPERATION is either.\n"
-             "union, inter, diff.\n"
+             "union, inter, diff, all.\n"
 	     "\n"
              "  -i      --inter    output an OOGL (Geomview) representation of the curve\n"
              "                     intersection of the surfaces\n"
@@ -242,6 +242,47 @@ int main (int argc, char * argv[])
     gts_surface_inter_boolean (si, s3, GTS_2_IN_1);
     gts_surface_foreach_face (si->s2, (GtsFunc) gts_triangle_revert, NULL);
     gts_surface_foreach_face (s2, (GtsFunc) gts_triangle_revert, NULL);
+  }
+  else if (!strcmp (operation, "all")) {
+    GtsSurface * s1out2, * s1in2, * s2out1, * s2in1;
+    FILE * fp;
+
+    s1out2 = gts_surface_new (gts_surface_class (),
+			      gts_face_class (),
+			      gts_edge_class (),
+			      gts_vertex_class ());
+    s1in2 = gts_surface_new (gts_surface_class (),
+			     gts_face_class (),
+			     gts_edge_class (),
+			     gts_vertex_class ());
+    s2out1 = gts_surface_new (gts_surface_class (),
+			      gts_face_class (),
+			      gts_edge_class (),
+			      gts_vertex_class ());
+    s2in1 = gts_surface_new (gts_surface_class (),
+			     gts_face_class (),
+			     gts_edge_class (),
+			     gts_vertex_class ());
+    gts_surface_inter_boolean (si, s1out2, GTS_1_OUT_2);
+    gts_surface_inter_boolean (si, s1in2, GTS_1_IN_2);  
+    gts_surface_inter_boolean (si, s2out1, GTS_2_OUT_1);
+    gts_surface_inter_boolean (si, s2in1, GTS_2_IN_1);
+    fp = fopen ("s1out2.gts", "w");
+    gts_surface_write (s1out2, fp);
+    fclose (fp);
+    fp = fopen ("s1in2.gts", "w");
+    gts_surface_write (s1in2, fp);
+    fclose (fp);
+    fp = fopen ("s2out1.gts", "w");
+    gts_surface_write (s2out1, fp);
+    fclose (fp);
+    fp = fopen ("s2in1.gts", "w");
+    gts_surface_write (s2in1, fp);
+    fclose (fp);
+    gts_object_destroy (GTS_OBJECT (s1out2));
+    gts_object_destroy (GTS_OBJECT (s1in2));
+    gts_object_destroy (GTS_OBJECT (s2out1));
+    gts_object_destroy (GTS_OBJECT (s2in1));
   }
   else {
     fprintf (stderr, 

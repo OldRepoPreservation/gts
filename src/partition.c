@@ -579,7 +579,9 @@ GtsGraphBisection * gts_graph_ggg_bisection (GtsGraph * g, guint ntry)
 	   gts_container_size (GTS_CONTAINER (bestg2)));
 #endif
 
+  g_assert (bestg1 != NULL);
   bg->g1 = bestg1;
+  g_assert (bestg2 != NULL);
   bg->g2 = bestg2;
   
   /* boundary nodes */

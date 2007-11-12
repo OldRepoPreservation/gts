@@ -7,7 +7,7 @@ Version: 0.7.6
 %else
 Version: %{current}
 %endif
-Release: 2.%{alphatag}cvs%{?dist}
+Release: 3.%{alphatag}cvs%{?dist}
 Summary: GNU Triangulated Surface Library
 Group: Applications/Engineering
 License: GPLv2
@@ -26,7 +26,7 @@ BuildRequires: libnetpbm
 %package devel
 Summary:        Development files for gts
 Group:          Applications/Engineering
-Requires:       pkgconfig
+Requires:       glib2-devel pkgconfig
 Requires:       %{name} = %{version}-%{release}
 
 %description
@@ -46,12 +46,12 @@ This package contains the gts header files and libs.
 %build
 RPM_OPT_FLAGS="$RPM_OPT_FLAGS -fPIC -DPIC"
 if [ -x ./configure ]; then
-    CFLAGS="$RPM_OPT_FLAGS" LIBS="-lm" ./configure \
+    CFLAGS="$RPM_OPT_FLAGS" ./configure \
 	--prefix=%{_prefix} \
 		--disable-dependency-tracking \
 		    --libdir=%{_prefix}/%_lib
 else
-    CFLAGS="$RPM_OPT_FLAGS" LIBS="-lm" sh autogen.sh \
+    CFLAGS="$RPM_OPT_FLAGS" sh autogen.sh \
 	--prefix=%{_prefix} \
 		--disable-dependency-tracking \
 		    --libdir=%{_prefix}/%_lib
@@ -107,6 +107,9 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Mon Nov 12 2007 Ivan Adam Vari <i.vari@niwa.co.nz>
+- Fixed package (install) dependencies
+
 * Fri Sep 28 2007 Ivan Adam Vari <i.vari@niwa.co.nz>
 - Added SLEx/SuSE compatibility
 - Added 64bit compatibility

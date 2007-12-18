@@ -1,6 +1,7 @@
 %define alphatag %(date +%Y%m%d)
 %define current %(gts-config --version)
 
+Summary: GNU Triangulated Surface Library
 Name: gts-snapshot
 %if "%{current}" == ""
 Version: 0.7.6
@@ -8,9 +9,8 @@ Version: 0.7.6
 Version: %{current}
 %endif
 Release: 3.%{alphatag}cvs%{?dist}
-Summary: GNU Triangulated Surface Library
-Group: Applications/Engineering
 License: GPLv2
+Group: Applications/Engineering
 URL: http://gts.sourceforge.net
 Packager: Ivan Adam Vari <i.vari@niwa.co.nz>
 Source0: gts-mainline.tar.gz
@@ -62,6 +62,7 @@ fi
 
 %install
 rm -rf $RPM_BUILD_ROOT
+mkdir $RPM_BUILD_ROOT
 make install DESTDIR=$RPM_BUILD_ROOT
 mv -f $RPM_BUILD_ROOT%{_bindir}/delaunay $RPM_BUILD_ROOT%{_bindir}/gtsdelaunay 
 mv -f $RPM_BUILD_ROOT%{_bindir}/happrox $RPM_BUILD_ROOT%{_bindir}/gtshapprox
@@ -107,6 +108,9 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Wed Dec 19 2007 Ivan Adam Vari <i.vari@niwa.co.nz>
+- Fixed creating RPM_BUILD_ROOT issue on some systems
+
 * Mon Nov 12 2007 Ivan Adam Vari <i.vari@niwa.co.nz>
 - Fixed package (install) dependencies
 

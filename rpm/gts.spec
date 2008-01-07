@@ -8,7 +8,7 @@ Version: 0.7.6
 %else
 Version: %{current}
 %endif
-Release: 3.%{alphatag}cvs%{?dist}
+Release: 4.%{alphatag}cvs%{?dist}
 License: GPLv2
 Group: Applications/Engineering
 URL: http://gts.sourceforge.net
@@ -57,13 +57,15 @@ else
 		    --libdir=%{_prefix}/%_lib
 fi
 
-%{__make} %{?_smp_mflags}
+%{__make}
 
 
 %install
 rm -rf $RPM_BUILD_ROOT
 mkdir $RPM_BUILD_ROOT
 make install DESTDIR=$RPM_BUILD_ROOT
+
+# Fedora compatible changes, won't hurt SuSE
 mv -f $RPM_BUILD_ROOT%{_bindir}/delaunay $RPM_BUILD_ROOT%{_bindir}/gtsdelaunay 
 mv -f $RPM_BUILD_ROOT%{_bindir}/happrox $RPM_BUILD_ROOT%{_bindir}/gtshapprox
 mv -f $RPM_BUILD_ROOT%{_bindir}/transform $RPM_BUILD_ROOT%{_bindir}/gtstransform
@@ -108,16 +110,18 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
-* Wed Dec 19 2007 Ivan Adam Vari <i.vari@niwa.co.nz>
-- Fixed creating RPM_BUILD_ROOT issue on some systems
+* Mon Jan 7 2008 Ivan Adam Vari <i.vari@niwa.co.nz> - 4
+- Removed %{?_smp_mflags} from make due to intermittent
+  build errors on some SMP systems
 
-* Mon Nov 12 2007 Ivan Adam Vari <i.vari@niwa.co.nz>
+* Wed Dec 19 2007 Ivan Adam Vari <i.vari@niwa.co.nz> - 3
+- Fixed creating RPM_BUILD_ROOT issue on some systems
 - Fixed package (install) dependencies
 
-* Fri Sep 28 2007 Ivan Adam Vari <i.vari@niwa.co.nz>
+* Fri Sep 28 2007 Ivan Adam Vari <i.vari@niwa.co.nz> - 2
 - Added SLEx/SuSE compatibility
 - Added 64bit compatibility
 - Removed --disable-static flag
 
-* Tue May 1 2007 Ivan Adam Vari <i.vari@niwa.co.nz>
+* Tue May 1 2007 Ivan Adam Vari <i.vari@niwa.co.nz> - 1
 - Initial rpm release based on Fedora/Redhat Linux

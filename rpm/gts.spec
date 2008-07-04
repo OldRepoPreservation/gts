@@ -8,7 +8,7 @@ Version: 0.7.6
 %else
 Version: %{current}
 %endif
-Release: 5.%{alphatag}cvs%{?dist}
+Release: 6.%{alphatag}cvs%{?dist}
 License: GPLv2
 # SuSE should have this macro set otherwise specify in ~/.rpmmacros
 %if 0%{?suse_version}
@@ -22,14 +22,17 @@ URL: http://gts.sourceforge.net
 Packager: Ivan Adam Vari <i.vari@niwa.co.nz>
 Source0: gts-mainline.tar.gz
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
-BuildRequires: glib2-devel gtkdoc >= 1.3-4
-Requires: glib2
 %if 0%{?fedora_version}
 Requires: netpbm-devel
+BuildRequires:  gtk-doc >= 1.3-4
 %endif
 %if 0%{?suse_version}
 Requires: libnetpbm
+BuildRequires: gtkdoc >= 1.3-4
 %endif
+# For both distros
+Requires: glib2
+BuildRequires: glib2-devel
 
 %package devel
 Summary: Development files for gts
@@ -119,7 +122,7 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %files
-%defattr(-,root,root,-)
+%defattr(-,root,root)
 %doc COPYING NEWS README TODO
 %{_bindir}/gtsdelaunay
 %{_bindir}/gts2dxf
@@ -134,7 +137,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/*.so.*
 
 %files devel
-%defattr(-,root,root,-)
+%defattr(-,root,root)
 %doc COPYING
 %{_bindir}/gts-config
 %{_includedir}/*.h
@@ -143,11 +146,15 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/aclocal/*.m4
 
 %files doc
-%defattr(-,root,root,-)
+%defattr(-,root,root)
 %doc COPYING doc/html/*.html
 
 
 %changelog
+* Thu Jul 3 2008 Ivan Adam Vari <i.vari@niwa.co.nz> - 6
+- Fixed typo in %files section (attr)
+- Fixed typo for FC build requirement gtk-doc
+
 * Thu May 15 2008 Ivan Adam Vari <i.vari@niwa.co.nz> - 5
 - Added fedora 8 support for x86 (32bit only)
 - Added doc package

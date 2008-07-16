@@ -1,14 +1,14 @@
 %define alphatag %(date +%Y%m%d)
-%define current %(gts-config --version)
+%define current %(pkg-config gts --modversion)
 
-Summary: GNU Triangulated Surface Library
+Summary: GNU Triangulated Surface Library (development snapshot)
 Name: gts-snapshot
 %if "%{current}" == ""
 Version: 0.7.6
 %else
 Version: %{current}
 %endif
-Release: 6.%{alphatag}cvs%{?dist}
+Release: 7.%{alphatag}cvs%{?dist}
 License: GPLv2
 # SuSE should have this macro set otherwise specify in ~/.rpmmacros
 %if 0%{?suse_version}
@@ -151,6 +151,9 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Wed Jul 16 2008 Ivan Adam Vari <i.vari@niwa.co.nz> - 7
+- Some minor changes found in debian packages
+
 * Thu Jul 3 2008 Ivan Adam Vari <i.vari@niwa.co.nz> - 6
 - Fixed typo in %files section (attr)
 - Fixed typo for FC build requirement gtk-doc

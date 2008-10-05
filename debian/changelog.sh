@@ -1,4 +1,4 @@
-GTS_VERSION=`pkg-config gts --modversion`
+GTS_VERSION=`grep GTS_MAJOR_VERSION config.h | awk '{print $3;}'`.`grep GTS_MINOR_VERSION config.h | awk '{print $3;}'`.`grep GTS_MICRO_VERSION config.h | awk '{print $3;}'`
 
 version=`date +%y%m%d`
 date=`date +"%a, %e %b %Y %T %z"`

@@ -8,7 +8,7 @@ pkgconfig_DATA = gts.pc
 ChangeLog:
 	darcs changes > ChangeLog
 
-debian-snapshot:
+debian-snapshot: config.h
 	darcs changes > ChangeLog
 	sh debian/changelog.sh
 	dpkg-buildpackage -rfakeroot -b

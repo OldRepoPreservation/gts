@@ -19,6 +19,7 @@ CFLAGS += -g
 endif
 
 DTMPDIR=$(CURDIR)/debian/tmp
+GTS_VERSION=$(shell grep -o "[0-9]*\.[0-9]*\.[0-9]*" $(CURDIR)/debian/changelog)
 
 CONFIG_GUESS := /usr/share/misc/config.guess
 CONFIG_SUB   := /usr/share/misc/config.sub
@@ -71,7 +72,7 @@ binary-indep:
 	dh_installdirs -plibgts-snapshot-doc usr/share/doc/libgts-snapshot-doc/html
 	cp -a doc/html/*.html debian/libgts-snapshot-doc/usr/share/doc/libgts-snapshot-doc/html
 	dh_installdocs
-	dh_installchangelogs 
+	dh_installchangelogs
 	dh_compress
 	dh_fixperms
 	dh_installdeb
@@ -91,7 +92,7 @@ binary-arch: build install
 	dh_strip
 	dh_compress
 	dh_fixperms
-	dh_makeshlibs -V 'libgts-snapshot'
+	dh_makeshlibs -V 'libgts-snapshot' -- -v$(GTS_VERSION) -c0
 	dh_installdeb
 	dh_shlibdeps
 	dh_gencontrol

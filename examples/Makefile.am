@@ -2,7 +2,7 @@
 
 INCLUDES = -I$(top_srcdir) -I$(top_srcdir)/src -I$(includedir)\
 	 -DG_LOG_DOMAIN=\"Gts-examples\"
-LDADD = $(top_builddir)/src/libgts.la -lm
+LDADD = $(top_builddir)/src/libgts.la
 DEPS = $(top_builddir)/src/libgts.la
 
 EXTRA_PROGRAMS = happrox

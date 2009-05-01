@@ -1,16 +1,14 @@
 Source: gts-snapshot
 Section: math
-Priority: extra
+Priority: optional
 Maintainer: Stephane Popinet <popinet@users.sf.net>
-Build-Depends: cdbs, debhelper (>= 4), autotools-dev, libglib2.0-dev, libnetpbm10-dev, gtk-doc-tools (>= 1.3-4)
+Build-Depends: cdbs, debhelper (>= 5), autotools-dev, libglib2.0-dev, libnetpbm10-dev, gtk-doc-tools (>= 1.3-4)
 Homepage: http://gts.sourceforge.net/
 
 Package: libgts-snapshot-dev
 Section: libdevel
-Priority: extra
 Architecture: any
-Depends: libglib2.0-dev, libgts-snapshot (= ${Source-Version})
-Conflicts: libgts-dev
+Depends: ${shlibs:Depends}, ${misc:Depends}, libglib2.0-dev, libgts-snapshot (= ${binary:Version})
 Replaces: libgts-dev
 Suggests: libgts-snapshot-doc
 Description: GTS Library (development snapshot)
@@ -22,12 +20,10 @@ Description: GTS Library (development snapshot)
  binary heaps.
 
 Package: libgts-snapshot
-Section: devel
-Priority: extra
+Section: libs
 Architecture: any
-Depends: libc6, libglib2.0-0, libnetpbm10
-Conflicts: libgts-0.7-1, libgts-dev
-Replaces: libgts-0.7-1
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Replaces: libgts-0.7-5, libgts-0.7-1
 Description: GTS Library (development snapshot) -- runtime environment
  GTS includes a number of useful functions to deal with triangulated
  surfaces.  Refer to the libgts-dev package description for more
@@ -37,11 +33,9 @@ Description: GTS Library (development snapshot) -- runtime environment
 
 Package: libgts-snapshot-doc
 Section: doc
-Priority: extra
 Architecture: all
-Conflicts: libgts-doc
 Replaces: libgts-doc
-Depends: lynx | www-browser
+Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: GTS Library documentation (development snapshot)
  GTS includes a number of useful functions to deal with triangulated
  surfaces.  Refer to the libgts-dev package description for more

@@ -233,17 +233,20 @@ static void add_stl (GtsSurface * s, GPtrArray * stl)
     GtsEdge * e3 = GTS_EDGE (gts_vertices_are_connected (stl->pdata[3*i + 2],
 							 stl->pdata[3*i]));
 
-    if (e1 == NULL)
+    if (e1 == NULL && stl->pdata[3*i] != stl->pdata[3*i + 1])
       e1 = gts_edge_new (s->edge_class, 
 			 stl->pdata[3*i], stl->pdata[3*i + 1]);
-    if (e2 == NULL)
+    if (e2 == NULL && stl->pdata[3*i + 1] != stl->pdata[3*i + 2])
       e2 = gts_edge_new (s->edge_class, 
 			 stl->pdata[3*i + 1], stl->pdata[3*i + 2]);
-    if (e3 == NULL)
+    if (e3 == NULL && stl->pdata[3*i + 2] != stl->pdata[3*i])
       e3 = gts_edge_new (s->edge_class, 
 			 stl->pdata[3*i + 2], stl->pdata[3*i]);
-    gts_surface_add_face (s, gts_face_new (s->face_class, e1, e2, e3));
-  }    
+    if (e1 != NULL && e2 != NULL && e3 != NULL)
+      gts_surface_add_face (s, gts_face_new (s->face_class, e1, e2, e3));
+    else
+      fprintf (stderr, "stl2gts: warning: ignoring degenerate facet!");
+  }
 }
 
 int main (int argc, char * argv[])

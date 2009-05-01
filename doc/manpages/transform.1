@@ -1,0 +1,66 @@
+.TH transform 1 "June 2, 2008" "" "transform: apply geometric transformations to the input"
+
+.SH NAME
+transform \- apply geometric transformations to the input.
+
+.SH SYNOPSIS
+.B transform
+.RI [OPTION] < file.gts
+
+.SH DESCRIPTION
+This manual page documents briefly the 
+.B transform
+command.
+
+.SH OPTIONS
+This program follow the usual GNU command line syntax, with long
+options starting with two dashes (`-').
+A summary of options is included below.
+.TP
+.B \-r ANGLE, \-\-rx=ANGLE
+Rotate around x-axis (angle in degrees).
+.TP
+.B \-m ANGLE, \-\-ry=ANGLE
+Rotate around y-axis.
+.TP
+.B \-m ANGLE, \-\-rz=ANGLE
+Rotate around z-axis.
+.TP
+.B \-s FACTOR, \-\-scale=FACTOR
+Scale by FACTOR.
+.TP
+.B \-R FACTOR, \-\-sx=FACTOR
+Scale x-axis by FACTOR.
+.TP
+.B \-M FACTOR, \-\-sy=FACTOR
+Scale y-axis by FACTOR.
+.TP
+.B \-N FACTOR, \-\-sz=FACTOR
+Scale z-axis by FACTOR.
+.TP
+.B \-t V, \-\-tx=V
+Translate of V along x-axis.
+.TP
+.B \-u V, \-\-ty=V
+Translate of V along y-axis.
+.TP
+.B \-w V, \-\-tz=V
+Translate of V along z-axis.
+.TP
+.B \-i, \-\-revert
+Turn surface inside out.
+.TP
+.B \-o, \-\-normalize
+Fit the resulting surface in a cube of size 1 centered at the origin.
+.TP
+.B \-v, \-\-verbose
+Print statistics about the surface.
+.TP
+.B \-h, \-\-help
+Display the help and exit.
+
+.SH AUTHOR
+transform was written by Stephane Popinet <popinet@users.sourceforge.net>.
+.PP
+This manual page was written by Ruben Molina <rmolina@udea.edu.co>,
+for the Debian project (but may be used by others).

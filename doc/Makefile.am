@@ -1,5 +1,7 @@
 ## Process this file with automake to produce Makefile.in
 
+SUBDIRS = manpages
+
 # The name of the module.
 DOC_MODULE=gts
 

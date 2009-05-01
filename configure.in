@@ -254,6 +254,7 @@ src/Makefile
 src/gts-config
 tools/Makefile
 doc/Makefile
+doc/manpages/Makefile
 examples/Makefile
 test/Makefile
 test/boolean/Makefile

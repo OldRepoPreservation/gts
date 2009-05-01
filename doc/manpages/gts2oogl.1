@@ -1,0 +1,99 @@
+.TH gts2oogl 1 "June 2, 2008" "" "gts2oogl: converts a GTS file to OOGL file format (Geomview)"
+
+.SH NAME
+gts2oogl \- converts a GTS file to OOGL file format (Geomview).
+
+.SH SYNOPSIS
+.B gts2oogl
+.RI [OPTION]... < input.srf > output.oogl
+
+.SH DESCRIPTION
+This manual page documents briefly the
+.B gts2oogl
+command.
+
+.SH OPTIONS
+This program follow the usual GNU command line syntax, with long
+options starting with two dashes (`-').
+A summary of options is included below.
+.TP
+.B \-G, \-\-gnuplot
+Writes isolines in gnuplot format.
+.TP
+.B \-\-component
+Color faces according to the component they belong too.
+.TP
+.B \-\-quality
+Color faces according to their quality.
+.TP
+.B \-\-area
+Color faces according to their area.
+.TP
+.B \-\-incomp
+Color incompatible faces.
+.TP
+.B \-f VAL, \-\-fold=VAL
+Color faces which make an angle smaller than VAL degrees with any of their neighbors.
+.TP
+.B \-t, \-\-faces
+Output individual faces.
+.TP
+.B \-\-epv
+Color vertices according to number of edges per vertex.
+.TP
+.B \-H C, \-\-height=C
+Color vertices according to their C coordinate.
+.TP
+.B \-g, \-\-gaussian
+Color vertices according to Gaussian curvature.
+.TP
+.B \-C, \-\-curvature
+Color vertices according to mean curvature.
+.TP
+.B \-\-boundary
+Output boundary edges.
+.TP
+.B \-e A, \-\-feature=A
+Output `feature' edges defined by angle A
+.TP
+.B \-\-non-manifold
+Output non-manifold edges.
+.TP
+.B \-\-duplicate
+Output duplicate edges.
+.TP
+.B \-i N, \-\-isolines=N
+Draw N isolines (levels of constant altitude).
+.TP
+.B \-I L, \-\-isolines=L
+Draw isoline at level L.
+.TP
+.B \-\-cmap=FILE
+Load FILE as colormap.
+.TP
+.B \-m VAL, \-\-min=VAL
+Use VAL as minimum scaling value.
+.TP
+.B \-M VAL, \-\-max=VAL
+Use VAL as maximum scaling value.
+.TP
+.B \-r, \-\-reverse
+Reverse colormap.
+.TP
+.B \-n, \-\-nosurface
+Do not output surface.
+.TP
+.B \-F C, \-\-flatten=C
+Set C coordinate to average value.
+.TP
+.B \-v, \-\-verbose
+Display surface statistics.
+.TP
+.B \-h, \-\-help
+Display the help and exit.
+
+.SH AUTHOR
+gts2oogl was written by Stephane Pipinet <popinet@users.sourceforge.net>.
+.PP
+This manual page was written by Ruben Molina <rmolina@udea.edu.co>,
+for the Debian project (but may be used by others).

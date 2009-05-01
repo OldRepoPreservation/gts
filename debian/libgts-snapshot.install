@@ -10,3 +10,13 @@ debian/tmp/usr/bin/gts2dxf
 debian/tmp/usr/bin/gts2stl
 debian/tmp/usr/lib/*.so.*
 debian/tmp/usr/lib/pkgconfig/*.pc
+debian/tmp/usr/share/man/man1/gts2oogl.1
+debian/tmp/usr/share/man/man1/gtscheck.1
+debian/tmp/usr/share/man/man1/gtscompare.1
+debian/tmp/usr/share/man/man1/gtstemplate.1
+debian/tmp/usr/share/man/man1/stl2gts.1
+debian/tmp/usr/share/man/man1/transform.1
+debian/tmp/usr/share/man/man1/delaunay.1
+debian/tmp/usr/share/man/man1/happrox.1
+debian/tmp/usr/share/man/man1/gts2dxf.1
+debian/tmp/usr/share/man/man1/gts2stl.1

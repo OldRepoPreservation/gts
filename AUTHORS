@@ -4,6 +4,7 @@ Stéphane Popinet   <popinet@users.sourceforge.net>
 
 Contributors
 ------------
+Marcelo E. Magallon, Ruben Molina: Debian packages.
 Jonathan R. Shewchuk: robust geometric predicates.
 Ray Jones: discrete differential operators.
 Gert Wollny: marching tetrahedra.

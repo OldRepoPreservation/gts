@@ -1,0 +1,51 @@
+.TH happrox 1 "June 2, 2008" "" "happrox: returns a simplified triangulation of a set of points"
+
+.SH NAME
+happrox \- returns a simplified triangulation of a set of points using algorithm III of Garland and Heckbert (1995).
+
+.SH SYNOPSIS
+.B happrox
+.RI [OPTION]... < [input.pgm|input] > output.gts
+
+.SH DESCRIPTION
+This manual page documents briefly the 
+.B happrox
+command.
+
+.SH OPTIONS
+This program follow the usual GNU command line syntax, with long
+options starting with two dashes (`-').
+A summary of options is included below.
+.TP
+.B \-n N, \-\-number=N
+Stop the refinement process if the number of vertices is larger than N.
+.TP
+.B \-c C, \-\-cost=C
+Stop the refinement process if the cost of insertion of a vertex is smaller than C.
+.TP
+.B \-f, \-\-flat
+Input is a flat file with three x,y,z columns (default is PGM file).
+.TP
+.B \-r Z, \-\-relative=Z
+Use relative height cost for all heights larger than Z.
+.TP
+.B \-k, \-\-keep
+Keep enclosing triangle.
+.TP
+.B \-C, \-\-closed
+Close the surface.
+.TP
+.B \-l, \-\-log
+Log evolution of cost.
+.TP
+.B \-v, \-\-verbose
+Display surface statistics.
+.TP
+.B \-h, \-\-help
+Display the help and exit.
+
+.SH AUTHOR
+happrox was written by Stephane Popinet <popinet@users.sourceforge.net>.
+.PP
+This manual page was written by Ruben Molina <rmolina@udea.edu.co>,
+for the Debian project (but may be used by others).

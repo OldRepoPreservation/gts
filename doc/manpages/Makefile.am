@@ -1,4 +1,4 @@
-man_MANS = \
+dist_man_MANS = \
 	delaunay.1 \
 	gts2dxf.1 \
 	gts2oogl.1 \

@@ -3,7 +3,7 @@ GTS_VERSION=`grep GTS_MAJOR_VERSION config.h | awk '{print $3;}'`.`grep GTS_MINO
 version=`date +%y%m%d`
 date=`date +"%a, %e %b %Y %T %z"`
 cat <<EOF > debian/changelog
-gts-snapshot ($GTS_VERSION-$version) testing; urgency=low
+gts-snapshot ($GTS_VERSION-$version) hardy; urgency=low
 
   * gts-snapshot release (based on Ruben Molina's official debian)
 

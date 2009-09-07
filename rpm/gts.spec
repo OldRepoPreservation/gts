@@ -135,6 +135,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_bindir}/stl2gts
 %{_bindir}/gtstransform
 %{_libdir}/*.so.*
+%{_mandir}/man1/*.gz
 
 %files devel
 %defattr(-,root,root)
@@ -148,7 +149,6 @@ rm -rf $RPM_BUILD_ROOT
 %files doc
 %defattr(-,root,root)
 %doc COPYING doc/html/*.html
-
 
 %changelog
 * Wed Jul 16 2008 Ivan Adam Vari <i.vari@niwa.co.nz> - 7

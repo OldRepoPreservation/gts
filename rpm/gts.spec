@@ -81,12 +81,14 @@ if [ -x ./configure ]; then
 	--prefix=%{_prefix} \
 	--disable-dependency-tracking \
 	--libdir=%{_prefix}/%_lib \
+	--mandir=%{_mandir} \
 	--disable-static
 else
     CFLAGS="$RPM_OPT_FLAGS" sh autogen.sh \
 	--prefix=%{_prefix} \
 	--disable-dependency-tracking \
         --libdir=%{_prefix}/%_lib \
+	--mandir=%{_mandir} \
 	--disable-static
 fi
 

@@ -528,8 +528,36 @@ GtsFileVariable * gts_file_assign_next (GtsFile * f, GtsFileVariable * vars)
 	      gts_file_error (f, "expecting a string");
 	      var->set = FALSE;
 	    }
-	    else if (var->data)
-	      *((gchar **) var->data) = g_strdup (f->token->str); 
+	    else {
+	      if (f->token->str[0] != '"') { /* simple string */
+		if (var->data)
+		  *((gchar **) var->data) = g_strdup (f->token->str); 
+	      }
+	      else { 
+		/* quoted string */
+		gint len = strlen (f->token->str);
+		if (f->token->str[len - 1] == '"') { 
+		  /* simple quoted string */
+		  f->token->str[len - 1] = '\0';
+		  if (var->data)
+		    *((gchar **) var->data) = g_strdup (&(f->token->str[1]));
+		  f->token->str[len - 1] = '"';
+		}
+		else { 
+		  /* multiple parts */
+		  GString * s = g_string_new (&(f->token->str[1]));
+		  g_string_append_c (s, ' ');
+		  int c = gts_file_getc (f);
+		  while (c != '"' && c != EOF) {
+		    g_string_append_c (s, c);
+		    c = gts_file_getc (f);
+		  }
+		  if (var->data)
+		    *((gchar **) var->data) = g_strdup (s->str);
+		  g_string_free (s, TRUE);
+		}
+	      }
+	    }
 	    break;
 	  default:
 	    g_assert_not_reached ();

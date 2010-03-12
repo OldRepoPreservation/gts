@@ -176,9 +176,6 @@ The progressive surface object.
 @split_class: 
 @f: 
 @Returns: 
-<!-- # Unused Parameters # -->
-@fptr: 
-@line: 
 
 
 <!-- ##### FUNCTION gts_psurface_read_vertex ##### -->
@@ -189,8 +186,6 @@ The progressive surface object.
 @ps: 
 @fp: 
 @Returns: 
-<!-- # Unused Parameters # -->
-@fptr: 
 
 
 <!-- ##### FUNCTION gts_psurface_close ##### -->

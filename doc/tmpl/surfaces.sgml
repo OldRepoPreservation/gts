@@ -60,6 +60,9 @@ This structure should only be accessed through the following functions.
 </para>
 
 @object: 
+@faces: 
+@faces: 
+@face_class: 
 @edge_class: 
 @vertex_class: 
 @keep_faces: 
@@ -110,8 +113,6 @@ This structure should only be accessed through the following functions.
 @s1: 
 @s2: 
 @Returns: 
-<!-- # Unused Parameters # -->
-@s: 
 
 
 <!-- ##### FUNCTION gts_surface_merge ##### -->
@@ -131,8 +132,6 @@ This structure should only be accessed through the following functions.
 @surface: 
 @f: 
 @Returns: 
-<!-- # Unused Parameters # -->
-@fptr: 
 
 
 <!-- ##### FUNCTION gts_surface_is_manifold ##### -->

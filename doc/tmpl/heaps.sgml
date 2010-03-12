@@ -65,8 +65,6 @@ An opaque data structure describing a binary heap.
 </para>
 
 @heap: 
-<!-- # Unused Parameters # -->
-@h: 
 
 
 <!-- ##### FUNCTION gts_heap_thaw ##### -->

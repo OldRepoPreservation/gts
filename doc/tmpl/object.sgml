@@ -221,7 +221,6 @@ Defined for future use.
 </para>
 
 @klass: 
-@from: 
 @Returns: 
 
 
@@ -286,7 +285,6 @@ Defined for future use.
 </para>
 
 @object: 
-@klass: 
 @Returns: 
 
 

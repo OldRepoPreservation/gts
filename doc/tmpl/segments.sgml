@@ -77,9 +77,6 @@ The segment object.
 @v1: 
 @v2: 
 @Returns: 
-<!-- # Unused Parameters # -->
-@p1: 
-@p2: 
 
 
 <!-- ##### MACRO gts_segments_are_identical ##### -->

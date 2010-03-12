@@ -74,9 +74,6 @@ Weighted graph
 @n2: 
 @weight: 
 @Returns: 
-<!-- # Unused Parameters # -->
-@g1: 
-@g2: 
 
 
 <!-- ##### MACRO GTS_WGNODE_CLASS ##### -->

@@ -38,13 +38,6 @@ The coarsening or refinement processes are stopped using a user-defined stop fun
 @refine_data: 
 @stop_func: 
 @stop_data: 
-<!-- # Unused Parameters # -->
-@compare_func: 
-@data: 
-@stop: 
-@user_data: 
-@s: 
-@lmax: 
 
 
 <!-- ##### USER_FUNCTION GtsCoarsenFunc ##### -->
@@ -93,12 +86,6 @@ User-defined function used to stop the coarsening process.
 @stop_func: 
 @stop_data: 
 @minangle: 
-<!-- # Unused Parameters # -->
-@midpoint: 
-@stop: 
-@data: 
-@key_func: 
-@lmin: 
 
 
 <!-- ##### FUNCTION gts_coarsen_stop_number ##### -->
@@ -151,8 +138,6 @@ The parameters for the volume optimization algorithm of Lindstrom and Turk. THey
 @e: 
 @params: 
 @Returns: 
-<!-- # Unused Parameters # -->
-@s: 
 
 
 <!-- ##### FUNCTION gts_edge_collapse_is_valid ##### -->

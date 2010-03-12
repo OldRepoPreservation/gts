@@ -144,8 +144,6 @@ index @i). This function is always called in order by gts_isosurface_cartesian()
 @f: 
 @data: 
 @iso: 
-<!-- # Unused Parameters # -->
-@Returns: 
 
 
 <!-- ##### FUNCTION gts_isosurface_tetra ##### -->

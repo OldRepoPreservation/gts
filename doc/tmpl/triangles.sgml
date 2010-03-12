@@ -79,10 +79,6 @@ The triangle object.
 @e2: 
 @e3: 
 @Returns: 
-<!-- # Unused Parameters # -->
-@s1: 
-@s2: 
-@s3: 
 
 
 <!-- ##### FUNCTION gts_triangle_set ##### -->
@@ -179,8 +175,6 @@ The triangle object.
 @t2: 
 @e: 
 @Returns: 
-<!-- # Unused Parameters # -->
-@s: 
 
 
 <!-- ##### FUNCTION gts_triangle_enclosing ##### -->
@@ -211,8 +205,6 @@ The triangle object.
 
 @t: 
 @Returns: 
-<!-- # Unused Parameters # -->
-@s: 
 
 
 <!-- ##### FUNCTION gts_triangle_neighbors ##### -->
@@ -222,8 +214,6 @@ The triangle object.
 
 @t: 
 @Returns: 
-<!-- # Unused Parameters # -->
-@s: 
 
 
 <!-- ##### FUNCTION gts_triangle_vertices_edges ##### -->

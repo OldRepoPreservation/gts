@@ -36,9 +36,6 @@ Kd-Trees (in this case 3D-Trees) are a relatively efficient way of doing point l
 @bbox: 
 @compare: 
 @Returns: 
-<!-- # Unused Parameters # -->
-@p1: 
-@p2: 
 
 
 <!-- ##### MACRO gts_kdtree_destroy ##### -->

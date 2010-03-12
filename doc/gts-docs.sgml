@@ -1,4 +1,4 @@
-<!doctype book PUBLIC "-//Davenport//DTD DocBook V3.0//EN" [
+<!doctype book PUBLIC "-//OASIS//DTD DocBook V4.4//EN" [
 <!entity gts-Heaps SYSTEM "sgml/heaps.sgml">
 <!entity gts-Extended-Heaps SYSTEM "sgml/extended_heaps.sgml">
 <!entity gts-Fifo SYSTEM "sgml/fifo.sgml">

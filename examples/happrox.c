@@ -21,8 +21,12 @@
 #include <stdlib.h>
 #include <locale.h>
 #include <string.h>
-#include <pgm.h>
 #include "config.h"
+#ifdef NETPBM_INCLUDE
+#  include <netpbm/pgm.h>
+#else
+#  include <pgm.h>
+#endif
 #ifdef HAVE_GETOPT_H
 #  include <getopt.h>
 #endif /* HAVE_GETOPT_H */

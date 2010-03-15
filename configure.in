@@ -67,8 +67,20 @@ AC_PROG_AWK
 AC_ISC_POSIX
 AC_HEADER_STDC
 
-AC_CHECK_LIB(netpbm, pgm_init, netpbm="true",
-  AC_MSG_WARN([libnetpbm not found. Some programs will not be available.]), [-lm])
+AC_CHECK_HEADER(pgm.h, netpbm="true", netpbm="false")
+if test x$netpbm = xfalse ; then
+   AC_CHECK_HEADER(netpbm/pgm.h,
+                   [netpbm="true"
+                    AC_DEFINE(NETPBM_INCLUDE, 1, 
+                              [Define if netpbm include files are in netpbm/.])],
+                   netpbm="false")
+fi
+if test x$netpbm = xtrue ; then
+   AC_CHECK_LIB(netpbm, pgm_init, netpbm="true", netpbm="false")
+fi
+if test x$netpbm = xfalse ; then
+   AC_MSG_WARN([libnetpbm not found. Some programs will not be available.])
+fi
 AM_CONDITIONAL(HAS_NETPBM, test x$netpbm = xtrue)
 
 AM_PATH_GLIB_2_0(2.4.0, has_glib2=yes, has_glib2=no, gthread gmodule)

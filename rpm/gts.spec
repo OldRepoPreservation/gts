@@ -1,5 +1,5 @@
 %define alphatag %(date +%Y%m%d)
-%define current %(pkg-config gts --modversion)
+%define current %(pkg-config gts --modversion --silence-errors)
 
 Summary: GNU Triangulated Surface Library (development snapshot)
 Name: gts-snapshot
@@ -8,28 +8,26 @@ Version: 0.7.6
 %else
 Version: %{current}
 %endif
-Release: 7.%{alphatag}cvs%{?dist}
+Release: 8.%{alphatag}cvs%{?dist}
 License: GPLv2
-# SuSE should have this macro set otherwise specify in ~/.rpmmacros
 %if 0%{?suse_version}
 Group: Productivity/Scientific/Other
-%endif
-# For Fedora you must specify fedora_version in your ~/.rpmmacros file
-%if 0%{?fedora_version}
+%else
 Group: Applications/Engineering
 %endif
 URL: http://gts.sourceforge.net
-Packager: Ivan Adam Vari <i.vari@niwa.co.nz>
-Source0: gts-mainline.tar.gz
+Packager: Matthieu Castellazzi <m.castellazzi@niwa.co.nz>
+Source0: gts-snapshot.tar.gz
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
-%if 0%{?fedora_version}
-Requires: netpbm-devel
-BuildRequires:  gtk-doc >= 1.3-4
-%endif
+
 %if 0%{?suse_version}
 Requires: libnetpbm
-BuildRequires: gtkdoc >= 1.3-4
+BuildRequires: gtkdoc >= 1.3-4, sgml-skel, netpbm, libnetpbm-devel
+%else
+Requires: netpbm
+BuildRequires: gtk-doc >= 1.3-4, netpbm-devel
 %endif
+
 # For both distros
 Requires: glib2
 BuildRequires: glib2-devel
@@ -38,8 +36,7 @@ BuildRequires: glib2-devel
 Summary: Development files for gts
 %if 0%{?suse_version}
 Group: Productivity/Scientific/Other
-%endif
-%if 0%{?fedora_version}
+%else
 Group: Applications/Engineering
 %endif
 Requires: glib2-devel
@@ -49,8 +46,7 @@ Requires: %{name} = %{version}-%{release}
 Summary: Documentation for GTS (development snapshot)
 %if 0%{?suse_version}
 Group: Productivity/Scientific/Other
-%endif
-%if 0%{?fedora_version}
+%else
 Group: Applications/Engineering
 %endif
 Requires: lynx
@@ -71,8 +67,7 @@ This package contains the GTS Reference, in HTML format.
 
 
 %prep
-%setup -q -n gts-mainline
-
+%setup -q -n gts-snapshot
 
 %build
 RPM_OPT_FLAGS="$RPM_OPT_FLAGS -fPIC -DPIC"
@@ -137,7 +132,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_bindir}/stl2gts
 %{_bindir}/gtstransform
 %{_libdir}/*.so.*
-%{_mandir}/man1/*.gz
+%{_mandir}/man1/*.1.*
 
 %files devel
 %defattr(-,root,root)
@@ -153,6 +148,11 @@ rm -rf $RPM_BUILD_ROOT
 %doc COPYING doc/html/*.html
 
 %changelog
+* Tue Nov 03 2009 Matthieu Castellazzi <m.castellazzi@niwa.co.nz> - 8
+- first attempt to use buildservice for gerris
+- add sgml-skel and libnetpbm dependencies for the build
+- add --silence-errors options to define %current
+
 * Wed Jul 16 2008 Ivan Adam Vari <i.vari@niwa.co.nz> - 7
 - Some minor changes found in debian packages
 

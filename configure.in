@@ -76,7 +76,7 @@ if test x$netpbm = xfalse ; then
                    netpbm="false")
 fi
 if test x$netpbm = xtrue ; then
-   AC_CHECK_LIB(netpbm, pgm_init, netpbm="true", netpbm="false")
+   AC_CHECK_LIB(netpbm, pgm_init, netpbm="true", netpbm="false", [-lm])
 fi
 if test x$netpbm = xfalse ; then
    AC_MSG_WARN([libnetpbm not found. Some programs will not be available.])

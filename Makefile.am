@@ -28,7 +28,7 @@ buildservice-snapshot: config.h dist
 	tar xzf $(PACKAGE)-?.?.?.tar.gz
 	rm -f $(PACKAGE)-?.?.?.tar.gz
 	mv -f $(PACKAGE)-?.?.? $(PACKAGE)-snapshot
-	cd $(PACKAGE)-snapshot && ./configure && darcs changes > ChangeLog && sh debian/changelog.s && chmod +x debian/rules
+	cd $(PACKAGE)-snapshot && ./configure && darcs changes > ChangeLog && sh debian/changelog.sh && chmod +x debian/rules
 	tar czvf $(PACKAGE)-snapshot.tar.gz $(PACKAGE)-snapshot
 	dpkg-source -b $(PACKAGE)-snapshot
 	rm -r -f $(PACKAGE)-snapshot

@@ -22,7 +22,10 @@ BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
 %if 0%{?suse_version}
 Requires: libnetpbm
-BuildRequires: gtkdoc >= 1.3-4, sgml-skel, netpbm, libnetpbm-devel
+BuildRequires: gtkdoc >= 1.3-4, sgml-skel, netpbm
+%if 0%{?suse_version} >= 1110
+BuildRequires: libnetpbm-devel
+%endif
 %else
 Requires: netpbm
 BuildRequires: gtk-doc >= 1.3-4, netpbm-devel

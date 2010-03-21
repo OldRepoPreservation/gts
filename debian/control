@@ -23,7 +23,7 @@ Package: libgts-snapshot
 Section: libs
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
-Conflicts: libgts-0.7-1, libgts-0.7.5, libgts-bin
+Conflicts: libgts-0.7-1, libgts-0.7-5, libgts-bin
 Description: GTS Library (development snapshot) -- runtime environment
  GTS includes a number of useful functions to deal with triangulated
  surfaces.  Refer to the libgts-dev package description for more

@@ -9,7 +9,7 @@ Package: libgts-snapshot-dev
 Section: libdevel
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, libglib2.0-dev, libgts-snapshot (= ${binary:Version})
-Replaces: libgts-dev
+Conflicts: libgts-dev, libgts-bin
 Suggests: libgts-snapshot-doc
 Description: GTS Library (development snapshot)
  GTS includes a number of useful functions to deal with triangulated
@@ -23,7 +23,7 @@ Package: libgts-snapshot
 Section: libs
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
-Replaces: libgts-0.7-5, libgts-0.7-1, libgts-0.7.5, libgts-bin
+Conflicts: libgts-0.7-1, libgts-0.7.5, libgts-bin
 Description: GTS Library (development snapshot) -- runtime environment
  GTS includes a number of useful functions to deal with triangulated
  surfaces.  Refer to the libgts-dev package description for more
@@ -34,7 +34,7 @@ Description: GTS Library (development snapshot) -- runtime environment
 Package: libgts-snapshot-doc
 Section: doc
 Architecture: all
-Replaces: libgts-doc
+Conflicts: libgts-doc
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: GTS Library documentation (development snapshot)
  GTS includes a number of useful functions to deal with triangulated

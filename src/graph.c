@@ -1473,8 +1473,8 @@ GtsGraph * gts_graph_read (GtsFile * fp)
 	      if (GTS_OBJECT_CLASS (g->edge_class)->read)
 		(*GTS_OBJECT_CLASS (g->edge_class)->read)
 		  ((GtsObject **) &new_edge, fp);
-	    gts_file_first_token_after (fp, '\n');
-	    n++;
+	    if (++n < ne)
+	      gts_file_first_token_after (fp, '\n');
 	  }
 	}
       }

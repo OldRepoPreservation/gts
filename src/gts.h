@@ -130,7 +130,8 @@ typedef enum {
   GTS_DOUBLE = 1 << 12,
   GTS_STRING = 1 << 13,
   GTS_FILE   = 1 << 14,
-  GTS_ERROR  = 1 << 15
+  GTS_ERROR  = 1 << 15,
+  GTS_OBJ    = 1 << 16,
 } GtsTokenType;
 
 struct _GtsFile {

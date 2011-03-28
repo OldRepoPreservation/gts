@@ -520,6 +520,14 @@ GtsFileVariable * gts_file_assign_next (GtsFile * f, GtsFileVariable * vars)
 	    else if (var->data)
 	      *((gdouble *) var->data) = atof (f->token->str); 
 	    break;
+	  case GTS_OBJ:
+	    gts_file_next_token (f);
+	    if (var->data) {
+	      GtsObject ** object = var->data;
+	      g_return_val_if_fail (GTS_IS_OBJECT (*object), NULL);
+	      (* (*object)->klass->read) (object, f);
+	    }
+	    break;
 	  case GTS_STRING:
 	    gts_file_next_token (f);
 	    if (f->type != GTS_INT && 

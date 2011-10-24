@@ -580,7 +580,8 @@ GtsFileVariable * gts_file_assign_next (GtsFile * f, GtsFileVariable * vars)
     gts_file_error (f, "unknown identifier `%s'", f->token->str);
   else if (f->type != GTS_ERROR) {
     g_assert (var->set);
-    gts_file_next_token (f);
+    if (f->type != '}')
+      gts_file_next_token (f);
     return var;
   }
   return NULL;

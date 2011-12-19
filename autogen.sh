@@ -18,9 +18,13 @@ case $system in
     ;;
 esac
 
-# On Mac OS fink is often used and installs stuff in /sw, so we search there
+# On Mac OS fink uses /sw and Macport uses /opt
 if [ -d "/sw" ]; then
 	ACLOCAL_FLAGS="-I /sw/share/aclocal $ACLOCAL_FLAGS"
+fi
+
+if [ -d "/opt" ]; then
+	ACLOCAL_FLAGS="-I /opt/local/share/aclocal $ACLOCAL_FLAGS"
 fi
 # end of Mac OS X (Darwin) fix
 

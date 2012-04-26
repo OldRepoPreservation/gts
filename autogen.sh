@@ -6,27 +6,26 @@ test -z "$srcdir" && srcdir=.
 
 DIE=0
 
-# a fix for Mac OS X (Darwin)
-
-system=`uname -s`
-libtoolize=libtoolize
-libtool=libtool
-case $system in
+case `uname -s` in
+    # fixes for Mac OSX
     Darwin)
 	libtoolize=glibtoolize
 	libtool=glibtool
-    ;;
+	touch=gtouch
+	# On Mac OS fink uses /sw and Macport uses /opt
+	if [ -d "/sw/share/aclocal" ]; then
+	    ACLOCAL_FLAGS="-I /sw/share/aclocal $ACLOCAL_FLAGS"
+	fi
+	if [ -d "/opt/local/share/aclocal" ]; then
+	    ACLOCAL_FLAGS="-I /opt/local/share/aclocal $ACLOCAL_FLAGS"
+	fi
+	;;
+    # default for other unices
+    *)
+	libtoolize=libtoolize
+	libtool=libtool
+	;;
 esac
-
-# On Mac OS fink uses /sw and Macport uses /opt
-if [ -d "/sw" ]; then
-	ACLOCAL_FLAGS="-I /sw/share/aclocal $ACLOCAL_FLAGS"
-fi
-
-if [ -d "/opt" ]; then
-	ACLOCAL_FLAGS="-I /opt/local/share/aclocal $ACLOCAL_FLAGS"
-fi
-# end of Mac OS X (Darwin) fix
 
 if [ -n "$GNOME2_DIR" ]; then
 	ACLOCAL_FLAGS="-I $GNOME2_DIR/share/aclocal $ACLOCAL_FLAGS"

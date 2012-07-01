@@ -148,7 +148,7 @@ static Color colormap_color (Colormap * cmap, gdouble val)
 
 static void write_point (GtsPoint * p, FILE * fp)
 {
-  fprintf (fp, "%g %g %g", 
+  fprintf (fp, "%f %f %f", 
 	   flatten == 0 ? avg : p->x,
 	   flatten == 1 ? avg : p->y,
 	   flatten == 2 ? avg : p->z);
@@ -464,7 +464,7 @@ static void oogl_surface (GtsSurface * s, FILE * fptr)
     ;
   }
   if (verbose)
-    fprintf (stderr, "scalar min: %g max: %g\n", min, max);
+    fprintf (stderr, "scalar min: %f max: %f\n", min, max);
   if (max == min)
     max = min + 1.;
   if (color == EPV || color == HEIGHT || 
@@ -614,6 +614,13 @@ static void sum_flatten (GtsPoint * p)
   avg += (&p->x)[flatten];
 }
 
+static void write_edge (GtsSegment * s)
+{
+  printf ("%f %f %f\n%f %f %f\n\n",
+	  GTS_POINT (s->v1)->x, GTS_POINT (s->v1)->y, GTS_POINT (s->v1)->z,
+	  GTS_POINT (s->v2)->x, GTS_POINT (s->v2)->y, GTS_POINT (s->v2)->z);
+}
+
 static void write_face (GtsTriangle * t)
 {
   GtsVertex * v1, * v2, * v3;
@@ -624,9 +631,9 @@ static void write_face (GtsTriangle * t)
   o.y = (GTS_POINT (v1)->y + GTS_POINT (v2)->y + GTS_POINT (v3)->y)/3.;
   o.z = (GTS_POINT (v1)->z + GTS_POINT (v2)->z + GTS_POINT (v3)->z)/3.;
   printf ("OFF 3 1 3\n"
-	  "%g %g %g\n"
-	  "%g %g %g\n"
-	  "%g %g %g\n"
+	  "%f %f %f\n"
+	  "%f %f %f\n"
+	  "%f %f %f\n"
 	  "3 0 1 2\n",
 	  o.x + 0.9*(GTS_POINT (v1)->x - o.x),
 	  o.y + 0.9*(GTS_POINT (v1)->y - o.y),
@@ -941,8 +948,10 @@ int main (int argc, char * argv[])
       printf ("LIST {\n");
       gts_surface_foreach_face (surface, (GtsFunc) write_face, NULL);
       printf ("}\n");
-    }      
-    else	
+    }
+    else if (gnuplot)
+      gts_surface_foreach_edge (surface, (GtsFunc) write_edge, NULL);
+    else
       oogl_surface (surface, stdout);
   }
 

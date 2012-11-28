@@ -177,7 +177,7 @@ AC_CONFIG_COMMANDS([default-1],[[
 	cat >src/gtsconfig.h <<\__EOF
 /* gtsconfig.h
  * 
- * This is a generated file.  Please modify `configure.in'
+ * This is a generated file.  Please modify `configure.ac'
  */
 
 #ifndef GTSCONFIG_H

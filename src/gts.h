@@ -136,7 +136,6 @@ typedef enum {
 
 struct _GtsFile {
   FILE * fp;
-  gchar * s, * s1;
   guint line, pos;
   GString * token;
   GtsTokenType type;
@@ -148,6 +147,8 @@ struct _GtsFile {
   gchar * delimiters;
   gchar * comments;
   gchar * tokens;
+  gchar * buf;
+  size_t len;
 };
 
 typedef struct _GtsFileVariable GtsFileVariable;
@@ -161,9 +162,10 @@ struct _GtsFileVariable {
   guint line, pos;
 };
 
-
 GtsFile *      gts_file_new               (FILE * fp);
-GtsFile *      gts_file_new_from_string   (const gchar * s);
+GtsFile *      gts_file_new_from_string   (gchar * s);
+GtsFile *      gts_file_new_from_buffer   (gchar * buf,
+					   size_t len);
 void           gts_file_verror            (GtsFile * f,
 					   const gchar * format,
 					   va_list args);
